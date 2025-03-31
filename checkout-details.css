@@ -1,0 +1,224 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Container */
+h1, h2 {
+    text-align: center;
+    color: #333;
+}
+
+.container {
+    width: 80%;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    position: absolute;
+    top: 220px;
+    margin-left: 60px;
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background-color: #fff;
+}
+
+thead {
+    background-color: rgb(43, 43, 43);
+    color: #fff;
+}
+
+thead th {
+    padding: 10px;
+    text-align: left;
+}
+
+tbody td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+    font-size: 20px;
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+tfoot {
+    background-color: #007bff;
+    color: #fff;
+    text-align: right;
+    padding-right: 10px;
+}
+
+tfoot td {
+    padding: 15px;
+    font-weight: bold;
+}
+
+/* Form and Button Styling */
+form {
+    margin-top: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #333;
+}
+
+input[type="radio"] {
+    margin-right: 10px;
+}
+
+button {
+    background-color: rgb(221, 22, 22);
+    color: #fff;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 30%;
+    position: absolute;
+    right: 30px;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+/* Totals Styling */
+.totals {
+    text-align: right;
+    margin-top: 20px;
+}
+
+.totals p {
+    font-size: 18px;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.totals p span {
+    font-weight: bold;
+    color: #007bff;
+}
+
+.address-section {
+    margin: 20px 0;
+}
+
+.address-section label {
+    display: block;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.address-section input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: border-color 0.3s ease;
+}
+
+.address-section input[type="text"]:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.container > p {
+    text-align: right;
+    margin-right: 200px;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.payment-method {
+    width: 40%;
+    margin-top: 20px;
+    margin-left: 320px;
+}
+
+.payment-title {
+    margin-bottom: 20px;
+    margin-top: 40px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    font-size: 20px;
+    background-color: #28a745;
+    border-radius: 16px;
+    color: white;
+}
+
+.payment-method > label {
+    margin-left: 40px;
+    font-size: 20px;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    table thead {
+        display: none;
+    }
+    
+    table, tbody, tr, td {
+        display: block;
+        width: 100%;
+    }
+    
+    tr {
+        margin-bottom: 20px;
+        padding: 15px;
+        border: 1px solid #ddd;
+        background-color: #fff;
+        border-radius: 10px;
+    }
+    
+    td {
+        text-align: right;
+        padding-left: 50%;
+        position: relative;
+    }
+    
+    td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 15px;
+        font-weight: bold;
+        text-align: left;
+        font-size: 14px;
+    }
+    
+    .totals {
+        text-align: center;
+    }
+    
+    button {
+        width: 100%;
+    }
+}

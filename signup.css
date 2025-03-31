@@ -1,0 +1,567 @@
+.sign-up-page {
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .sign-up-page .div {
+    background-color: #ffffff;
+    width: 1440px;
+    height: 1063px;
+    position: relative;
+  }
+  
+  .sign-up-page .image {
+    position: absolute;
+    width: 694px;
+    height: 952px;
+    top: 111px;
+    left: 0;
+    background-color: #ffffff;
+  }
+  
+  .sign-up-page .and-machines {
+    position: absolute;
+    width: 694px;
+    height: 952px;
+    top: 0;
+    left: 0;
+  }
+  
+  .sign-up-page .frame {
+    position: absolute;
+    width: 567px;
+    height: 804px;
+    top: 171px;
+    left: 771px;
+  }
+  
+  .sign-up-page .text-wrapper {
+    height: 46px;
+    top: -8px;
+    font-family: "Open Sans-Regular", Helvetica;
+    font-weight: 400;
+    color: #333333;
+    font-size: 34px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    left: 0;
+  }
+  
+  .sign-up-page .p {
+    position: absolute;
+    top: 42px;
+    left: 0;
+    font-family: "Roboto-Regular", Helvetica;
+    font-weight: 400;
+    color: #666666cc;
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+  }
+  
+  .sign-up-page .frame-2 {
+    position: absolute;
+    width: 372px;
+    height: 70px;
+    top: 490px;
+    left: -10px;
+  }
+  
+  .sign-up-page .text-wrapper-2 {
+    position: absolute;
+    top: 39px;
+    left: 28px;
+    font-family: "Roboto-Regular", Helvetica;
+    font-weight: 400;
+    color: #807d7e;
+    font-size: 18px;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+  }
+  
+  .sign-up-page .frame-3 {
+    position: absolute;
+    width: 371px;
+    height: 22px;
+    top: 0;
+    left: 0;
+  }
+  
+  .sign-up-page .agree-to-our-terms {
+    position: absolute;
+    top: -1px;
+    left: 28px;
+    font-family: "Roboto-Regular", Helvetica;
+    font-weight: 400;
+    color: transparent;
+    font-size: 18px;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+  }
+  
+  .sign-up-page .span {
+    color: #807d7e;
+  }
+  
+  .sign-up-page .text-wrapper-3 {
+    color: #807d7e;
+    text-decoration: underline;
+  }
+  
+  .sign-up-page .check-box {
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    top: 3px;
+    left: 0;
+  }
+  
+  .sign-up-page .img {
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    top: 43px;
+    left: 0;
+  }
+  
+  .sign-up-page .sign-in {
+    width: 244px;
+    height: 83px;
+    top: 586px;
+    position: absolute;
+    left: 0;
+  }
+  
+  .sign-up-page .already-have-an {
+    position: absolute;
+    top: 63px;
+    left: 0;
+    font-family: "Roboto-Regular", Helvetica;
+    font-weight: 400;
+    color: transparent;
+    font-size: 16px;
+    line-height: normal;
+    white-space: nowrap;
+  }
+  
+  .sign-up-page .text-wrapper-4 {
+    color: #3c4242;
+    letter-spacing: 0.05px;
+  }
+  
+  .sign-up-page .text-wrapper-5 {
+    color: #3c4242;
+    letter-spacing: 0.05px;
+    text-decoration: underline;
+  }
+  
+  .sign-up-page .button {
+    all: unset;
+    box-sizing: border-box;
+    display: flex;
+    width: 167px;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 16px 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #3c4242;
+    border-radius: 8px;
+  }
+  
+  .sign-up-page .button-2 {
+    all: unset;
+    box-sizing: border-box;
+    position: relative;
+    width: fit-content;
+    margin-top: -1px;
+    font-family: "Roboto-Regular", Helvetica;
+    font-weight: 400;
+    color: #ffffff;
+    font-size: 18px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+  }
+  
+  .sign-up-page .overlap-group {
+    position: absolute;
+    width: 572px;
+    height: 202px;
+    top: 112px;
+    left: -5px;
+  }
+  
+  .sign-up-page .email-address {
+    position: absolute;
+    width: 567px;
+    height: 119px;
+    top: 83px;
+    left: 0;
+  }
+  
+  .sign-up-page .text-wrapper-6 {
+    position: absolute;
+    top: 93px;
+    left: 0;
+    font-family: "Roboto-Regular", Helvetica;
+    font-weight: 400;
+    color: #ee1d52;
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+  }
+  
+  .sign-up-page .email-address-2 {
+    position: absolute;
+    width: 567px;
+    height: 90px;
+    top: 0;
+    left: 0;
+  }
+  
+  .sign-up-page .label {
+    position: absolute;
+    top: -1px;
+    left: 0;
+    font-family: "Roboto-Regular", Helvetica;
+    font-weight: 400;
+    color: #3c4242;
+    font-size: 18px;
+    letter-spacing: 0.36px;
+    line-height: normal;
+    white-space: nowrap;
+  }
+  
+  .sign-up-page .button-3 {
+    all: unset;
+    box-sizing: border-box;
+    display: flex;
+    width: 567px;
+    align-items: center;
+    gap: 12px;
+    padding: 18px 20px;
+    position: absolute;
+    top: 32px;
+    left: 0;
+    border-radius: 8px;
+    border: 1px solid;
+    border-color: #3c4242;
+  }
+  
+  .sign-up-page .button-4 {
+    all: unset;
+    box-sizing: border-box;
+    position: relative;
+    width: fit-content;
+    margin-top: -1px;
+    font-family: "Roboto-Regular", Helvetica;
+    font-weight: 400;
+    color: #807d7e;
+    font-size: 14px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+  }
+  
+  .sign-up-page .button-wrapper {
+    position: absolute;
+    width: 567px;
+    height: 136px;
+    top: 0;
+    left: 5px;
+  }
+  
+  .sign-up-page .button-5 {
+    all: unset;
+    box-sizing: border-box;
+    display: flex;
+    width: 567px;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 16px 20px;
+    position: relative;
+    border-radius: 8px;
+    border: 1px solid;
+    border-color: #3c4242;
+  }
+  
+  .sign-up-page .img-2 {
+    position: relative;
+    width: 20px;
+    height: 20px;
+  }
+  
+  .sign-up-page .button-6 {
+    all: unset;
+    box-sizing: border-box;
+    position: relative;
+    width: fit-content;
+    margin-top: -1px;
+    font-family: "Roboto-Regular", Helvetica;
+    font-weight: 400;
+    color: #3c4242;
+    font-size: 22px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+  }
+  
+  .sign-up-page .password {
+    position: absolute;
+    width: 567px;
+    height: 124px;
+    top: 340px;
+    left: 0;
+  }
+  
+  .sign-up-page .password-2 {
+    position: relative;
+    width: 571px;
+    height: 124px;
+  }
+  
+  .sign-up-page .password-3 {
+    position: absolute;
+    width: 559px;
+    height: 27px;
+    top: 0;
+    left: 3px;
+  }
+  
+  .sign-up-page .frame-4 {
+    position: absolute;
+    width: 70px;
+    height: 22px;
+    top: 2px;
+    left: 495px;
+  }
+  
+  .sign-up-page .text-wrapper-7 {
+    position: absolute;
+    top: -1px;
+    left: 32px;
+    font-family: "Roboto-Regular", Helvetica;
+    font-weight: 400;
+    color: #807d7e;
+    font-size: 18px;
+    text-align: right;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+  }
+  
+  .sign-up-page .hide-view {
+    position: absolute;
+    width: 18px;
+    height: 16px;
+    top: 6px;
+    left: 0;
+  }
+  
+  .sign-up-page .label-2 {
+    position: absolute;
+    top: 2px;
+    left: 0;
+    font-family: "Roboto-Regular", Helvetica;
+    font-weight: 400;
+    color: #3c4242;
+    font-size: 18px;
+    letter-spacing: 0.36px;
+    line-height: normal;
+    white-space: nowrap;
+  }
+  
+  .sign-up-page .button-7 {
+    display: flex;
+    width: 567px;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 16px 20px;
+    position: absolute;
+    top: 37px;
+    left: 0;
+    border-radius: 8px;
+    border: 1px solid;
+    border-color: #3c4242;
+  }
+  
+  .sign-up-page .use-or-more {
+    position: absolute;
+    top: 104px;
+    left: 3px;
+    font-family: "Roboto-Regular", Helvetica;
+    font-weight: 400;
+    color: #807d7e;
+    font-size: 16px;
+    text-align: right;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+  }
+  
+  .sign-up-page .overlap-wrapper {
+    position: absolute;
+    width: 1440px;
+    height: 111px;
+    top: 0;
+    left: 0;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-color: #bebcbd;
+  }
+  
+  .sign-up-page .overlap {
+    position: relative;
+    width: 1292px;
+    height: 100px;
+    top: 5px;
+    left: 48px;
+  }
+  
+  .sign-up-page .frame-5 {
+    position: absolute;
+    width: 1240px;
+    height: 46px;
+    top: 29px;
+    left: 52px;
+  }
+  
+  .sign-up-page .select-langauge {
+    position: absolute;
+    width: 206px;
+    height: 24px;
+    top: 12px;
+    left: 649px;
+  }
+  
+  .sign-up-page .text-wrapper-8 {
+    position: absolute;
+    top: -1px;
+    left: 0;
+    font-family: "Roboto-Regular", Helvetica;
+    font-weight: 400;
+    color: #333333;
+    font-size: 18px;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+  }
+  
+  .sign-up-page .vector {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    top: -897px;
+    left: 4621px;
+  }
+  
+  .sign-up-page .vector-2 {
+    position: absolute;
+    width: 10px;
+    height: 5px;
+    top: 10px;
+    left: 189px;
+  }
+  
+  .sign-up-page .button-8 {
+    all: unset;
+    box-sizing: border-box;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 12px 48px;
+    position: absolute;
+    top: 0;
+    left: 255px;
+    background-color: #f6f6f6;
+    border-radius: 8px;
+  }
+  
+  .sign-up-page .button-9 {
+    all: unset;
+    box-sizing: border-box;
+    position: relative;
+    width: fit-content;
+    margin-top: -1px;
+    font-family: "Roboto-Regular", Helvetica;
+    font-weight: 400;
+    color: #807d7e;
+    font-size: 18px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+  }
+  
+  .sign-up-page .button-10 {
+    all: unset;
+    box-sizing: border-box;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 12px 48px;
+    position: absolute;
+    top: 0;
+    left: 915px;
+    background-color: #3c4242;
+    border-radius: 8px;
+  }
+  
+  .sign-up-page .button-11 {
+    all: unset;
+    box-sizing: border-box;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 12px 48px;
+    position: absolute;
+    top: 0;
+    left: 1084px;
+    border-radius: 8px;
+    border: 1px solid;
+    border-color: #3c4242;
+  }
+  
+  .sign-up-page .button-12 {
+    all: unset;
+    box-sizing: border-box;
+    position: relative;
+    width: fit-content;
+    margin-top: -1px;
+    font-family: "Roboto-Regular", Helvetica;
+    font-weight: 400;
+    color: #3c4242;
+    font-size: 18px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+  }
+  
+  .sign-up-page .images {
+    position: absolute;
+    width: 104px;
+    height: 100px;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+  }

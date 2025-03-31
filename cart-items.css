@@ -1,0 +1,113 @@
+.cart-container {
+    width: 90%;
+    margin: 0 auto;
+    padding-top: 100px;
+    font-family: Arial, sans-serif;
+}
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+}
+.cart-item img {
+    width: 100px;
+    height: auto;
+}
+.cart-item-info {
+    flex: 2;
+    padding-left: 15px;
+}
+.cart-item-info .product-name {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+.cart-item-info .product-size {
+    font-size: 0.9em;
+    color: #777;
+}
+.cart-item-price,
+.cart-item-quantity {
+    min-width: 80px;
+    flex: 1;
+    text-align: left;
+    padding-left: 60px;
+}
+
+.cart-item-delete {
+    cursor: pointer;
+}
+.cart-item-delete img {
+    width: 24px;
+    height: 24px;
+}
+
+.cart-item-total {
+    margin-right: 30px;
+    text-align: center;
+    min-width: 80px;
+    flex: 1;
+    text-align: left;
+}
+
+.cart-summary {
+    padding: 20px;
+    border-top: 1px solid #ddd;
+    margin-top: 20px;
+    position: absolute;
+    right: 0;
+    width: 20%;
+    margin-right: 220px;
+}
+.cart-summary div {
+    margin-bottom: 10px;
+    font-size: 1.2em;
+}
+.checkout-button {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    text-align: center;
+    background-color: rgb(205, 38, 38);
+    color: white;
+    font-size: 1.2em;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.summery-item {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cart-item-availability {
+    font-weight: bold;
+    min-width: 80px;
+    flex: 1;
+    text-align: left;
+}
+
+.buy-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 5px;
+    min-width: 80px;
+    flex: 1;
+    margin-right: 120px;
+}
+
+.buy-button:hover {
+    background-color: #45a049;
+}
+
+.buy-button.disabled {
+    pointer-events: none;
+    opacity: 0.5;
+    cursor: not-allowed;
+}

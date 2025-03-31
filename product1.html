@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <link rel="stylesheet" href="product1.css">
+    </head>
+    <body>
+        <div class="product-container">
+            <div class="other-images">
+                
+            </div>
+            <div class="product-image">
+                <img class="image" src="img/0307007636lpk-1ladies-t-shirt-fashion-bug-srilanka-compresse-1.png">
+            </div>
+            <div class="product-details">
+                <h1 class="product-title">
+                    Product 1
+                </h1>
+                <div class="ratings">
+                    <div class="rating">
+                        <span class="star">&#9733;</span>
+                        <span class="star">&#9733;</span>
+                        <span class="star">&#9733;</span>
+                        <span class="star">&#9733;</span>
+                        <span class="star">&#9734;</span>
+                        <span class="star"></span>
+                        <span class="star"></span>
+                        <div class="rating-value">4/5</div>
+                      </div>
+                      <div class="rating-container">
+                        <button class="rating-toggle" onclick="toggleRating()">Rate this product</button>
+                        <div class="rating-dropdown" id="ratingDropdown">
+                          <div class="select-rating" id="rating">
+                            <span class="select-star" data-value="1">&#9734;</span>
+                            <span class="select-star" data-value="2">&#9734;</span>
+                            <span class="select-star" data-value="3">&#9734;</span>
+                            <span class="select-star" data-value="4">&#9734;</span>
+                            <span class="select-star" data-value="5">&#9734;</span>
+                          </div>
+                          <p>Selected Rating: <span id="selected-rating">0</span></p>
+                          
+                          <form id="ratingForm">
+                            <input type="hidden" name="rating" id="ratingValue" value="0">
+                            <input type="hidden" name="productId" value="1">
+                            <button type="button" onclick="submitRating()">Submit Rating</button>
+                          </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="size-selector">
+                    <div class="size-option" data-size="S">S</div>
+                    <div class="size-option" data-size="M">M</div>
+                    <div class="size-option" data-size="L">L</div>
+                    <div class="size-option" data-size="XL">XL</div>
+                </div>
+
+                <input type="hidden" id="selected-size" name="size" value="" />
+                <div class="product-buttons">
+                    <button class="add-to-cart">
+                        <img src="img/shopping-cart.svg" alt="Cart" class="cart-icon">
+                        ADD to Cart
+                    </button>
+                    <div class="price-container">
+                        $19.99
+                    </div>
+                </div>
+                <div class="reviews-container">
+                    <button class="toggle-reviews" onclick="toggleReviews()">Show/Hide Reviews</button>
+                    
+                    <div class="reviews" id="reviews" style="display: none;">
+                        <div class="review-list" id="reviewList">
+                        </div>
+                        
+                        <h2>Add a Review</h2>
+                        <form id="reviewForm">
+                            <textarea id="reviewText" rows="4" placeholder="Write your review here..." required></textarea>
+                            <button type="button" onclick="submitReview()">Submit Review</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="product-details.js"></script>
+    </body>
+</html>

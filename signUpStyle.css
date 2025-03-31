@@ -1,0 +1,163 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    
+    background-color: white;
+}
+
+.logo img {
+    max-height: 70px;
+    align-items: center;
+    margin-left: 450px;
+}
+
+.login-button a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: 1px solid #007bff;
+    border-radius: 5px;
+    margin-right: 450px;
+}
+
+hr {
+    margin: 0;
+}
+
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.left-section img {
+    height: 690px;
+}
+
+.right-section {
+    width: 500px;
+    background-color: white;
+    padding: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.right-section h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+form input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.google-signin {
+    width: 100%;
+    padding: 10px;
+    background-color: #db4437;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.checkbox-container {
+    margin: 15px 0;
+    display: flex;
+}
+
+.signup-button {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.toggle-password {
+    cursor: pointer;
+    margin-left: -25px;
+    position: relative;
+    top: -35px;
+    right: 10px;
+    float: right;
+}
+
+.container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.google-signin-button {
+    background-color: transparent; /* Google Blue */
+    color: black;
+    border: 1px solid black;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    display: inline-flex;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.google-signin-button img {
+    width: 20px; /* Adjust size as needed */
+    margin-right: 10px; /* Space between image and text */
+}
+
+.line-with-text {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.line-with-text::before,
+.line-with-text::after {
+    content: "";
+    flex: 1;
+    border-bottom: 1px solid #000;
+}
+
+.line-with-text::before {
+    margin-right: 10px;
+}
+
+.line-with-text::after {
+    margin-left: 10px;
+}
+
+.checkbox-container > input {
+    flex: 1;
+}
+
+.checkbox-container > label {
+    flex: 5;
+    padding-top: 8px;
+}

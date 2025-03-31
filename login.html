@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In - Beliyo</title>
+    <link rel="stylesheet" href="loginStyle.css">
+</head>
+<body>
+    <header>
+        
+    </header>
+    <hr>
+    <div class="main-container">
+        <div class="left-section">
+            <img src="img/bert-b-rhnff6hb41s-unsplash-2.png" alt="Sign In Image">
+        </div>
+        <div class="right-section">
+            <div class="container">
+                <h1>Log In</h1>
+                <a href="auth.php">
+                    <button class="google-signin-button">
+                        <img src="img/google-1.svg" alt="Google Logo" />
+                        Continue with Google
+                    </button>
+                </a>
+            </div>
+
+            <div class="line-with-text">or</div>
+            
+            <form action="login.php" method="POST">
+                <label for="email">Username or Email</label>
+                <input type="text" id="email" name="email" required>
+
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+                <span class="toggle-password" onclick="togglePasswordVisibility()"><u>Hide</u></span>
+
+                <a href="#">Forgot your password?</a>
+
+                <button type="submit" class="login-button"> Login</button>
+            </form>
+            <p>Don’t have an account? <a href="sign.html"><center>Sign Up</center></a></p>
+        </div>
+    </div>
+    <script src="password.js"></script>
+</body>
+</html>

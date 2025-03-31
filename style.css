@@ -1,0 +1,1547 @@
+.product-detail-page {
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .product-detail-page .div {
+    background-color: #ffffff;
+    overflow: hidden;
+    width: 1440px;
+    height: 3338px;
+    position: relative;
+  }
+  
+  .product-detail-page .overlap {
+    position: absolute;
+    width: 1440px;
+    height: 995px;
+    top: -94px;
+    left: 0;
+  }
+  
+  .product-detail-page .overlap-group {
+    position: absolute;
+    width: 1440px;
+    height: 995px;
+    top: 0;
+    left: 0;
+  }
+  
+  .product-detail-page .element {
+    position: absolute;
+    width: 282px;
+    height: 370px;
+    top: 491px;
+    left: 13px;
+    object-fit: cover;
+  }
+  
+  .product-detail-page .element-blu {
+    position: absolute;
+    width: 286px;
+    height: 372px;
+    top: 0;
+    left: 13px;
+    object-fit: cover;
+  }
+  
+  .product-detail-page .rectangle {
+    position: absolute;
+    width: 281px;
+    height: 784px;
+    top: 211px;
+    left: 3px;
+    background-color: #f6f6f6;
+    border-radius: 4px;
+  }
+  
+  .product-detail-page .frame {
+    position: absolute;
+    width: 21px;
+    height: 75px;
+    top: 463px;
+    left: 143px;
+    transform: rotate(180deg);
+  }
+  
+  .product-detail-page .element-lpk {
+    height: 80px;
+    top: 56px;
+    left: -11px;
+    transform: rotate(-180deg);
+    position: absolute;
+    width: 64px;
+    object-fit: cover;
+  }
+  
+  .product-detail-page .task-baar {
+    position: absolute;
+    width: 1440px;
+    height: 108px;
+    top: 103px;
+    left: 0;
+  }
+  
+  .product-detail-page .overlap-2 {
+    position: relative;
+    height: 108px;
+  }
+  
+  .product-detail-page .frame-2 {
+    position: absolute;
+    width: 1237px;
+    height: 45px;
+    top: 31px;
+    left: 102px;
+  }
+  
+  .product-detail-page .navbar {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    position: absolute;
+    top: 9px;
+    left: 179px;
+  }
+  
+  .product-detail-page .text-wrapper {
+    position: relative;
+    width: fit-content;
+    margin-top: -1px;
+    font-family: "Roboto-Regular", Helvetica;
+    font-weight: 400;
+    color: #807d7e;
+    font-size: 22px;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+  }
+  
+  .product-detail-page .text-wrapper-2 {
+    position: relative;
+    width: fit-content;
+    margin-top: -1px;
+    font-family: "Roboto-Regular", Helvetica;
+    font-weight: 400;
+    color: #7f7c7d;
+    font-size: 22px;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+  }
+  
+  .product-detail-page .button {
+    all: unset;
+    box-sizing: border-box;
+    display: flex;
+    width: 267px;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 20px;
+    position: absolute;
+    top: 0;
+    left: 738px;
+    background-color: #f6f6f6;
+    border-radius: 8px;
+  }
+  
+  .product-detail-page .img {
+    position: relative;
+    width: 20px;
+    height: 20px;
+  }
+  
+  .product-detail-page .button-2 {
+    all: unset;
+    box-sizing: border-box;
+    position: relative;
+    width: fit-content;
+    margin-top: -0.5px;
+    font-family: "Roboto-Regular", Helvetica;
+    font-weight: 400;
+    color: #807d7e;
+    font-size: 16px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+  }
+  
+  .product-detail-page .frame-3 {
+    display: inline-flex;
+    align-items: flex-start;
+    gap: 12px;
+    position: absolute;
+    top: 0;
+    left: 1081px;
+  }
+  
+  .product-detail-page .component {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 12px;
+    position: relative;
+    flex: 0 0 auto;
+    background-color: #f6f6f6;
+    border-radius: 8px;
+  }
+  
+  .product-detail-page .shopping-cart-wrapper {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 12px;
+    position: relative;
+    flex: 0 0 auto;
+    background-color: #fe0000;
+    border-radius: 8px;
+  }
+  
+  .product-detail-page .rectangle-2 {
+    position: absolute;
+    width: 1440px;
+    height: 108px;
+    top: 0;
+    left: 0;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-color: #bebcbd;
+  }
+  
+  .product-detail-page .images {
+    position: absolute;
+    width: 104px;
+    height: 100px;
+    top: 4px;
+    left: 48px;
+    object-fit: cover;
+  }
+  
+  .product-detail-page .moose-pant-moss {
+    position: absolute;
+    width: 279px;
+    height: 370px;
+    top: 0;
+    left: 337px;
+    object-fit: cover;
+  }
+  
+  .product-detail-page .element-mens {
+    position: absolute;
+    width: 281px;
+    height: 370px;
+    top: 491px;
+    left: 337px;
+    object-fit: cover;
+  }
+  
+  .product-detail-page .frame-4 {
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+    position: absolute;
+    top: 232px;
+    left: 808px;
+  }
+  
+  .product-detail-page .text-wrapper-3 {
+    position: relative;
+    width: fit-content;
+    margin-top: -1px;
+    font-family: "Roboto-Regular", Helvetica;
+    font-weight: 400;
+    color: #807d7e;
+    font-size: 18px;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+  }
+  
+  .product-detail-page .left-stroke {
+    position: relative;
+    width: 5px;
+    height: 10.14px;
+  }
+  
+  .product-detail-page .text-wrapper-4 {
+    position: absolute;
+    width: 393px;
+    top: 288px;
+    left: 808px;
+    font-family: "Open Sans-Regular", Helvetica;
+    font-weight: 400;
+    color: #3c4242;
+    font-size: 34px;
+    letter-spacing: 0.68px;
+    line-height: 47.6px;
+  }
+  
+  .product-detail-page .frame-5 {
+    display: inline-flex;
+    align-items: flex-start;
+    gap: 25px;
+    position: absolute;
+    top: 412px;
+    left: 808px;
+  }
+  
+  .product-detail-page .frame-6 {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    position: relative;
+    flex: 0 0 auto;
+  }
+  
+  .product-detail-page .frame-7 {
+    display: inline-flex;
+    align-items: flex-start;
+    gap: 10px;
+    position: relative;
+    flex: 0 0 auto;
+  }
+  
+  .product-detail-page .star {
+    position: relative;
+    width: 22px;
+    height: 22px;
+  }
+  
+  .product-detail-page .star-2 {
+    position: absolute;
+    width: 21px;
+    height: 20px;
+    top: 0;
+    left: 1px;
+  }
+  
+  .product-detail-page .text-wrapper-5 {
+    position: relative;
+    width: fit-content;
+    margin-top: -0.5px;
+    font-family: "Roboto-Regular", Helvetica;
+    font-weight: 400;
+    color: #807d7e;
+    font-size: 18px;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+  }
+  
+  .product-detail-page .frame-8 {
+    display: flex;
+    width: 146px;
+    height: 22px;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    position: relative;
+  }
+  
+  .product-detail-page .message-icon {
+    position: relative;
+    width: 21.5px;
+    height: 19.19px;
+  }
+  
+  .product-detail-page .frame-9 {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 25px;
+    position: absolute;
+    top: 469px;
+    left: 808px;
+  }
+  
+  .product-detail-page .frame-10 {
+    display: inline-flex;
+    align-items: flex-start;
+    gap: 20px;
+    position: relative;
+    flex: 0 0 auto;
+  }
+  
+  .product-detail-page .text-wrapper-6 {
+    position: relative;
+    width: fit-content;
+    margin-top: -1px;
+    font-family: "Roboto-Regular", Helvetica;
+    font-weight: 400;
+    color: #3f4646;
+    font-size: 18px;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+  }
+  
+  .product-detail-page .frame-11 {
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+    position: relative;
+    flex: 0 0 auto;
+  }
+  
+  .product-detail-page .arrow {
+    position: relative;
+    width: 15.39px;
+    height: 13.8px;
+    margin-right: -0.9px;
+  }
+  
+  .product-detail-page .frame-12 {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    position: relative;
+    flex: 0 0 auto;
+  }
+  
+  .product-detail-page .size {
+    position: relative;
+    width: 42px;
+    height: 42px;
+  }
+  
+  .product-detail-page .div-wrapper {
+    position: relative;
+    width: 38px;
+    height: 38px;
+    border-radius: 12px;
+    border: 1.5px solid;
+    border-color: #bebbbc;
+  }
+  
+  .product-detail-page .text-wrapper-7 {
+    position: absolute;
+    width: 20px;
+    height: 16px;
+    top: 8px;
+    left: 8px;
+    font-family: "Roboto-Regular", Helvetica;
+    font-weight: 400;
+    color: #3c4242;
+    font-size: 14px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .product-detail-page .s-wrapper {
+    position: relative;
+    width: 38px;
+    height: 38px;
+    background-color: #3c4141;
+    border-radius: 12px;
+  }
+  
+  .product-detail-page .s {
+    position: absolute;
+    width: 9px;
+    top: 9px;
+    left: 14px;
+    font-family: "Roboto-Regular", Helvetica;
+    font-weight: 400;
+    color: #ffffff;
+    font-size: 14px;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .product-detail-page .frame-13 {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 25px;
+    position: absolute;
+    top: 593px;
+    left: 808px;
+  }
+  
+  .product-detail-page .frame-14 {
+    display: inline-flex;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+    flex: 0 0 auto;
+  }
+  
+  .product-detail-page .colour {
+    position: relative;
+    width: 30px;
+    height: 30px;
+  }
+  
+  .product-detail-page .overlap-group-2 {
+    position: relative;
+    height: 30px;
+    border-radius: 15px;
+  }
+  
+  .product-detail-page .ellipse {
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    top: 4px;
+    left: 4px;
+    background-color: #3c4242;
+    border-radius: 11px;
+  }
+  
+  .product-detail-page .ellipse-2 {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: 0;
+    left: 0;
+    border-radius: 15px;
+    border: 1px solid;
+    border-color: #3f4646;
+  }
+  
+  .product-detail-page .colour-2 {
+    background-color: #edd146;
+    position: relative;
+    width: 22px;
+    height: 22px;
+    border-radius: 11px;
+  }
+  
+  .product-detail-page .colour-3 {
+    background-color: #eb84b0;
+    position: relative;
+    width: 22px;
+    height: 22px;
+    border-radius: 11px;
+  }
+  
+  .product-detail-page .colour-4 {
+    background-color: #9c1f35;
+    position: relative;
+    width: 22px;
+    height: 22px;
+    border-radius: 11px;
+  }
+  
+  .product-detail-page .frame-15 {
+    position: absolute;
+    width: 219px;
+    height: 50px;
+    top: 829px;
+    left: 807px;
+  }
+  
+  .product-detail-page .img-wrapper {
+    position: absolute;
+    width: 44px;
+    height: 44px;
+    top: 0;
+    left: 0;
+    background-color: #f6f6f6;
+    border-radius: 22px;
+  }
+  
+  .product-detail-page .credit-card {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: 14px;
+    left: 14px;
+  }
+  
+  .product-detail-page .text-wrapper-8 {
+    position: absolute;
+    top: 10px;
+    left: 59px;
+    font-family: "Roboto-Regular", Helvetica;
+    font-weight: 400;
+    color: #3c4242;
+    font-size: 18px;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+  }
+  
+  .product-detail-page .frame-16 {
+    position: absolute;
+    width: 193px;
+    height: 50px;
+    top: 899px;
+    left: 807px;
+  }
+  
+  .product-detail-page .truck {
+    position: absolute;
+    width: 19px;
+    height: 15px;
+    top: 14px;
+    left: 12px;
+  }
+  
+  .product-detail-page .frame-17 {
+    position: absolute;
+    width: 246px;
+    height: 50px;
+    top: 899px;
+    left: 1094px;
+  }
+  
+  .product-detail-page .img-2 {
+    position: absolute;
+    width: 17px;
+    height: 17px;
+    top: 13px;
+    left: 13px;
+  }
+  
+  .product-detail-page .frame-18 {
+    position: absolute;
+    width: 154px;
+    height: 50px;
+    top: 829px;
+    left: 1094px;
+  }
+  
+  .product-detail-page .add-to-cart {
+    position: absolute;
+    width: 362px;
+    height: 46px;
+    top: 706px;
+    left: 808px;
+  }
+  
+  .product-detail-page .button-3 {
+    all: unset;
+    box-sizing: border-box;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 12px 40px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #fe0000;
+    border-radius: 8px;
+  }
+  
+  .product-detail-page .button-4 {
+    all: unset;
+    box-sizing: border-box;
+    position: relative;
+    width: fit-content;
+    margin-top: -1px;
+    font-family: "Roboto-Regular", Helvetica;
+    font-weight: 400;
+    color: #ffffff;
+    font-size: 18px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+  }
+  
+  .product-detail-page .button-5 {
+    all: unset;
+    box-sizing: border-box;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 12px 40px;
+    position: absolute;
+    top: 0;
+    left: 224px;
+    border-radius: 8px;
+    border: 1px solid;
+    border-color: #3c4242;
+  }
+  
+  .product-detail-page .button-6 {
+    all: unset;
+    box-sizing: border-box;
+    position: relative;
+    width: fit-content;
+    margin-top: -1px;
+    font-family: "Roboto-Bold", Helvetica;
+    font-weight: 700;
+    color: #3c4242;
+    font-size: 18px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+  }
+  
+  .product-detail-page .product {
+    position: absolute;
+    width: 282px;
+    height: 441px;
+    top: 2066px;
+    left: 738px;
+  }
+  
+  .product-detail-page .heart-wrapper {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    top: 27px;
+    left: 229px;
+    background-color: #ffffff;
+    border-radius: 16.18px;
+  }
+  
+  .product-detail-page .heart {
+    position: absolute;
+    width: 15px;
+    height: 13px;
+    top: 10px;
+    left: 8px;
+  }
+  
+  .product-detail-page .frame-19 {
+    position: absolute;
+    width: 281px;
+    height: 41px;
+    top: 400px;
+    left: 0;
+  }
+  
+  .product-detail-page .frame-20 {
+    position: absolute;
+    width: 166px;
+    height: 41px;
+    top: 0;
+    left: 0;
+  }
+  
+  .product-detail-page .black-sweatshirt {
+    position: absolute;
+    top: -1px;
+    left: 0;
+    font-family: "Roboto-Regular", Helvetica;
+    font-weight: 400;
+    color: #3c4242;
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+  }
+  
+  .product-detail-page .jhanvi-s-brand {
+    position: absolute;
+    top: 23px;
+    left: 0;
+    font-family: "Roboto-Regular", Helvetica;
+    font-weight: 400;
+    color: #807d7e;
+    font-size: 14px;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+  }
+  
+  .product-detail-page .element-wrapper {
+    position: absolute;
+    width: 82px;
+    height: 37px;
+    top: 2px;
+    left: 199px;
+    background-color: #f6f6f6;
+    border-radius: 8px;
+  }
+  
+  .product-detail-page .element-2 {
+    position: absolute;
+    top: 9px;
+    left: 3px;
+    font-family: "Roboto-Bold", Helvetica;
+    font-weight: 700;
+    color: #3c4242;
+    font-size: 14px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+  }
+  
+  .product-detail-page .element-pgr {
+    position: absolute;
+    width: 283px;
+    height: 372px;
+    top: -94px;
+    left: -624px;
+    object-fit: cover;
+  }
+  
+  .product-detail-page .element-lgr-mens {
+    position: absolute;
+    width: 286px;
+    height: 370px;
+    top: 397px;
+    left: -620px;
+    object-fit: cover;
+  }
+  
+  .product-detail-page .element-moose {
+    position: absolute;
+    width: 279px;
+    height: 370px;
+    top: 397px;
+    left: -298px;
+    object-fit: cover;
+  }
+  
+  .product-detail-page .line {
+    position: absolute;
+    width: 534px;
+    height: 1px;
+    top: -975px;
+    left: 85px;
+    object-fit: cover;
+  }
+  
+  .product-detail-page .product-description {
+    position: absolute;
+    width: 304px;
+    height: 31px;
+    top: 993px;
+    left: 100px;
+  }
+  
+  .product-detail-page .text-wrapper-9 {
+    position: absolute;
+    width: 284px;
+    top: -1px;
+    left: 21px;
+    font-family: "Open Sans-Regular", Helvetica;
+    font-weight: 400;
+    color: #3c4242;
+    font-size: 28px;
+    letter-spacing: 0.56px;
+    line-height: 33.5px;
+    white-space: nowrap;
+  }
+  
+  .product-detail-page .rectangle-3 {
+    position: absolute;
+    width: 6px;
+    height: 28px;
+    top: 1px;
+    left: 0;
+    background-color: #fe0000;
+    border-radius: 10px;
+  }
+  
+  .product-detail-page .description {
+    position: absolute;
+    width: 610px;
+    height: 145px;
+    top: 1054px;
+    left: 100px;
+  }
+  
+  .product-detail-page .element-bio-washed {
+    position: absolute;
+    width: 610px;
+    top: 69px;
+    left: 0;
+    font-family: "Roboto-Regular", Helvetica;
+    font-weight: 400;
+    color: #807d7e;
+    font-size: 16px;
+    letter-spacing: 0.32px;
+    line-height: 25px;
+  }
+  
+  .product-detail-page .frame-21 {
+    position: absolute;
+    width: 491px;
+    height: 40px;
+    top: 0;
+    left: 0;
+  }
+  
+  .product-detail-page .text-wrapper-10 {
+    position: absolute;
+    top: -1px;
+    left: 0;
+    font-family: "Roboto-Regular", Helvetica;
+    font-weight: 400;
+    color: #3c4242;
+    font-size: 18px;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+  }
+  
+  .product-detail-page .frame-22 {
+    position: absolute;
+    width: 159px;
+    height: 22px;
+    top: 0;
+    left: 119px;
+  }
+  
+  .product-detail-page .text-wrapper-11 {
+    position: absolute;
+    top: -1px;
+    left: 51px;
+    font-family: "Roboto-Regular", Helvetica;
+    font-weight: 400;
+    color: #807d7e;
+    font-size: 18px;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+  }
+  
+  .product-detail-page .frame-23 {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 2px;
+    left: 112px;
+    background-color: #fe0000;
+    border-radius: 4px;
+  }
+  
+  .product-detail-page .text-wrapper-12 {
+    position: absolute;
+    width: 9px;
+    height: 12px;
+    top: 3px;
+    left: 5px;
+    font-family: "Roboto-Regular", Helvetica;
+    font-weight: 400;
+    color: #ffffff;
+    font-size: 10px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+  }
+  
+  .product-detail-page .frame-24 {
+    position: absolute;
+    width: 185px;
+    height: 22px;
+    top: 0;
+    left: 308px;
+  }
+  
+  .product-detail-page .question-answer {
+    position: absolute;
+    top: -1px;
+    left: 0;
+    font-family: "Roboto-Regular", Helvetica;
+    font-weight: 400;
+    color: #807d7e;
+    font-size: 18px;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+  }
+  
+  .product-detail-page .frame-25 {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 1px;
+    left: 162px;
+    background-color: #3c4242;
+    border-radius: 4px;
+  }
+  
+  .product-detail-page .line-2 {
+    position: absolute;
+    width: 44px;
+    height: 1px;
+    top: 39px;
+    left: -1px;
+  }
+  
+  .product-detail-page .product-tabel {
+    position: absolute;
+    width: 612px;
+    height: 185px;
+    top: 1229px;
+    left: 100px;
+  }
+  
+  .product-detail-page .overlap-3 {
+    position: relative;
+    height: 185px;
+    border-radius: 12px;
+  }
+  
+  .product-detail-page .rectangle-4 {
+    position: absolute;
+    width: 612px;
+    height: 185px;
+    top: 0;
+    left: 0;
+    background-color: #f6f6f6;
+    border-radius: 12px;
+    opacity: 0.6;
+  }
+  
+  .product-detail-page .line-3 {
+    position: absolute;
+    width: 612px;
+    height: 1px;
+    top: 91px;
+    left: 0;
+    object-fit: cover;
+  }
+  
+  .product-detail-page .frame-26 {
+    position: absolute;
+    width: 516px;
+    height: 172px;
+    top: 7px;
+    left: 48px;
+  }
+  
+  .product-detail-page .line-4 {
+    position: absolute;
+    width: 1px;
+    height: 172px;
+    top: 0;
+    left: 187px;
+    object-fit: cover;
+  }
+  
+  .product-detail-page .line-5 {
+    position: absolute;
+    width: 1px;
+    height: 172px;
+    top: 0;
+    left: 376px;
+    object-fit: cover;
+  }
+  
+  .product-detail-page .frame-27 {
+    position: absolute;
+    width: 138px;
+    height: 44px;
+    top: 17px;
+    left: 0;
+    overflow: hidden;
+  }
+  
+  .product-detail-page .text-wrapper-13 {
+    position: absolute;
+    top: -1px;
+    left: 0;
+    font-family: "Roboto-Regular", Helvetica;
+    font-weight: 400;
+    color: #807d7e;
+    font-size: 16px;
+    letter-spacing: 0.32px;
+    line-height: 16px;
+    white-space: nowrap;
+  }
+  
+  .product-detail-page .text-wrapper-14 {
+    position: absolute;
+    top: 27px;
+    left: 0;
+    font-family: "Roboto-Regular", Helvetica;
+    font-weight: 400;
+    color: #3c4242;
+    font-size: 16px;
+    letter-spacing: 0.32px;
+    line-height: 16px;
+    white-space: nowrap;
+  }
+  
+  .product-detail-page .frame-28 {
+    position: absolute;
+    width: 52px;
+    height: 44px;
+    top: 17px;
+    left: 238px;
+  }
+  
+  .product-detail-page .frame-29 {
+    position: absolute;
+    width: 89px;
+    height: 44px;
+    top: 17px;
+    left: 427px;
+  }
+  
+  .product-detail-page .frame-30 {
+    position: absolute;
+    width: 138px;
+    height: 44px;
+    top: 109px;
+    left: 0;
+  }
+  
+  .product-detail-page .frame-31 {
+    position: absolute;
+    width: 89px;
+    height: 44px;
+    top: 109px;
+    left: 238px;
+  }
+  
+  .product-detail-page .frame-32 {
+    position: absolute;
+    width: 89px;
+    height: 44px;
+    top: 109px;
+    left: 427px;
+  }
+  
+  .product-detail-page .product-description-2 {
+    position: absolute;
+    width: 304px;
+    height: 31px;
+    top: 1514px;
+    left: 100px;
+  }
+  
+  .product-detail-page .text-wrapper-15 {
+    position: absolute;
+    width: 237px;
+    top: -1px;
+    left: 33px;
+    font-family: "Open Sans-Regular", Helvetica;
+    font-weight: 400;
+    color: #3c4242;
+    font-size: 28px;
+    letter-spacing: 0.56px;
+    line-height: 33.5px;
+    white-space: nowrap;
+  }
+  
+  .product-detail-page .product-2 {
+    position: absolute;
+    width: 282px;
+    height: 441px;
+    top: 1575px;
+    left: 100px;
+  }
+  
+  .product-detail-page .product-3 {
+    position: absolute;
+    width: 282px;
+    height: 441px;
+    top: 2066px;
+    left: 100px;
+  }
+  
+  .product-detail-page .overlap-4 {
+    position: absolute;
+    width: 282px;
+    height: 441px;
+    top: 1575px;
+    left: 419px;
+  }
+  
+  .product-detail-page .product-4 {
+    position: absolute;
+    width: 282px;
+    height: 441px;
+    top: 0;
+    left: 0;
+  }
+  
+  .product-detail-page .product-5 {
+    position: absolute;
+    width: 282px;
+    height: 441px;
+    top: 2066px;
+    left: 419px;
+  }
+  
+  .product-detail-page .product-6 {
+    position: absolute;
+    width: 282px;
+    height: 441px;
+    top: 1575px;
+    left: 738px;
+  }
+  
+  .product-detail-page .overlap-5 {
+    position: absolute;
+    width: 282px;
+    height: 441px;
+    top: 1575px;
+    left: 1057px;
+  }
+  
+  .product-detail-page .frame-33 {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    top: 27px;
+    left: 218px;
+    background-color: #ffffff;
+    border-radius: 16.18px;
+  }
+  
+  .product-detail-page .product-7 {
+    position: absolute;
+    width: 282px;
+    height: 441px;
+    top: 2066px;
+    left: 1057px;
+  }
+  
+  .product-detail-page .element-3 {
+    position: absolute;
+    width: 574px;
+    height: 727px;
+    top: -1526px;
+    left: -523px;
+  }
+  
+  .product-detail-page .element-4 {
+    height: 81px;
+    top: -1261px;
+    left: -613px;
+    position: absolute;
+    width: 64px;
+    object-fit: cover;
+  }
+  
+  .product-detail-page .need-help-section {
+    position: absolute;
+    width: 1440px;
+    height: 731px;
+    top: 2607px;
+    left: 0;
+    background-color: #3c4242;
+  }
+  
+  .product-detail-page .frame-34 {
+    position: relative;
+    width: 1220px;
+    height: 613px;
+    top: 59px;
+    left: 110px;
+  }
+  
+  .product-detail-page .icon {
+    position: absolute;
+    width: 20px;
+    height: 11px;
+    top: 491px;
+    left: 1169px;
+  }
+  
+  .product-detail-page .frame-35 {
+    position: absolute;
+    width: 1059px;
+    height: 292px;
+    top: 0;
+    left: 76px;
+  }
+  
+  .product-detail-page .frame-36 {
+    position: absolute;
+    width: 394px;
+    height: 204px;
+    top: 0;
+    left: 665px;
+  }
+  
+  .product-detail-page .text-wrapper-16 {
+    position: absolute;
+    top: -1px;
+    left: 0;
+    font-family: "Roboto-Bold", Helvetica;
+    font-weight: 700;
+    color: #f6f6f6;
+    font-size: 28.6px;
+    letter-spacing: 0;
+    line-height: 62px;
+    white-space: nowrap;
+  }
+  
+  .product-detail-page .frame-37 {
+    position: absolute;
+    width: 394px;
+    height: 127px;
+    top: 77px;
+    left: 0;
+  }
+  
+  .product-detail-page .p {
+    position: absolute;
+    top: -21px;
+    left: 0;
+    font-family: "Roboto-Regular", Helvetica;
+    font-weight: 400;
+    color: #f6f6f6;
+    font-size: 18px;
+    letter-spacing: 0;
+    line-height: 39px;
+    white-space: nowrap;
+  }
+  
+  .product-detail-page .text-wrapper-17 {
+    position: absolute;
+    top: 24px;
+    left: 0;
+    font-family: "Roboto-Regular", Helvetica;
+    font-weight: 400;
+    color: #f6f6f6;
+    font-size: 18px;
+    letter-spacing: 0;
+    line-height: 39px;
+    white-space: nowrap;
+  }
+  
+  .product-detail-page .frame-38 {
+    position: absolute;
+    width: 162px;
+    height: 248px;
+    top: 0;
+    left: 423px;
+  }
+  
+  .product-detail-page .frame-39 {
+    position: absolute;
+    width: 162px;
+    height: 171px;
+    top: 77px;
+    left: 0;
+  }
+  
+  .product-detail-page .text-wrapper-18 {
+    position: absolute;
+    top: -1px;
+    left: 0;
+    font-family: "Roboto-Regular", Helvetica;
+    font-weight: 400;
+    color: #f6f6f6;
+    font-size: 18px;
+    letter-spacing: 0;
+    line-height: 39px;
+    white-space: nowrap;
+  }
+  
+  .product-detail-page .text-wrapper-19 {
+    position: absolute;
+    top: 43px;
+    left: 0;
+    font-family: "Roboto-Regular", Helvetica;
+    font-weight: 400;
+    color: #f6f6f6;
+    font-size: 18px;
+    letter-spacing: 0;
+    line-height: 39px;
+    white-space: nowrap;
+  }
+  
+  .product-detail-page .text-wrapper-20 {
+    position: absolute;
+    top: 87px;
+    left: 0;
+    font-family: "Roboto-Regular", Helvetica;
+    font-weight: 400;
+    color: #f6f6f6;
+    font-size: 18px;
+    letter-spacing: 0;
+    line-height: 39px;
+    white-space: nowrap;
+  }
+  
+  .product-detail-page .text-wrapper-21 {
+    position: absolute;
+    top: 131px;
+    left: 0;
+    font-family: "Roboto-Regular", Helvetica;
+    font-weight: 400;
+    color: #f6f6f6;
+    font-size: 18px;
+    letter-spacing: 0;
+    line-height: 39px;
+    white-space: nowrap;
+  }
+  
+  .product-detail-page .frame-40 {
+    position: absolute;
+    width: 142px;
+    height: 292px;
+    top: 0;
+    left: 0;
+  }
+  
+  .product-detail-page .frame-41 {
+    position: absolute;
+    width: 142px;
+    height: 215px;
+    top: 77px;
+    left: 0;
+  }
+  
+  .product-detail-page .text-wrapper-22 {
+    position: absolute;
+    top: 175px;
+    left: 0;
+    font-family: "Roboto-Regular", Helvetica;
+    font-weight: 400;
+    color: #f6f6f6;
+    font-size: 18px;
+    letter-spacing: 0;
+    line-height: 39px;
+    white-space: nowrap;
+  }
+  
+  .product-detail-page .frame-42 {
+    position: absolute;
+    width: 121px;
+    height: 292px;
+    top: 0;
+    left: 222px;
+  }
+  
+  .product-detail-page .frame-43 {
+    position: absolute;
+    width: 108px;
+    height: 215px;
+    top: 77px;
+    left: 0;
+  }
+  
+  .product-detail-page .text-wrapper-23 {
+    position: absolute;
+    width: 242px;
+    height: 21px;
+    top: 484px;
+    left: 76px;
+    font-family: "Roboto-Bold", Helvetica;
+    font-weight: 700;
+    color: #f6f6f6;
+    font-size: 28.6px;
+    letter-spacing: 0;
+    line-height: 57.2px;
+    white-space: nowrap;
+  }
+  
+  .product-detail-page .frame-44 {
+    display: inline-flex;
+    align-items: flex-start;
+    gap: 9.97px;
+    position: absolute;
+    top: 369px;
+    left: 83px;
+  }
+  
+  .product-detail-page .group {
+    width: 37.02px;
+    background-color: #f6f6f6;
+    border-radius: 10.68px;
+    position: relative;
+    height: 37.02px;
+  }
+  
+  .product-detail-page .vector {
+    position: absolute;
+    width: 10px;
+    height: 18px;
+    top: 9px;
+    left: 14px;
+  }
+  
+  .product-detail-page .vector-2 {
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    top: 11px;
+    left: 11px;
+  }
+  
+  .product-detail-page .vector-3 {
+    width: 18px;
+    height: 14px;
+    position: absolute;
+    top: 11px;
+    left: 11px;
+  }
+  
+  .product-detail-page .overlap-group-wrapper {
+    width: 39.02px;
+    margin-right: -2px;
+    position: relative;
+    height: 37.02px;
+  }
+  
+  .product-detail-page .overlap-group-3 {
+    position: relative;
+    width: 37px;
+    height: 37px;
+    background-color: #f6f6f6;
+    border-radius: 10.68px;
+  }
+  
+  .product-detail-page .text-wrapper-24 {
+    position: absolute;
+    width: 16px;
+    top: 4px;
+    left: 11px;
+    font-family: "Roboto-Bold", Helvetica;
+    font-weight: 700;
+    color: #2c2c2c;
+    font-size: 17.1px;
+    letter-spacing: 0.34px;
+    line-height: 28.5px;
+    white-space: nowrap;
+  }
+  
+  .product-detail-page .line-6 {
+    position: absolute;
+    width: 1220px;
+    height: 1px;
+    top: 455px;
+    left: 0;
+    object-fit: cover;
+  }
+  
+  .product-detail-page .line-7 {
+    position: absolute;
+    width: 1220px;
+    height: 1px;
+    top: 539px;
+    left: 0;
+    object-fit: cover;
+  }
+  
+  .product-detail-page .text-wrapper-25 {
+    position: absolute;
+    height: 36px;
+    top: 576px;
+    left: 377px;
+    font-family: "Roboto-Bold", Helvetica;
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 18px;
+    letter-spacing: 0;
+    line-height: 36px;
+    white-space: nowrap;
+  }
+  
+  .product-detail-page .element-men {
+    position: absolute;
+    width: 281px;
+    height: 370px;
+    top: -94px;
+    left: -301px;
+    object-fit: cover;
+  }

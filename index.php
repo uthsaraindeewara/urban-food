@@ -19,52 +19,36 @@
       <div class="div">
         <div class="overlap-5">
           <div class="frame-4">
-            <div class="text-wrapper-2">Filter</div>
+            <div class="text-wrapper-2">Products</div>
             <img class="filter" src="img/filter.svg" />
-          </div>
-          <div class="frame-5">
-            <div class="text-wrapper-2">Price</div>
-            <img class="icon" src="img/icon.svg" />
-          </div>
-          <div class="frame-6">
-            <div class="text-wrapper-2">Size</div>
-            <img class="icon" src="img/icon.svg" />
-          </div>
-          <div class="frame-7">
-            <div class="text-wrapper-2">Dress Style</div>
-            <img class="icon" src="img/icon.svg" />
-          </div>
-          <div class="frame-8">
-            <div class="text-wrapper-3">Colors</div>
-            <img class="icon" src="img/icon.svg" />
           </div>
           <div class="frame-9">
             <div class="frame-10">
-              <div class="text-wrapper-4">Tops</div>
+              <div class="text-wrapper-4">Vegetables</div>
               <img class="icon-2" src="img/icon-3.svg" />
             </div>
             <div class="frame-11">
-              <div class="text-wrapper-4">Printed T-shirts</div>
+              <div class="text-wrapper-4">Greens</div>
               <img class="icon-2" src="img/icon-3.svg" />
             </div>
             <div class="frame-12">
-              <div class="text-wrapper-4">Plain T-shirts</div>
+              <div class="text-wrapper-4">Grains</div>
               <img class="icon-2" src="img/icon-3.svg" />
             </div>
             <div class="frame-13">
-              <div class="text-wrapper-4">Kurti</div>
+              <div class="text-wrapper-4">Fruits</div>
               <img class="icon-2" src="img/icon-3.svg" />
             </div>
             <div class="frame-14">
-              <div class="text-wrapper-4">Boxers</div>
+              <div class="text-wrapper-4">Milk</div>
               <img class="icon-2" src="img/icon-3.svg" />
             </div>
             <div class="frame-15">
-              <div class="text-wrapper-4">Full sleeve T-shirts</div>
+              <div class="text-wrapper-4">Eggs</div>
               <img class="icon-2" src="img/icon-3.svg" />
             </div>
             <div class="frame-16">
-              <div class="text-wrapper-4">Joggers</div>
+              <div class="text-wrapper-4"></div>
               <img class="icon-2" src="img/icon-3.svg" />
             </div>
             <div class="frame-17">
@@ -76,93 +60,32 @@
               <img class="icon-2" src="img/icon-3.svg" />
             </div>
           </div>
-          <div class="frame-19">
-            <div class="text-wrapper-4">Classic</div>
-            <img class="icon-2" src="img/icon-3.svg" />
-            <div class="text-wrapper-5">Casual</div>
-            <div class="text-wrapper-6">Business</div>
-            <div class="text-wrapper-7">Sport</div>
-            <div class="text-wrapper-8">Elegant</div>
-            <div class="text-wrapper-9">Formal (evening)</div>
-            <img class="icon-3" src="img/icon-3.svg" />
-            <img class="icon-4" src="img/icon-3.svg" />
-            <img class="icon-5" src="img/icon-3.svg" />
-            <img class="icon-6" src="img/icon-3.svg" />
-            <img class="icon-7" src="img/icon-3.svg" />
-          </div>
-          <div class="frame-20">
-            <div class="slider-input-one">
-              <div class="overlap-group-2">
-                <div class="bg"></div>
-                <div class="bar-left"></div>
-                <img class="left" src="img/left.svg" />
-                <div class="right"></div>
-              </div>
-            </div>
-            <div class="frame-21">
-              <div class="div-wrapper"><div class="text-wrapper-10">Rs. 700</div></div>
-              <div class="frame-22"><div class="text-wrapper-11">Rs. 6000</div></div>
-            </div>
-          </div>
-          <div class="frame-23">
-            <div class="overlap-6"><div class="text-wrapper-12">XXS</div></div>
-            <div class="overlap-7"><div class="text-wrapper-13">S</div></div>
-            <div class="overlap-8"><div class="text-wrapper-14">XXL</div></div>
-            <div class="overlap-9"><div class="text-wrapper-15">XL</div></div>
-            <div class="overlap-10"><div class="text-wrapper-16">M</div></div>
-            <div class="overlap-11"><div class="text-wrapper-17">3XL</div></div>
-            <div class="overlap-12"><div class="text-wrapper-15">XS</div></div>
-            <div class="overlap-13"><div class="text-wrapper-13">L</div></div>
-            <div class="overlap-14"><div class="text-wrapper-17">4XL</div></div>
-          </div>
-          <div class="frame-24">
-            <div class="frame-25">
-              <div class="rectangle"></div>
-              <div class="text-wrapper-18">Purple</div>
-              <div class="rectangle-2"></div>
-              <div class="text-wrapper-18">Navy</div>
-              <div class="rectangle-3"></div>
-              <div class="text-wrapper-18">Yellow</div>
-            </div>
-            <div class="frame-25">
-              <div class="rectangle-4"></div>
-              <div class="text-wrapper-18">Black</div>
-              <div class="rectangle-5"></div>
-              <div class="text-wrapper-18">White</div>
-              <div class="rectangle-6"></div>
-              <div class="text-wrapper-18">Grey</div>
-            </div>
-            <div class="frame-25">
-              <div class="rectangle-7"></div>
-              <div class="text-wrapper-18">Red</div>
-              <div class="rectangle-8"></div>
-              <div class="text-wrapper-18">Broom</div>
-              <div class="rectangle-9"></div>
-              <div class="text-wrapper-18">Pink</div>
-            </div>
-            <div class="frame-25">
-              <div class="rectangle-10"></div>
-              <div class="text-wrapper-18">Orange</div>
-              <div class="rectangle-11"></div>
-              <div class="text-wrapper-18">Green</div>
-              <div class="rectangle-12"></div>
-              <div class="text-wrapper-18">Blue</div>
-            </div>
           </div>
         </div>
         <div class="frame-26">
-          <div class="text-wrapper-19">Women’s Clothing</div>
-          <div class="text-wrapper-20">New</div>
-          <div class="text-wrapper-21">Recommended</div>
+          <div class="text-wrapper-19">Vegetables</div>
+          <div class="text-wrapper-21">
+          <div class="text-wrapper-21">
+            <div class="toggle-container">
+                <input type="radio" id="vendors" name="toggle" checked>
+                <label for="vendors" class="toggle-label" onclick="toggleSlider(true)">Vendors</label>
+
+                <input type="radio" id="products" name="toggle">
+                <label for="products" class="toggle-label" onclick="toggleSlider(false)">Products</label>
+
+                <div class="toggle-slider"></div>
+            </div>
+          </div>
+          </div>
         </div>
         <div class="task-baar">
           <div class="overlap-15">
             <div class="frame-27">
               <div class="navbar">
                 <div class="text-wrapper-22 shop-button"><a href="index.php">Shop</a></div>
-                <div class="text-wrapper-22 mens-button"><a href="mensProducts.php">Men</a></div>
-                <div class="text-wrapper-22 womens-button"><a href="womensProducts.php">Women</a></div>
-                <div class="text-wrapper-23 kids-button"><a href="kidsProducts.php">Kids</a></div>
+                <div class="text-wrapper-22 vegetables-button"><a href="vegetablesProducts.php">Vegetables</a></div>
+                <div class="text-wrapper-22 fruits-button"><a href="fruitsProducts.php">Fruits</a></div>
+                <div class="text-wrapper-23 dairy-button"><a href="dairyProducts.php">Dairy</a></div>
               </div>
               <div class="search-bar">
                 <form id="search-form"  class="search-form" action="search-results.php" method="post">
@@ -204,7 +127,7 @@
                       // Check if user is logged in
                       if (isset($_SESSION['user'])) {
                                               // Database connection
-                      $host = 'localhost:3307';
+                      $host = 'localhost:3306';
                       $user = 'root';
                       $password = '';
                       $dbname = 'storedb';
@@ -283,12 +206,10 @@
               </div>
             </div>
             <div class="rectangle-13"></div>
-            <img class="images" src="img/images-1-1.png" />
+            <img class="nav-logo" src="img/urban-food-logo.png" />
           </div>
         </div>
           <div>
-            <img class="line" src="img/line-6.svg" />
-            <img class="line-2" src="img/line-6.svg" />
             <p class="text-wrapper-33">Copyright © 2024 Beliyo Fasion Pvt Ltd. All rights reserved.</p>
           </div>
         </div>
@@ -302,7 +223,7 @@
 <div class="product-grid">
     <?php
     // Connect to the database
-    $servername = "localhost:3307";
+    $servername = "localhost:3306";
     $username = "root";
     $password = "";
     $dbname = "storedb";

@@ -65,3 +65,12 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
+
+function toggleSlider(isVendor) {
+    const toggleContainer = document.querySelector(".toggle-container");
+    if (isVendor) {
+        toggleContainer.classList.remove("active");
+    } else {
+        toggleContainer.classList.add("active");
+    }
+}

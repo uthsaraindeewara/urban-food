@@ -3,7 +3,7 @@ session_start();
 require 'vendor/autoload.php'; // Ensure you have your autoload file
 
 // Database connection setup (replace with your actual database connection code)
-$conn = new mysqli('localhost:3307', 'root', '', 'storedb'); // Update with your credentials
+$conn = new mysqli('localhost:3306', 'root', '', 'storedb'); // Update with your credentials
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }

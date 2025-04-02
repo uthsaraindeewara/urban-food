@@ -2,7 +2,7 @@
 session_start();
 
 // MySQLi connection
-$mysqli = new mysqli("localhost:3307", "root", "", "storedb");
+$mysqli = new mysqli("localhost:3306", "root", "", "storedb");
 
 // Check connection
 if ($mysqli->connect_error) {

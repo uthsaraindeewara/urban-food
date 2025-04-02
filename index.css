@@ -4,10 +4,16 @@
         grid-template-columns: repeat(3, 1fr); /* 3 columns */
         gap: 20px; /* Space between grid items */
         padding: 20px;
-        width: 70%;
+        width: 80%;
         position: absolute;
-        top: 200px;
+        top: 150px;
         right: 10px;
+    }
+
+    .nav-logo {
+        width: 200px;
+        margin-left: 20px;
+        margin-top: 10px;
     }
 
     /* Styling for each product element */
@@ -18,20 +24,24 @@
         text-align: center;
         transition: transform 0.2s;
         position: relative;
-        height: 441px;
+        width: 100%; /* Set full width */
+        max-width: 600px; /* Adjust as needed */
+        height: auto; /* Adjust height automatically */
     }
-
+    
     .overlap-16:hover {
         transform: scale(1.05); /* Slight zoom on hover */
     }
-
+    
+    /* Ensure images fit properly within landscape format */
     .element-pgr {
-        height: 320px; /* Fixed width of 320px */
-        width: auto; /* This will maintain the aspect ratio */
-        object-fit: cover; /* Ensure the image is fully covered in the container */
+        width: 100%; /* Make it take the full width */
+        height: 250px; /* Fixed height for a landscape view */
+        object-fit: cover; /* Maintain aspect ratio and crop if necessary */
         border-bottom: 1px solid #ccc;
     }
-
+    
+    /* Heart icon positioning */
     .frame {
         height: 30px;
         width: 30px;
@@ -39,33 +49,35 @@
         position: absolute;
         background-color: white;
         border-radius: 15px;
-        top: 20px;
-        right: 20px;
+        top: 10px;
+        right: 10px;
     }
     
     .heart {
         width: 20px;
         height: 20px;
     }
-
+    
     .product-6 {
         padding: 10px;
     }
-
+    
     .black-sweatshirt {
         font-weight: bold;
         margin: 10px 0;
+        font-size: 18px;
     }
-
+    
     .jhanvi-s-brand {
         color: #888;
         font-size: 14px;
         margin-bottom: 5px;
     }
-
+    
     .text-wrapper {
-        font-size: 16px;
+        font-size: 18px;
         color: #000;
+        font-weight: bold;
     }
 
     .account {
@@ -286,11 +298,17 @@
     padding-top: 4px;
     border-radius: 4px;
     border: none;
+    width: 36px;
+    height: 36px;
+    cursor: pointer;
 }
 
 .search {
-    height: 24px;
-    width: 220px;
+    height: 36px;
+    width: 320px;
+    border-radius: 8px;
+    border: 1px solid black;
+    margin-right: 4px;
 }
 
 .suggestions li {
@@ -322,23 +340,27 @@
     cursor: pointer;
 }
 
-.mens-button {
+.vegetables-button {
     z-index: 4;
     cursor: pointer;
 }
 
-.womens-button {
+.fruits-button {
     z-index: 4;
     cursor: pointer;
 }
 
-.kids-button {
+.dairy-button {
     z-index: 4;
     cursor: pointer;
 }
 
 a {
     color: #888;
+}
+
+a:hover {
+    color: #38E54D;
 }
     
     hr {

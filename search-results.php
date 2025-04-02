@@ -204,7 +204,7 @@
                       // Check if user is logged in
                       if (isset($_SESSION['user'])) {
                                               // Database connection
-                      $host = 'localhost:3307';
+                      $host = 'localhost:3306';
                       $user = 'root';
                       $password = '';
                       $dbname = 'storedb';
@@ -307,7 +307,7 @@
     }
 
     // Connect to the database
-    $servername = "localhost:3307";
+    $servername = "localhost:3306";
     $username = "root";
     $password = "";
     $dbname = "storedb";

@@ -1,0 +1,1524 @@
+.products-list-page {
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .products-list-page .div {
+    background-color: #ffffff;
+    overflow: hidden;
+    width: 1440px;
+    height: 2952px;
+    position: relative;
+  }
+  
+  .products-list-page .overlap {
+    position: absolute;
+    width: 286px;
+    height: 450px;
+    top: 1702px;
+    left: 1061px;
+  }
+  
+  .products-list-page .element {
+    position: absolute;
+    width: 271px;
+    height: 369px;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+  }
+  
+  .products-list-page .product {
+    top: 9px;
+    left: 4px;
+    position: absolute;
+    width: 282px;
+    height: 441px;
+  }
+  
+  .products-list-page .frame {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    top: 27px;
+    left: 229px;
+    background-color: #ffffff;
+    border-radius: 16.18px;
+  }
+  
+  .products-list-page .heart {
+    position: absolute;
+    width: 15px;
+    height: 13px;
+    top: 10px;
+    left: 8px;
+  }
+  
+  .products-list-page .frame-2 {
+    position: absolute;
+    width: 281px;
+    height: 41px;
+    top: 400px;
+    left: 0;
+  }
+  
+  .products-list-page .frame-3 {
+    position: absolute;
+    width: 166px;
+    height: 41px;
+    top: 0;
+    left: 0;
+  }
+  
+  .products-list-page .black-sweatshirt {
+    position: absolute;
+    top: -1px;
+    left: 0;
+    font-family: "Roboto-Regular", Helvetica;
+    font-weight: 400;
+    color: #3c4242;
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+  }
+  
+  .products-list-page .jhanvi-s-brand {
+    position: absolute;
+    top: 23px;
+    left: 0;
+    font-family: "Roboto-Regular", Helvetica;
+    font-weight: 400;
+    color: #807d7e;
+    font-size: 14px;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+  }
+  
+  .products-list-page .element-wrapper {
+    position: absolute;
+    width: 82px;
+    height: 37px;
+    top: 2px;
+    left: 199px;
+    background-color: #f6f6f6;
+    border-radius: 8px;
+  }
+  
+  .products-list-page .text-wrapper {
+    position: absolute;
+    top: 9px;
+    left: 3px;
+    font-family: "Roboto-Bold", Helvetica;
+    font-weight: 700;
+    color: #3c4242;
+    font-size: 14px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+  }
+  
+  .products-list-page .overlap-group {
+    position: absolute;
+    width: 283px;
+    height: 441px;
+    top: 1201px;
+    left: 429px;
+  }
+  
+  .products-list-page .overlap-2 {
+    position: absolute;
+    width: 283px;
+    height: 461px;
+    top: 1700px;
+    left: 745px;
+  }
+  
+  .products-list-page .overlap-3 {
+    position: absolute;
+    width: 290px;
+    height: 445px;
+    top: 1702px;
+    left: 422px;
+  }
+  
+  .products-list-page .img {
+    position: absolute;
+    width: 287px;
+    height: 386px;
+    top: 0;
+    left: 0;
+  }
+  
+  .products-list-page .overlap-4 {
+    position: absolute;
+    width: 300px;
+    height: 474px;
+    top: 1173px;
+    left: 1047px;
+  }
+  
+  .products-list-page .element-lpk {
+    position: absolute;
+    width: 297px;
+    height: 437px;
+    top: 0;
+    left: 0;
+  }
+  
+  .products-list-page .overlap-5 {
+    position: absolute;
+    width: 18%;
+    height: 1708px;
+    top: 108px;
+    left: 20px;
+    background-size: 100% 100%;
+  }
+  
+  .products-list-page .frame-4 {
+    position: absolute;
+    width: 60%;
+    height: 26px;
+    top: 20px;
+    left: 18px;
+  }
+  
+  .products-list-page .text-wrapper-2 {
+    position: absolute;
+    top: -1px;
+    left: 0;
+    font-family: "Roboto-Regular", Helvetica;
+    font-weight: 400;
+    color: #807d7e;
+    font-size: 22px;
+    letter-spacing: 0.44px;
+    line-height: normal;
+    white-space: nowrap;
+  }
+  
+  .products-list-page .filter {
+    position: absolute;
+    width: 16px;
+    height: 18px;
+    top: 3px;
+    left: 100%;
+  }
+  
+  .products-list-page .frame-5 {
+    position: absolute;
+    width: 232px;
+    height: 26px;
+    top: 481px;
+    left: 30px;
+  }
+  
+  .products-list-page .icon {
+    position: absolute;
+    width: 12px;
+    height: 7px;
+    top: 10px;
+    left: 218px;
+  }
+  
+  .products-list-page .frame-6 {
+    position: absolute;
+    width: 232px;
+    height: 26px;
+    top: 1100px;
+    left: 30px;
+  }
+  
+  .products-list-page .frame-7 {
+    position: absolute;
+    width: 232px;
+    height: 26px;
+    top: 1378px;
+    left: 30px;
+  }
+  
+  .products-list-page .frame-8 {
+    position: absolute;
+    width: 232px;
+    height: 26px;
+    top: 703px;
+    left: 30px;
+  }
+  
+  .products-list-page .text-wrapper-3 {
+    position: absolute;
+    top: -1px;
+    left: 0;
+    font-family: "Roboto-Regular", Helvetica;
+    font-weight: 400;
+    color: #3c4242;
+    font-size: 22px;
+    letter-spacing: 0.44px;
+    line-height: normal;
+    white-space: nowrap;
+  }
+  
+  .products-list-page .frame-9 {
+    position: absolute;
+    width: 80%;
+    height: 315px;
+    top: 106px;
+    left: 18px;
+  }
+  
+  .products-list-page .frame-10 {
+    position: absolute;
+    width: 80%;
+    height: 19px;
+    top: 0;
+    left: 0;
+  }
+  
+  .products-list-page .text-wrapper-4 {
+    position: absolute;
+    top: -1px;
+    left: 0;
+    font-family: "Roboto-Regular", Helvetica;
+    font-weight: 400;
+    color: #8a8989;
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+  }
+  
+  .products-list-page .icon-2 {
+    position: absolute;
+    width: 7px;
+    height: 13px;
+    top: 3px;
+    left: 100%;
+  }
+  
+  .products-list-page .frame-11 {
+    position: absolute;
+    width: 80%;
+    height: 19px;
+    top: 37px;
+    left: 0;
+  }
+  
+  .products-list-page .frame-12 {
+    position: absolute;
+    width: 80%;
+    height: 19px;
+    top: 74px;
+    left: 0;
+  }
+  
+  .products-list-page .frame-13 {
+    position: absolute;
+    width: 80%;
+    height: 19px;
+    top: 111px;
+    left: 0;
+  }
+  
+  .products-list-page .frame-14 {
+    position: absolute;
+    width: 80%;
+    height: 19px;
+    top: 148px;
+    left: 0;
+  }
+  
+  .products-list-page .frame-15 {
+    position: absolute;
+    width: 80%;
+    height: 19px;
+    top: 185px;
+    left: 0;
+  }
+  
+  .products-list-page .frame-16 {
+    position: absolute;
+    width: 80%;
+    height: 19px;
+    top: 222px;
+    left: 0;
+  }
+  
+  .products-list-page .frame-17 {
+    position: absolute;
+    width: 80%;
+    height: 19px;
+    top: 259px;
+    left: 0;
+  }
+  
+  .products-list-page .frame-18 {
+    position: absolute;
+    width: 80%;
+    height: 19px;
+    top: 296px;
+    left: 0;
+  }
+  
+  .products-list-page .frame-19 {
+    position: absolute;
+    width: 80%;
+    height: 204px;
+    top: 1464px;
+    left: 32px;
+  }
+  
+  .products-list-page .text-wrapper-5 {
+    position: absolute;
+    top: 36px;
+    left: 0;
+    font-family: "Roboto-Regular", Helvetica;
+    font-weight: 400;
+    color: #8a8989;
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+  }
+  
+  .products-list-page .text-wrapper-6 {
+    position: absolute;
+    top: 73px;
+    left: 0;
+    font-family: "Roboto-Regular", Helvetica;
+    font-weight: 400;
+    color: #8a8989;
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+  }
+  
+  .products-list-page .text-wrapper-7 {
+    position: absolute;
+    top: 110px;
+    left: 0;
+    font-family: "Roboto-Regular", Helvetica;
+    font-weight: 400;
+    color: #8a8989;
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+  }
+  
+  .products-list-page .text-wrapper-8 {
+    position: absolute;
+    top: 147px;
+    left: 0;
+    font-family: "Roboto-Regular", Helvetica;
+    font-weight: 400;
+    color: #8a8989;
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+  }
+  
+  .products-list-page .text-wrapper-9 {
+    position: absolute;
+    top: 184px;
+    left: 0;
+    font-family: "Roboto-Regular", Helvetica;
+    font-weight: 400;
+    color: #8a8989;
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+  }
+  
+  .products-list-page .icon-3 {
+    position: absolute;
+    width: 7px;
+    height: 13px;
+    top: 40px;
+    left: 224px;
+  }
+  
+  .products-list-page .icon-4 {
+    position: absolute;
+    width: 7px;
+    height: 13px;
+    top: 77px;
+    left: 224px;
+  }
+  
+  .products-list-page .icon-5 {
+    position: absolute;
+    width: 7px;
+    height: 13px;
+    top: 114px;
+    left: 224px;
+  }
+  
+  .products-list-page .icon-6 {
+    position: absolute;
+    width: 7px;
+    height: 13px;
+    top: 151px;
+    left: 224px;
+  }
+  
+  .products-list-page .icon-7 {
+    position: absolute;
+    width: 7px;
+    height: 13px;
+    top: 188px;
+    left: 224px;
+  }
+  
+  .products-list-page .frame-20 {
+    position: absolute;
+    width: 230px;
+    height: 76px;
+    top: 567px;
+    left: 31px;
+  }
+  
+  .products-list-page .slider-input-one {
+    position: absolute;
+    width: 230px;
+    height: 24px;
+    top: 0;
+    left: 0;
+  }
+  
+  .products-list-page .overlap-group-2 {
+    position: relative;
+    width: 225px;
+    height: 34px;
+    top: -4px;
+  }
+  
+  .products-list-page .bg {
+    position: absolute;
+    width: 225px;
+    height: 3px;
+    top: 13px;
+    left: 0;
+    background-color: #807d7e;
+    border-radius: 4px;
+    opacity: 0.6;
+  }
+  
+  .products-list-page .bar-left {
+    position: absolute;
+    width: 87px;
+    height: 3px;
+    top: 13px;
+    left: 65px;
+    background-color: #2B7A0B;
+    border-radius: 4px;
+  }
+  
+  .products-list-page .left {
+    position: absolute;
+    width: 32px;
+    height: 34px;
+    top: 0;
+    left: 55px;
+  }
+  
+  .products-list-page .right {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: 6px;
+    left: 144px;
+    background-color: #2B7A0B;
+    border-radius: 8px;
+    box-shadow: var(--s2);
+  }
+  
+  .products-list-page .frame-21 {
+    position: absolute;
+    width: 224px;
+    height: 32px;
+    top: 44px;
+    left: 4px;
+  }
+  
+  .products-list-page .div-wrapper {
+    position: absolute;
+    width: 97px;
+    height: 32px;
+    top: 0;
+    left: 0;
+    border-radius: 8px;
+    border: 1px solid;
+    border-color: #bebcbdcc;
+  }
+  
+  .products-list-page .text-wrapper-10 {
+    left: 33px;
+    position: absolute;
+    top: 5px;
+    font-family: "Roboto-Regular", Helvetica;
+    font-weight: 400;
+    color: #3c4242;
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+  }
+  
+  .products-list-page .frame-22 {
+    position: absolute;
+    width: 97px;
+    height: 32px;
+    top: 0;
+    left: 127px;
+    border-radius: 8px;
+    border: 1px solid;
+    border-color: #bebcbdcc;
+  }
+  
+  .products-list-page .text-wrapper-11 {
+    left: 28px;
+    position: absolute;
+    top: 5px;
+    font-family: "Roboto-Regular", Helvetica;
+    font-weight: 400;
+    color: #3c4242;
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+  }
+  
+  .products-list-page .frame-23 {
+    position: absolute;
+    width: 223px;
+    height: 132px;
+    top: 1186px;
+    left: 36px;
+  }
+  
+  .products-list-page .overlap-6 {
+    position: absolute;
+    width: 61px;
+    height: 32px;
+    top: 0;
+    left: 0;
+    border-radius: 8px;
+    border: 1px solid;
+    border-color: #bebcbdcc;
+  }
+  
+  .products-list-page .text-wrapper-12 {
+    position: absolute;
+    top: 5px;
+    left: 16px;
+    font-family: "Roboto-Regular", Helvetica;
+    font-weight: 400;
+    color: #3c4242;
+    font-size: 14px;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+  }
+  
+  .products-list-page .overlap-7 {
+    position: absolute;
+    width: 61px;
+    height: 32px;
+    top: 50px;
+    left: 0;
+    border-radius: 8px;
+    border: 1px solid;
+    border-color: #bebcbdcc;
+  }
+  
+  .products-list-page .text-wrapper-13 {
+    position: absolute;
+    top: 5px;
+    left: 25px;
+    font-family: "Roboto-Regular", Helvetica;
+    font-weight: 400;
+    color: #3c4242;
+    font-size: 14px;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+  }
+  
+  .products-list-page .overlap-8 {
+    position: absolute;
+    width: 61px;
+    height: 32px;
+    top: 100px;
+    left: 0;
+    border-radius: 8px;
+    border: 1px solid;
+    border-color: #bebcbdcc;
+  }
+  
+  .products-list-page .text-wrapper-14 {
+    position: absolute;
+    top: 5px;
+    left: 14px;
+    font-family: "Roboto-Regular", Helvetica;
+    font-weight: 400;
+    color: #3c4242;
+    font-size: 14px;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+  }
+  
+  .products-list-page .overlap-9 {
+    position: absolute;
+    width: 61px;
+    height: 32px;
+    top: 0;
+    left: 81px;
+    border-radius: 8px;
+    border: 1px solid;
+    border-color: #bebcbdcc;
+  }
+  
+  .products-list-page .text-wrapper-15 {
+    position: absolute;
+    top: 5px;
+    left: 21px;
+    font-family: "Roboto-Regular", Helvetica;
+    font-weight: 400;
+    color: #3c4242;
+    font-size: 14px;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+  }
+  
+  .products-list-page .overlap-10 {
+    position: absolute;
+    width: 61px;
+    height: 32px;
+    top: 50px;
+    left: 81px;
+    border-radius: 8px;
+    border: 1px solid;
+    border-color: #bebcbdcc;
+  }
+  
+  .products-list-page .text-wrapper-16 {
+    position: absolute;
+    top: 5px;
+    left: 24px;
+    font-family: "Roboto-Regular", Helvetica;
+    font-weight: 400;
+    color: #3c4242;
+    font-size: 14px;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+  }
+  
+  .products-list-page .overlap-11 {
+    position: absolute;
+    width: 61px;
+    height: 32px;
+    top: 100px;
+    left: 81px;
+    border-radius: 8px;
+    border: 1px solid;
+    border-color: #bebcbdcc;
+  }
+  
+  .products-list-page .text-wrapper-17 {
+    position: absolute;
+    top: 5px;
+    left: 17px;
+    font-family: "Roboto-Regular", Helvetica;
+    font-weight: 400;
+    color: #3c4242;
+    font-size: 14px;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+  }
+  
+  .products-list-page .overlap-12 {
+    position: absolute;
+    width: 61px;
+    height: 32px;
+    top: 0;
+    left: 162px;
+    border-radius: 8px;
+    border: 1px solid;
+    border-color: #bebcbdcc;
+  }
+  
+  .products-list-page .overlap-13 {
+    position: absolute;
+    width: 61px;
+    height: 32px;
+    top: 50px;
+    left: 162px;
+    border-radius: 8px;
+    border: 1px solid;
+    border-color: #bebcbdcc;
+  }
+  
+  .products-list-page .overlap-14 {
+    position: absolute;
+    width: 61px;
+    height: 32px;
+    top: 100px;
+    left: 162px;
+    border-radius: 8px;
+    border: 1px solid;
+    border-color: #bebcbdcc;
+  }
+  
+  .products-list-page .frame-24 {
+    display: inline-flex;
+    align-items: flex-start;
+    gap: 18px;
+    position: absolute;
+    top: 789px;
+    left: 38px;
+  }
+  
+  .products-list-page .frame-25 {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    position: relative;
+    flex: 0 0 auto;
+  }
+  
+  .products-list-page .rectangle {
+    position: relative;
+    width: 36.73px;
+    height: 36.73px;
+    background-color: #8434e1;
+    border-radius: 12px;
+  }
+  
+  .products-list-page .text-wrapper-18 {
+    position: relative;
+    width: fit-content;
+    font-family: "Roboto-Regular", Helvetica;
+    font-weight: 400;
+    color: #8a8989;
+    font-size: 14px;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+  }
+  
+  .products-list-page .rectangle-2 {
+    background-color: #345eff;
+    position: relative;
+    width: 36.73px;
+    height: 36.73px;
+    border-radius: 12px;
+  }
+  
+  .products-list-page .rectangle-3 {
+    background-color: #fdc761;
+    position: relative;
+    width: 36.73px;
+    height: 36.73px;
+    border-radius: 12px;
+  }
+  
+  .products-list-page .rectangle-4 {
+    position: relative;
+    width: 36.73px;
+    height: 36.73px;
+    background-color: #252525;
+    border-radius: 12px;
+  }
+  
+  .products-list-page .rectangle-5 {
+    background-color: #ffffff;
+    border: 0.97px solid;
+    border-color: #f4f1f1;
+    position: relative;
+    width: 36.73px;
+    height: 36.73px;
+    border-radius: 12px;
+  }
+  
+  .products-list-page .rectangle-6 {
+    background-color: #e4e5e8;
+    position: relative;
+    width: 36.73px;
+    height: 36.73px;
+    border-radius: 12px;
+  }
+  
+  .products-list-page .rectangle-7 {
+    position: relative;
+    width: 36.73px;
+    height: 36.73px;
+    background-color: #f35528;
+    border-radius: 12px;
+  }
+  
+  .products-list-page .rectangle-8 {
+    background-color: #d67e3b;
+    position: relative;
+    width: 36.73px;
+    height: 36.73px;
+    border-radius: 12px;
+  }
+  
+  .products-list-page .rectangle-9 {
+    background-color: #e08d9d;
+    position: relative;
+    width: 36.73px;
+    height: 36.73px;
+    border-radius: 12px;
+  }
+  
+  .products-list-page .rectangle-10 {
+    position: relative;
+    width: 36.73px;
+    height: 36.73px;
+    background-color: #f16f2b;
+    border-radius: 12px;
+  }
+  
+  .products-list-page .rectangle-11 {
+    background-color: #48bc4e;
+    position: relative;
+    width: 36.73px;
+    height: 36.73px;
+    border-radius: 12px;
+  }
+  
+  .products-list-page .rectangle-12 {
+    background-color: #3edeff;
+    position: relative;
+    width: 36.73px;
+    height: 36.73px;
+    border-radius: 12px;
+  }
+  
+  .products-list-page .frame-26 {
+    position: absolute;
+    width: 895px;
+    height: 26px;
+    top: 110px;
+    left: 300px;
+  }
+
+  .toggle-container {
+    display: flex;
+    position: relative;
+    width: 200px;
+    height: 40px;
+    background: #f0f0f0;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    align-items: center;
+    padding: 5px;
+  }
+
+  .toggle-label {
+      flex: 1;
+      text-align: center;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      z-index: 2;
+      transition: color 0.3s ease-in-out;
+      padding: 10px 0;
+  }
+
+  input[type="radio"] {
+      display: none;
+  }
+
+  .toggle-slider {
+      position: absolute;
+      width: 50%;
+      height: 100%;
+      background: #4CAF50;
+      border-radius: 25px;
+      transition: transform 0.3s ease-in-out;
+      z-index: 1;
+  }
+
+  /* Move the slider when toggled */
+
+  /* Text color change */
+
+  .toggle-container:not(.active) .toggle-label:nth-of-type(1) {
+      color: white;
+  }
+  
+  .products-list-page .text-wrapper-19 {
+    position: absolute;
+    top: -1px;
+    left: 0;
+    font-family: "Roboto-Regular", Helvetica;
+    font-weight: 400;
+    color: #3f4646;
+    font-size: 22px;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+  }
+  
+  .products-list-page .text-wrapper-20 {
+    position: absolute;
+    top: -1px;
+    left: 684px;
+    font-family: "Roboto-Regular", Helvetica;
+    font-weight: 400;
+    color: #2B7A0B;
+    font-size: 22px;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+  }
+  
+  .products-list-page .text-wrapper-21 {
+    position: absolute;
+    top: -1px;
+    left: 390px;
+    font-family: "Roboto-Regular", Helvetica;
+    font-weight: 400;
+    color: #3f4646;
+    font-size: 22px;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+  }
+  
+  .products-list-page .task-baar {
+    position: absolute;
+    width: 1440px;
+    height: 108px;
+    top: 0;
+    left: -8px;
+  }
+  
+  .products-list-page .overlap-15 {
+    position: relative;
+    height: 108px;
+  }
+  
+  .products-list-page .frame-27 {
+    position: absolute;
+    width: 1237px;
+    height: 45px;
+    top: 31px;
+    left: 102px;
+  }
+  
+  .products-list-page .navbar {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    position: absolute;
+    top: 0;
+    left: 150px;
+  }
+  
+  .products-list-page .text-wrapper-22 {
+    position: relative;
+    width: fit-content;
+    margin-top: -1px;
+    font-family: "Roboto-Regular", Helvetica;
+    font-weight: 400;
+    color: #807d7e;
+    font-size: 22px;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+  }
+  
+  .products-list-page .text-wrapper-23 {
+    position: relative;
+    width: fit-content;
+    margin-top: -1px;
+    font-family: "Roboto-Regular", Helvetica;
+    font-weight: 400;
+    color: #7f7c7d;
+    font-size: 22px;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+  }
+  
+  .products-list-page .button {
+    all: unset;
+    box-sizing: border-box;
+    display: flex;
+    width: 267px;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 20px;
+    position: absolute;
+    top: 0;
+    left: 738px;
+    background-color: #f6f6f6;
+    border-radius: 8px;
+  }
+  
+  .products-list-page .img-2 {
+    position: relative;
+    width: 20px;
+    height: 20px;
+  }
+  
+  .products-list-page .button-2 {
+    all: unset;
+    box-sizing: border-box;
+    position: relative;
+    width: fit-content;
+    margin-top: -0.5px;
+    font-family: "Roboto-Regular", Helvetica;
+    font-weight: 400;
+    color: #807d7e;
+    font-size: 16px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+  }
+  
+  .products-list-page .frame-28 {
+    display: inline-flex;
+    align-items: flex-start;
+    gap: 12px;
+    position: absolute;
+    top: 0;
+    left: 1020px;
+  }
+  
+  .products-list-page .component {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 12px;
+    position: relative;
+    flex: 0 0 auto;
+    background-color: #f6f6f6;
+    border-radius: 8px;
+    height: 46px;
+  }
+  
+  .products-list-page .shopping-cart-wrapper {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 12px;
+    position: relative;
+    flex: 0 0 auto;
+    background-color: #2B7A0B;
+    border-radius: 8px;
+    height: 46px;
+  }
+  
+  .products-list-page .rectangle-13 {
+    position: absolute;
+    width: 1440px;
+    height: 90px;
+    top: 0;
+    left: 0;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-color: #bebcbd;
+    display: flex;
+  }
+  
+  .products-list-page .images {
+    position: absolute;
+    width: 104px;
+    height: 100px;
+    top: 4px;
+    left: 48px;
+    object-fit: cover;
+  }
+  
+  .products-list-page .overlap-16 {
+    position: absolute;
+    width: 286px;
+    height: 441px;
+    top: 230px;
+    left: 445px;
+  }
+  
+  .products-list-page .element-pgr {
+    position: absolute;
+    width: 283px;
+    height: 372px;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+  }
+  
+  .products-list-page .product-6 {
+    top: 0;
+    left: 4px;
+    position: absolute;
+    width: 282px;
+    height: 441px;
+  }
+  
+  .products-list-page .element-blu {
+    position: absolute;
+    width: 286px;
+    height: 372px;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+  }
+  
+  .products-list-page .moose-pant-moss {
+    position: absolute;
+    width: 279px;
+    height: 370px;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+  }
+  
+  .products-list-page .element-mens {
+    position: absolute;
+    width: 286px;
+    height: 370px;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+  }
+  
+  .products-list-page .element-moose {
+    position: absolute;
+    width: 279px;
+    height: 370px;
+    top: 0;
+    left: 3px;
+    object-fit: cover;
+  }
+  
+  .products-list-page .need-help-section {
+    position: absolute;
+    width: 1440px;
+    height: 731px;
+    top: 2221px;
+    left: 0;
+    background-color: #3c4242;
+  }
+  
+  .products-list-page .frame-29 {
+    position: relative;
+    width: 1220px;
+    height: 613px;
+    top: 59px;
+    left: 110px;
+  }
+  
+  .products-list-page .frame-30 {
+    position: absolute;
+    width: 1059px;
+    height: 292px;
+    top: 0;
+    left: 76px;
+  }
+  
+  .products-list-page .frame-31 {
+    position: absolute;
+    width: 394px;
+    height: 204px;
+    top: 0;
+    left: 665px;
+  }
+  
+  .products-list-page .text-wrapper-24 {
+    position: absolute;
+    top: -1px;
+    left: 0;
+    font-family: "Roboto-Bold", Helvetica;
+    font-weight: 700;
+    color: #f6f6f6;
+    font-size: 28.6px;
+    letter-spacing: 0;
+    line-height: 62px;
+    white-space: nowrap;
+  }
+  
+  .products-list-page .frame-32 {
+    position: absolute;
+    width: 394px;
+    height: 127px;
+    top: 77px;
+    left: 0;
+  }
+  
+  .products-list-page .p {
+    position: absolute;
+    top: -21px;
+    left: 0;
+    font-family: "Roboto-Regular", Helvetica;
+    font-weight: 400;
+    color: #f6f6f6;
+    font-size: 18px;
+    letter-spacing: 0;
+    line-height: 39px;
+    white-space: nowrap;
+  }
+  
+  .products-list-page .text-wrapper-25 {
+    position: absolute;
+    top: 24px;
+    left: 0;
+    font-family: "Roboto-Regular", Helvetica;
+    font-weight: 400;
+    color: #f6f6f6;
+    font-size: 18px;
+    letter-spacing: 0;
+    line-height: 39px;
+    white-space: nowrap;
+  }
+  
+  .products-list-page .frame-33 {
+    position: absolute;
+    width: 162px;
+    height: 248px;
+    top: 0;
+    left: 423px;
+  }
+  
+  .products-list-page .frame-34 {
+    position: absolute;
+    width: 162px;
+    height: 171px;
+    top: 77px;
+    left: 0;
+  }
+  
+  .products-list-page .text-wrapper-26 {
+    position: absolute;
+    top: -1px;
+    left: 0;
+    font-family: "Roboto-Regular", Helvetica;
+    font-weight: 400;
+    color: #f6f6f6;
+    font-size: 18px;
+    letter-spacing: 0;
+    line-height: 39px;
+    white-space: nowrap;
+  }
+  
+  .products-list-page .text-wrapper-27 {
+    position: absolute;
+    top: 43px;
+    left: 0;
+    font-family: "Roboto-Regular", Helvetica;
+    font-weight: 400;
+    color: #f6f6f6;
+    font-size: 18px;
+    letter-spacing: 0;
+    line-height: 39px;
+    white-space: nowrap;
+  }
+  
+  .products-list-page .text-wrapper-28 {
+    position: absolute;
+    top: 87px;
+    left: 0;
+    font-family: "Roboto-Regular", Helvetica;
+    font-weight: 400;
+    color: #f6f6f6;
+    font-size: 18px;
+    letter-spacing: 0;
+    line-height: 39px;
+    white-space: nowrap;
+  }
+  
+  .products-list-page .text-wrapper-29 {
+    position: absolute;
+    top: 131px;
+    left: 0;
+    font-family: "Roboto-Regular", Helvetica;
+    font-weight: 400;
+    color: #f6f6f6;
+    font-size: 18px;
+    letter-spacing: 0;
+    line-height: 39px;
+    white-space: nowrap;
+  }
+  
+  .products-list-page .frame-35 {
+    position: absolute;
+    width: 142px;
+    height: 292px;
+    top: 0;
+    left: 0;
+  }
+  
+  .products-list-page .frame-36 {
+    position: absolute;
+    width: 142px;
+    height: 215px;
+    top: 77px;
+    left: 0;
+  }
+  
+  .products-list-page .text-wrapper-30 {
+    position: absolute;
+    top: 175px;
+    left: 0;
+    font-family: "Roboto-Regular", Helvetica;
+    font-weight: 400;
+    color: #f6f6f6;
+    font-size: 18px;
+    letter-spacing: 0;
+    line-height: 39px;
+    white-space: nowrap;
+  }
+  
+  .products-list-page .frame-37 {
+    position: absolute;
+    width: 121px;
+    height: 292px;
+    top: 0;
+    left: 222px;
+  }
+  
+  .products-list-page .frame-38 {
+    position: absolute;
+    width: 108px;
+    height: 215px;
+    top: 77px;
+    left: 0;
+  }
+  
+  .products-list-page .text-wrapper-31 {
+    position: absolute;
+    width: 242px;
+    height: 21px;
+    top: 484px;
+    left: 76px;
+    font-family: "Roboto-Bold", Helvetica;
+    font-weight: 700;
+    color: #f6f6f6;
+    font-size: 28.6px;
+    letter-spacing: 0;
+    line-height: 57.2px;
+    white-space: nowrap;
+  }
+  
+  .products-list-page .frame-39 {
+    display: inline-flex;
+    align-items: flex-start;
+    gap: 9.97px;
+    position: absolute;
+    top: 369px;
+    left: 83px;
+  }
+  
+  .products-list-page .group {
+    width: 37.02px;
+    background-color: #f6f6f6;
+    border-radius: 10.68px;
+    position: relative;
+    height: 37.02px;
+  }
+  
+  .products-list-page .vector {
+    position: absolute;
+    width: 10px;
+    height: 18px;
+    top: 9px;
+    left: 14px;
+  }
+  
+  .products-list-page .vector-2 {
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    top: 11px;
+    left: 11px;
+  }
+  
+  .products-list-page .vector-3 {
+    width: 18px;
+    height: 14px;
+    position: absolute;
+    top: 11px;
+    left: 11px;
+  }
+  
+  .products-list-page .overlap-group-wrapper {
+    width: 39.02px;
+    margin-right: -2px;
+    position: relative;
+    height: 37.02px;
+  }
+  
+  .products-list-page .overlap-group-3 {
+    position: relative;
+    width: 37px;
+    height: 37px;
+    background-color: #f6f6f6;
+    border-radius: 10.68px;
+  }
+  
+  .products-list-page .text-wrapper-32 {
+    position: absolute;
+    width: 16px;
+    top: 4px;
+    left: 11px;
+    font-family: "Roboto-Bold", Helvetica;
+    font-weight: 700;
+    color: #2c2c2c;
+    font-size: 17.1px;
+    letter-spacing: 0.34px;
+    line-height: 28.5px;
+    white-space: nowrap;
+  }
+  
+  .products-list-page .line {
+    top: 455px;
+    position: absolute;
+    width: 1220px;
+    height: 1px;
+    left: 0;
+    object-fit: cover;
+  }
+  
+  .products-list-page .line-2 {
+    top: 539px;
+    position: absolute;
+    width: 1220px;
+    height: 1px;
+    left: 0;
+    object-fit: cover;
+  }
+  
+  .products-list-page .text-wrapper-33 {
+    position: absolute;
+    height: 36px;
+    top: 576px;
+    left: 377px;
+    font-family: "Roboto-Bold", Helvetica;
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 18px;
+    letter-spacing: 0;
+    line-height: 36px;
+    white-space: nowrap;
+  }

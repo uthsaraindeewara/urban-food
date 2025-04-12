@@ -116,92 +116,6 @@
                   </div>
                 </div>
                 <div class="shopping-cart-wrapper cart-button" id="cart-button"><a href="cart.php"><img class="img-2" src="img/shopping-cart.svg" /></a></div>
-                <div class="component notification" id="notifications">
-                  <img class="img-2" src="img/icons8-notification-50.png" onclick="toggleDropdownnotification()" />
-                  <div class="dropdown-content" id="notification-dropdown-content">
-                    <div class="notifications-header">
-                        <span>Notifications</span>
-                    </div>
-                    <div class="notifications-list">
-                    <?php
-                      // Check if user is logged in
-                      if (isset($_SESSION['user'])) {
-                                              // Database connection
-                      $host = 'localhost:3306';
-                      $user = 'root';
-                      $password = '';
-                      $dbname = 'storedb';
-
-                      $conn = new mysqli($host, $user, $password, $dbname);
-
-                      if ($conn->connect_error) {
-                          die("Connection failed: " . $conn->connect_error);
-                      }
-
-                      // Assuming the customer ID is stored in session (when the user logs in)
-                      $cusID = $_SESSION['user']['cusID'];
-
-                      // If the remove button was clicked, delete the notification
-                      if (isset($_POST['delete_notification']) && isset($_POST['notificationID'])) {
-                        $notificationID = intval($_POST['notificationID']);
-
-                        // Delete from customer_notification table
-                        $sql1 = "DELETE FROM customer_notification WHERE notificationID = ?";
-                        $stmt1 = $conn->prepare($sql1);
-                        $stmt1->bind_param("i", $notificationID);
-                        $stmt1->execute();
-
-                        // Delete from notification table
-                        $sql2 = "DELETE FROM notification WHERE notificationID = ?";
-                        $stmt2 = $conn->prepare($sql2);
-                        $stmt2->bind_param("i", $notificationID);
-                        $stmt2->execute();
-
-                        // Close the statements
-                        $stmt1->close();
-                        $stmt2->close();
-                    }
-
-                      // Fetch notifications for the logged-in customer
-                      $sql = "SELECT n.notificationID, n.time, n.description, n.date 
-                              FROM notification n
-                              INNER JOIN customer_notification cn ON n.notificationID = cn.notificationID
-                              WHERE cn.cusID = ?";
-                      $stmt = $conn->prepare($sql);
-                      $stmt->bind_param("i", $cusID);
-                      $stmt->execute();
-                      $result = $stmt->get_result();
-
-                      // Check if there are any notifications
-                      if ($result->num_rows > 0): 
-                        ?>
-                            <div class="notifications-list">
-                                <?php while ($notification = $result->fetch_assoc()): ?>
-                                    <div class="notification-item">
-                                        <div class="notification-description">
-                                          <?php echo htmlspecialchars($notification['description']); ?>
-                                          <form method="post">
-                                            <input type="hidden" name="notificationID" value="<?php echo $notification['notificationID']; ?>">
-                                            <button type="submit" name="delete_notification" class="remove-notification">Remove</button>
-                                        </form>
-                                        </div>
-                                        <div class="notification-details">
-                                          <div class="notification-time"><?php echo htmlspecialchars($notification['time']); ?></div>
-                                          <div class="notification-date"><?php echo htmlspecialchars($notification['date']); ?></div>
-                                        </div>
-                                    </div>
-                                <?php endwhile; ?>
-                            </div>
-                        <?php else: ?>
-                            <div class="no-notifications">No notifications available</div>
-                        <?php endif;
-
-                      $stmt->close();
-                      $conn->close();
-                      }
-                      ?>
-                    </div>
-                </div>
                 </div>
               </div>
             </div>
@@ -222,62 +136,47 @@
 
 <div class="product-grid">
     <?php
-    // Connect to the database
-    $servername = "localhost:3306";
-    $username = "root";
-    $password = "";
-    $dbname = "storedb";
+      // Oracle Database Connection
+      include 'connection.php';
 
-    $conn = new mysqli($servername, $username, $password, $dbname);
+      // Prepare the SQL block to call the stored procedure
+      $sql = "BEGIN SYSTEM.get_all_sellers(:cursor); END;";
+      $stid = oci_parse($conn, $sql);
 
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
+      $cursor = oci_new_cursor($conn);
+      oci_bind_by_name($stid, ":cursor", $cursor, -1, OCI_B_CURSOR);
 
-    // Query to get product data
-    $sql = "
-    SELECT 
-        p.productID AS id,
-        p.productName AS name,
-        p.catagory AS brand,
-        i.name AS imageName,
-        p.price
-    FROM 
-        product p
-    JOIN 
-        (SELECT MIN(imageID) AS imageID, productID FROM image GROUP BY productID) AS first_image
-        ON p.productID = first_image.productID
-    JOIN 
-        image i 
-        ON i.imageID = first_image.imageID;
-    ";
+      // Execute the procedure
+      if (!oci_execute($stid)) {
+          $e = oci_error($stid);
+          die("Error executing procedure: " . $e['message']);
+      }
 
-    $result = $conn->query($sql);
+      // Execute the cursor to fetch data
+      oci_execute($cursor);
 
-    if ($result->num_rows > 0) {
-        // Output data for each row
-        while ($row = $result->fetch_assoc()) {
-            // Dynamically generate the HTML for each product
-            echo '<div class="overlap-16" id="' . htmlspecialchars($row["id"]) . '">
-      <a href="product.php?id=' . htmlspecialchars($row["id"]) . '">
-          <img class="element-pgr" src="productImages/' . htmlspecialchars($row["imageName"]) . '" />
-          <div class="product-6">
-              <div class="frame"><img class="heart" src="img/image.svg" /></div>
-              <div class="frame-2">
-                  <div class="frame-3">
-                      <div class="black-sweatshirt">' . htmlspecialchars($row["name"]) . '</div>
-                      <div class="jhanvi-s-brand">Priya’s&nbsp;&nbsp;Brand</div>
+      // Process results correctly from $cursor
+      while ($row = oci_fetch_assoc($cursor)) {
+          echo '<div class="overlap-16" id="' . htmlspecialchars($row["SELLER_ID"]) . '">
+              <a href="seller.php?seller_id=' . htmlspecialchars($row["SELLER_ID"]) . '">
+                  <img class="element-pgr" src="sellerImages/seller-' . htmlspecialchars($row["SELLER_ID"]) .'.jpg" />
+                  <div class="product-6">
+                      <div class="frame"><img class="heart" src="img/image.svg" /></div>
+                      <div class="frame-2">
+                          <div class="frame-3">
+                              <div class="black-sweatshirt">' . htmlspecialchars($row["SELLER_NAME"]) . '</div>
+                              <div class="jhanvi-s-brand">Priya’s&nbsp;&nbsp;Brand</div>
+                          </div>
+                          <div class="element-wrapper"><div class="text-wrapper">'. htmlspecialchars($row["FARM_ADDRESS"]) . '</div></div>
+                      </div>
                   </div>
-                  <div class="element-wrapper"><div class="text-wrapper">'. htmlspecialchars($row["price"]) . '</div></div>
-              </div>
-          </div>
-      </a>
-  </div>';
-        }
-    } else {
-        echo "No products found.";
-    }
+              </a>
+          </div>';
+      }
 
-    $conn->close();
+      // Free resources
+      oci_free_statement($cursor);
+      oci_free_statement($stid);
+      oci_close($conn);
     ?>
 </div>

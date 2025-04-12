@@ -1,0 +1,371 @@
+    /* Container for the product grid */
+    .product-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* 3 columns */
+        gap: 20px; /* Space between grid items */
+        padding: 20px;
+        width: 80%;
+        position: absolute;
+        top: 150px;
+        right: 10px;
+    }
+
+    .nav-logo {
+        width: 200px;
+        margin-left: 20px;
+        margin-top: 10px;
+    }
+
+    /* Styling for each product element */
+    .overlap-16 {
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        padding: 10px;
+        text-align: center;
+        transition: transform 0.2s;
+        position: relative;
+        width: 100%; /* Set full width */
+        max-width: 600px; /* Adjust as needed */
+        height: auto; /* Adjust height automatically */
+    }
+    
+    .overlap-16:hover {
+        transform: scale(1.05); /* Slight zoom on hover */
+    }
+    
+    /* Ensure images fit properly within landscape format */
+    .element-pgr {
+        width: 100%; /* Make it take the full width */
+        height: 250px; /* Fixed height for a landscape view */
+        object-fit: cover; /* Maintain aspect ratio and crop if necessary */
+        border-bottom: 1px solid #ccc;
+    }
+    
+    /* Heart icon positioning */
+    .frame {
+        height: 30px;
+        width: 30px;
+        padding-top: 5px;
+        position: absolute;
+        background-color: white;
+        border-radius: 15px;
+        top: 10px;
+        right: 10px;
+    }
+    
+    .heart {
+        width: 20px;
+        height: 20px;
+    }
+    
+    .product-6 {
+        padding: 10px;
+    }
+    
+    .black-sweatshirt {
+        font-weight: bold;
+        margin: 10px 0;
+        font-size: 18px;
+    }
+    
+    .jhanvi-s-brand {
+        color: #888;
+        font-size: 14px;
+        margin-bottom: 5px;
+    }
+    
+    .text-wrapper {
+        font-size: 18px;
+        color: #000;
+        font-weight: bold;
+    }
+
+    .account {
+        position: relative; /* Position relative for dropdown positioning */
+        display: inline-block; /* Allow dropdown to be inline with other elements */
+        z-index: 4;
+        cursor: pointer;
+    }
+    
+    .dropdown-content {
+        display: none; /* Initially hidden */
+        position: absolute; /* Position absolutely */
+        top: 40px;
+        background-color: white; /* Dropdown background color */
+        min-width: 200px; /* Minimum width of the dropdown */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow */
+        z-index: 6; /* Make sure it floats above other elements */
+    }
+
+    .account > .dropdown-content {
+        left: 0;
+    }
+    
+    .dropdown-content .user-info {
+        padding: 10px; /* Add padding */
+        display: flex; /* Flexbox to align avatar and username */
+        align-items: center; /* Center items vertically */
+    }
+    
+    .avatar {
+        width: 40px; /* Circle diameter */
+        height: 40px; /* Circle diameter */
+        border-radius: 50%; /* Make it a circle */
+        background-color: #007bff; /* Background color for avatar */
+        color: white; /* Text color */
+        display: flex; /* Flexbox to center text */
+        align-items: center; /* Center text vertically */
+        justify-content: center; /* Center text horizontally */
+        font-size: 18px; /* Font size */
+        margin-right: 10px; /* Space between avatar and username */
+    }
+    
+    .edit-account, .logout {
+        display: block; /* Display as block for full width */
+        padding: 10px; /* Add padding */
+        text-align: left; /* Align text to the left */
+        border: none; /* No border */
+        background: none; /* No background */
+        cursor: pointer; /* Pointer on hover */
+    }
+    
+    .edit-account:hover, .logout:hover {
+        background-color: #f1f1f1; /* Background color on hover */
+    }
+
+    /* Button Styles */
+.account-button {
+    background-color: #007BFF; /* Blue background */
+    color: white;              /* White text color */
+    border: none;              /* No border */
+    border-radius: 5px;       /* Rounded corners */
+    padding: 10px 15px;       /* Padding */
+    text-align: center;        /* Centered text */
+    text-decoration: none;     /* No underline */
+    display: inline-block;     /* Inline-block for spacing */
+    font-size: 16px;          /* Font size */
+    margin: 5px;              /* Margin between buttons */
+    cursor: pointer;           /* Pointer cursor on hover */
+    transition: background-color 0.3s ease; /* Transition effect */
+}
+
+/* Button Hover Effect */
+.button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Sign In Button Specific Styles */
+.signin {
+    background-color: #28A745; /* Green background for Sign In */
+}
+
+.signin:hover {
+    background-color: #218838; /* Darker green on hover */
+}
+
+/* Sign Up Button Specific Styles */
+.signup {
+    background-color: #FFC107; /* Yellow background for Sign Up */
+}
+
+.signup:hover {
+    background-color: #e0a800; /* Darker yellow on hover */
+}
+
+/* Link hover effect */
+.dropdown-content a:hover {
+    background-color: #0056b3; /* Change color on hover */
+}
+
+.notification {
+    z-index: 4;
+}
+
+.notification:hover {
+    cursor: pointer;
+}
+
+.notifications-header {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.notifications-list {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.notification-item {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.notification-time,
+.notification-description,
+.notification-date {
+    font-size: 16px;
+}
+
+.notification-item {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(43, 43, 43);
+    border-radius: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.notification-description {
+    flex: 4;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 20px;
+    color: white;
+}
+
+.notification-details {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    margin-right: 200px;
+}
+
+.notification-date {
+    margin-left: 10px;
+    color: white;
+}
+
+.notification-time {
+    color: #999;
+}
+
+.no-notifications {
+    padding: 10px;
+    text-align: center;
+    font-style: italic;
+}
+
+.notification > .dropdown-content {
+    right: 10px;
+    width: 600px;
+    text-align: center;
+}
+
+.remove-notification {
+    background-color: #ff4d4d;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    margin-left: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.remove-notification:hover {
+    background-color: #cc0000;
+}
+
+.suggestions {
+    max-height: 150px;
+    overflow-y: auto;
+    position: absolute;
+    background-color: white;
+    width: 200px;
+    top: 30px;
+}
+
+.search-bar {
+    position: absolute;
+    left: 600px;
+    z-index: 4;
+    display: flex;
+    align-items: center;
+}
+
+.search-button {
+    padding-top: 4px;
+    border-radius: 4px;
+    border: none;
+    width: 36px;
+    height: 36px;
+    cursor: pointer;
+}
+
+.search {
+    height: 36px;
+    width: 320px;
+    border-radius: 8px;
+    border: 1px solid black;
+    margin-right: 4px;
+}
+
+.suggestions li {
+    padding: 8px;
+    cursor: pointer;
+}
+
+.suggestions li:hover {
+    background-color: #f0f0f0;
+}
+
+.search-form {
+    display: flex;
+    align-items: center;
+}
+
+.wishlist-button {
+    z-index: 4;
+    cursor: pointer;
+}
+
+.cart-button {
+    z-index: 4;
+    cursor: pointer;
+}
+
+.shop-button {
+    z-index: 4;
+    cursor: pointer;
+}
+
+.vegetables-button {
+    z-index: 4;
+    cursor: pointer;
+}
+
+.fruits-button {
+    z-index: 4;
+    cursor: pointer;
+}
+
+.dairy-button {
+    z-index: 4;
+    cursor: pointer;
+}
+
+a {
+    color: #888;
+}
+
+a:hover {
+    color: #38E54D;
+}
+    
+    hr {
+        margin: 5px 0; /* Space above and below the line */
+    }
+
+    @media (max-width: 768px) {
+        .product-grid {
+            grid-template-columns: repeat(2, 1fr); /* 2 columns on smaller screens */
+        }
+    }
+
+    @media (max-width: 480px) {
+        .product-grid {
+            grid-template-columns: 1fr; /* 1 column on very small screens */
+        }
+    }

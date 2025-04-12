@@ -15,7 +15,7 @@ session_start();
 $customerID = 2;
 
 // MySQLi connection
-$mysqli = new mysqli("localhost:3306", "root", "", "storedb");
+$mysqli = new mysqli("localhost:3307", "root", "", "storedb");
 
 // Check connection
 if ($mysqli->connect_error) {
@@ -92,7 +92,7 @@ $stmt->close();
 
 <!-- Payment options -->
 <h2>Payment Options</h2>
-<form method="POST" action="process_payment.php">
+<form method="POST" action="process-payment.php">
     <label>
         <input type="radio" name="payment_method" value="credit_card" required> Credit Card
     </label><br>

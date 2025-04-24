@@ -2,7 +2,7 @@
 session_start();
 
 // Connect to the database
-$servername = "localhost:3306";
+$servername = "localhost:3307";
 $username = "root";
 $password = "";
 $dbname = "storedb";

@@ -1,6 +1,6 @@
 <?php
 // Database connection
-$servername = "localhost:3306";
+$servername = "localhost:3307";
 $username = "root";
 $password = "";
 $dbname = "storedb";

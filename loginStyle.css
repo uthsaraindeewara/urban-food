@@ -42,13 +42,13 @@ hr {
 }
 
 .left-section img {
-    height: 650px;
+    height: 1000px;
     
 }
 
 .right-section {
     width: 400px;
-    height: 650px;
+    height: 1000px;
     background-color: white;
     padding: 30px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -120,7 +120,7 @@ p {
 p a {
     color: #007bff;
     text-decoration: none;
-    padding: 10px;
+    
     text-underline-position: below;
     
     

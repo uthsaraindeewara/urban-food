@@ -1,41 +1,41 @@
 <?php
 session_start();
-
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-// Oracle connection (adjust with your local config)
-$conn = oci_connect('SYSTEM', 'ui123', 'DESKTOP-5EIEBIJ/XE');
+// Oracle DB connection
+$conn = oci_connect('Ur', 'oracle_password', '//localhost:1521/XEPDB1');
 if (!$conn) {
     $e = oci_error();
     die("Oracle connection failed: " . $e['message']);
 }
 
+// Check if form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $email = $_POST['email'];
+    $username = $_POST['username'];
+    $email    = $_POST['email'];
     $password = $_POST['password'];
 
+    // Prepare PL/SQL call
     $stmt = oci_parse($conn, "
         BEGIN
-            user_login(
+            signup_seller(
+                :username,
                 :email,
                 :password,
                 :user_id,
-                :full_name,
-                :user_type,
                 :status
             );
         END;
     ");
 
-    // Bind input parameters
+    // Bind input
+    oci_bind_by_name($stmt, ":username", $username);
     oci_bind_by_name($stmt, ":email", $email);
     oci_bind_by_name($stmt, ":password", $password);
 
-    // Bind output parameters
+    // Bind output
     oci_bind_by_name($stmt, ":user_id", $userID, 32);
-    oci_bind_by_name($stmt, ":full_name", $fullName, 100);
-    oci_bind_by_name($stmt, ":user_type", $userType, 20);
     oci_bind_by_name($stmt, ":status", $status, 20);
 
     $exec = oci_execute($stmt);
@@ -43,20 +43,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($exec && $status == 'SUCCESS') {
         $_SESSION['user'] = [
             'userID' => $userID,
-            'name' => $fullName,
-            'userType' => $userType
+            'name' => $username,
+            'userType' => 'seller'
         ];
 
-        if ($userType == 'admin') {
-            header("Location: admin-dashboard.php");
-        } else {
-            header("Location: index.php");
-        }
+        header("Location: login.html");
         exit();
-    } else if ($status == 'NOT_FOUND') {
-        echo "<script>alert('Invalid username/email or password.');</script>";
     } else {
-        echo "<script>alert('An error occurred. Please try again later.');</script>";
+        echo "<script>alert('Error registering seller. Please try again.');</script>";
     }
 
     oci_free_statement($stmt);

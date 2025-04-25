@@ -3,14 +3,14 @@ session_start();
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-// Oracle DB connection
-$conn = oci_connect('Ur', 'oracle_password', '//localhost:1521/XEPDB1');
+
+// Database connection
+$conn = oci_connect("system", "sys112233", "//localhost/XEPDB1");
 if (!$conn) {
-    $e = oci_error();
-    die("Oracle connection failed: " . $e['message']);
+    die("Database connection failed: " . oci_error()['message']);
 }
 
-// Check if form is submitted
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST['username'];
     $email    = $_POST['email'];
@@ -29,12 +29,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         END;
     ");
 
-    // Bind input
     oci_bind_by_name($stmt, ":username", $username);
     oci_bind_by_name($stmt, ":email", $email);
     oci_bind_by_name($stmt, ":password", $password);
 
-    // Bind output
     oci_bind_by_name($stmt, ":user_id", $userID, 32);
     oci_bind_by_name($stmt, ":status", $status, 20);
 

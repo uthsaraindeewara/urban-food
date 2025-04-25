@@ -183,64 +183,128 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 20px;
-    padding: 20px 5%;
+    padding: 40px;
     max-width: 1440px;
     margin: 0 auto;
+    flex: 4;
+    overflow: hidden;
 }
 
 .product-card {
-    border: 1px solid #ccc;
-    border-radius: 8px;
+    width: 300px;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
     overflow: hidden;
-    transition: transform 0.2s;
+    transition: transform 0.3s ease;
+    margin: 20px;
+    display: inline-block;
+    vertical-align: top;
 }
 
 .product-card:hover {
-    transform: scale(1.05);
+    transform: translateY(-5px);
 }
 
 .product-image {
     width: 100%;
-    height: 250px;
+    height: 200px;
     object-fit: cover;
-    border-bottom: 1px solid #ccc;
+    display: block;
 }
 
 .product-details {
-    padding: 15px;
-    position: relative;
+    padding: 16px;
 }
 
-.wishlist-icon {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background: white;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
+.product-details h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: black;
+}
+
+.product-details .description {
+    color: #555;
+    font-size: 14px;
+    height: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+.rating {
+    margin: 6px 0;
+    font-size: 18px;
+    color: #f5b50a;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.product-name {
-    font-weight: bold;
-    margin: 10px 0 5px;
-    font-size: 18px;
-    color: #3c4242;
+.rating .star {
+    margin-right: 2px;
 }
 
-.product-brand {
-    color: #888;
+.rating .star.empty {
+    color: #ccc;
+}
+
+.rating-number {
+    margin-left: 8px;
+    color: #333;
     font-size: 14px;
-    margin-bottom: 10px;
 }
 
-.product-price {
+.price {
     font-size: 18px;
-    color: #000;
+    color: #28a745;
     font-weight: bold;
+    display: flex;
+    justify-content: center;
+}
+
+.seller-container {
+    max-width: 600px;
+    margin: 40px auto;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    background: #fff;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.seller-image img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    opacity: 0.6;
+}
+
+.seller-info {
+    padding: 20px;
+}
+
+.seller-name {
+    margin: 0 0 10px;
+    font-size: 24px;
+    color: #333;
+    font-weight: 600;
+}
+
+.seller-detail {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    font-size: 16px;
+    color: #555;
+}
+
+.icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    filter: grayscale(100%);
 }
 
 /* Footer Styles */
@@ -250,6 +314,86 @@ footer {
     background-color: #3c4242;
     color: white;
     font-weight: bold;
+}
+
+.main-container {
+    display: flex;
+}
+
+.side-panel {
+    flex: 1;
+}
+
+.filter-sort-container {
+    width: 100%;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.filter-sort-container, 
+.filter-sort-container * {
+    box-sizing: border-box;
+}
+
+.section {
+    margin-bottom: 20px;
+}
+
+.section-title {
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.btn-group {
+    width: 100%;
+}
+
+.btn-group input[type="radio"] {
+    display: none;
+}
+
+.btn-group label {
+    display: block;
+    width: 100%;
+    background: #f1f1f1;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    cursor: pointer;
+    text-align: left;
+    transition: all 0.2s ease;
+}
+
+.btn-group input[type="radio"]:checked + label {
+    background-color: #28a745;
+    color: white;
+    border-color: #28a745;
+}
+
+.sort-direction {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.sort-direction button {
+    padding: 10px 14px;
+    border: none;
+    border-radius: 8px;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.sort-direction button:hover {
+    background-color: black;
+    opacity: 0.6;
 }
 
 /* Responsive Styles */

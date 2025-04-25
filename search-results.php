@@ -289,7 +289,7 @@
           <div>
             <img class="line" src="img/line-6.svg" />
             <img class="line-2" src="img/line-6.svg" />
-            <p class="text-wrapper-33">Copyright © 2024 Beliyo Fasion Pvt Ltd. All rights reserved.</p>
+            <p class="text-wrapper-33"></p>
           </div>
         </div>
       </div>
@@ -368,8 +368,8 @@
               <div class="frame"><img class="heart" src="img/image.svg" /></div>
               <div class="frame-2">
                   <div class="frame-3">
-                      <div class="black-sweatshirt">' . htmlspecialchars($row["name"]) . '</div>
-                      <div class="jhanvi-s-brand">Priya’s&nbsp;&nbsp;Brand</div>
+                      <div class="seller-name-1">' . htmlspecialchars($row["name"]) . '</div>
+                      <div class="seller-contact-no">Priya’s&nbsp;&nbsp;Brand</div>
                   </div>
                   <div class="element-wrapper"><div class="text-wrapper">'. htmlspecialchars($row["price"]) . '</div></div>
               </div>

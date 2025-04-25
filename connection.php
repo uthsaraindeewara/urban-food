@@ -1,6 +1,6 @@
 <?php
 
-$conn = oci_connect('SYSTEM', 'ui123', 'DESKTOP-5EIEBIJ/XE');
+$conn = oci_connect('SYSTEM', 'ui123', 'localhost/XE');
 
 if (!$conn) {
     $e = oci_error();

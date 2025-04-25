@@ -1,37 +1,32 @@
 <?php
-// Database connection
-$servername = "localhost:3306";
-$username = "root";
-$password = "";
-$dbname = "storedb";
+require 'connection1.php';
 
-$conn = new mysqli($servername, $username, $password, $dbname);
+$db = $client->selectDatabase('productdb');
+$ratingCollection = $db->selectCollection('ratings');
 
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-
-// Check if the rating and product ID are received
-if (isset($_POST['rating']) && isset($_POST['productId'])) {
+if (isset($_POST['rating']) && isset($_POST['productId']) && isset($_POST['userId'])) {
     $rating = intval($_POST['rating']);
     $productId = intval($_POST['productId']);
+    $userId = intval($_POST['userId']);
 
-    // Insert the rating into the database (assuming a 'ratings' table)
-    $sql = "INSERT INTO rating (value, productID) VALUES (?, ?)";
+    $existingRating = $ratingCollection->findOne([
+        'product_id' => (int)$productId,
+        'user_id' => (int)$userId
+    ]);
 
-    $stmt = $conn->prepare($sql);
-    $stmt->bind_param("ii", $rating, $productId);
-
-    if ($stmt->execute()) {
-        echo "Rating submitted successfully";
+    if ($existingRating) {
+        // UPDATE existing rating
+        $ratingCollection->updateOne(
+            ['_id' => $existingRating['_id']],
+            ['$set' => ['value' => (int)$rating]]
+        );
     } else {
-        echo "Error submitting rating: " . $conn->error;
+        // ADD new rating
+        $ratingCollection->insertOne([
+            'product_id' => (int)$productId,
+            'user_id' => (int)$userId,
+            'value' => (int)$rating
+        ]);
     }
-
-    $stmt->close();
-} else {
-    echo "Invalid request";
 }
-
-$conn->close();
 ?>

@@ -24,6 +24,49 @@ document.addEventListener('DOMContentLoaded', function() {
         ratingValueInput.value = rating;
       });
     });
+
+    const quantityInput = document.getElementById('quantity');
+    const stockMessage = document.getElementById('stockMessage');
+    const maxQuantity = parseFloat(quantityInput.dataset.max);
+    const totalPriceDisplay = document.getElementById('totalPrice');
+    const price = parseFloat(document.getElementById('price').value);
+
+    function updateTotalPrice() {
+        const quantity = parseFloat(quantityInput.value);
+        const total = (quantity * price).toFixed(2);
+        totalPriceDisplay.textContent = total;
+    }
+
+    quantityInput.addEventListener('input', () => {
+        let currentVal = parseFloat(quantityInput.value);
+        
+        if (isNaN(currentVal)) {
+          currentVal = 0;
+          quantityInput.value = 0;
+        }
+
+        if (currentVal > maxQuantity) {
+            stockMessage.textContent = `Only ${maxQuantity} kg left in stock.`;
+            stockMessage.style.display = 'block';
+            quantityInput.value = maxQuantity;
+        } else if (currentVal < 1) {
+            quantityInput.value = 1;
+        } else {
+            stockMessage.style.display = 'none';
+        }
+
+        updateTotalPrice();
+    });
+
+    // Prevent form submission if the quantity exceeds stock
+    const form = document.getElementById('addToCartForm');
+    form.addEventListener('submit', function (e) {
+        if (parseInt(quantityInput.value) > maxQuantity) {
+            e.preventDefault();  // Prevent form submission
+            stockMessage.textContent = `Only ${maxQuantity} item(s) left in stock.`;
+            stockMessage.style.display = 'block';
+        }
+    });
 });
   
   // Function to submit the rating via AJAX
@@ -99,17 +142,15 @@ function toggleReviews() {
 function submitReview() {
     const reviewText = document.getElementById('reviewText').value;
     const productId = document.querySelector('input[name="productId"]').value; // Correct way to get the hidden input value
-    const cusID = document.querySelector('input[name="cusId"]').value;
-    const date = new Date().toISOString().split('T')[0]; // Get current date
-    const time = new Date().toLocaleTimeString(); // Get current time
+    const userId = document.querySelector('input[name="cusId"]').value;
+    const date = new Date().toISOString();
 
     if (reviewText) {
         const reviewData = {
             date: date,
-            time: time,
             description: reviewText,
-            productID: productId,
-            cusID: cusID
+            productId: productId,
+            userId: userId
         };
 
         saveReviewToDatabase(reviewData);
@@ -129,33 +170,11 @@ function saveReviewToDatabase(reviewData) {
     .then(response => response.json())
     .then(data => {
         console.log('Review saved:', data);
-        const reviewList = document.getElementById('reviewList');
-        const reviewContainer = document.createElement('div');
-        reviewContainer.classList.add('review-container');
-        
-        const reviewHeader = document.createElement('div');
-        reviewHeader.classList.add('review-header');
-        const userName = document.createElement('strong');
-        userName.textContent = 'You'
-        reviewHeader.appendChild(userName);
-        
-        const reviewBody = document.createElement('div');
-        reviewBody.classList.add('review-body');
-        const reviewText = document.createElement('p');
-        reviewText.textContent = reviewData.description;
-        reviewBody.appendChild(reviewText);
-        
-        const reviewFooter = document.createElement('div');
-        reviewFooter.classList.add('review-footer');
-        reviewFooter.textContent = `Posted on ${reviewData.date} at ${reviewData.time}`;
-        
-        reviewContainer.appendChild(reviewHeader);
-        reviewContainer.appendChild(reviewBody);
-        reviewContainer.appendChild(reviewFooter);
-
-        reviewList.appendChild(reviewContainer);
-
-        reviewList.scrollTop = reviewList.scrollHeight;
+        if (data.success) {
+          location.reload();
+        } else {
+            alert(data.message);
+        }
     })
     .catch((error) => {
         console.error('Error saving review:', error);

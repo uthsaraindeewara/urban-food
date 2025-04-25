@@ -14,6 +14,15 @@
   $isLoggedIn = isset($_SESSION['user']);
   $username = $isLoggedIn ? $_SESSION['user']['name'] : '';
   $firstLetter = $isLoggedIn ? strtoupper(substr($username, 0, 1)) : '';
+  $category = null;
+  $searchText = null;
+  if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $searchText = $_POST["search"];;
+  } else {
+    if (isset($_GET['category']) && !empty(trim($_GET['category']))) {
+      $category = trim($_GET['category']);
+    }
+  }
   ?>
     <div class="products-list-page">
       <div class="div">
@@ -23,55 +32,62 @@
             <img class="filter" src="img/filter.svg" />
           </div>
           <div class="frame-9">
-            <div class="frame-10">
-              <div class="text-wrapper-4">Vegetables</div>
-              <img class="icon-2" src="img/icon-3.svg" />
-            </div>
-            <div class="frame-11">
-              <div class="text-wrapper-4">Greens</div>
-              <img class="icon-2" src="img/icon-3.svg" />
-            </div>
-            <div class="frame-12">
-              <div class="text-wrapper-4">Grains</div>
-              <img class="icon-2" src="img/icon-3.svg" />
-            </div>
-            <div class="frame-13">
-              <div class="text-wrapper-4">Fruits</div>
-              <img class="icon-2" src="img/icon-3.svg" />
-            </div>
-            <div class="frame-14">
-              <div class="text-wrapper-4">Milk</div>
-              <img class="icon-2" src="img/icon-3.svg" />
-            </div>
-            <div class="frame-15">
-              <div class="text-wrapper-4">Eggs</div>
-              <img class="icon-2" src="img/icon-3.svg" />
-            </div>
-            <div class="frame-16">
-              <div class="text-wrapper-4"></div>
-              <img class="icon-2" src="img/icon-3.svg" />
-            </div>
-            <div class="frame-17">
-              <div class="text-wrapper-4">Payjamas</div>
-              <img class="icon-2" src="img/icon-3.svg" />
-            </div>
-            <div class="frame-18">
-              <div class="text-wrapper-4">Jeans</div>
-              <img class="icon-2" src="img/icon-3.svg" />
-            </div>
+            <a href="index.php">
+              <div class="frame-10">
+                <div class="text-wrapper-4">All</div>
+                <img class="icon-2" src="img/icon-3.svg" />
+              </div>
+            </a>
+            <a href="index.php?category=Vegetables">
+              <div class="frame-10">
+                <div class="text-wrapper-4">Vegetables</div>
+                <img class="icon-2" src="img/icon-3.svg" />
+              </div>
+            </a>
+            <a href="index.php?category=Greens">
+              <div class="frame-10">
+                <div class="text-wrapper-4">Greens</div>
+                <img class="icon-2" src="img/icon-3.svg" />
+              </div>
+            </a>
+            <a href="index.php?category=Grains">
+              <div class="frame-10">
+                <div class="text-wrapper-4">Grains</div>
+                <img class="icon-2" src="img/icon-3.svg" />
+              </div>
+            </a>
+            <a href="index.php?category=Fruits">
+              <div class="frame-10">
+                <div class="text-wrapper-4">Fruits</div>
+                <img class="icon-2" src="img/icon-3.svg" />
+              </div>
+            </a>
+            <a href="index.php?category=Dairy">
+              <div class="frame-10">
+                <div class="text-wrapper-4">Dairy</div>
+                <img class="icon-2" src="img/icon-3.svg" />
+              </div>
+            </a>
           </div>
           </div>
         </div>
         <div class="frame-26">
-          <div class="text-wrapper-19">Vegetables</div>
+          <div class="text-wrapper-19">
+          <?php
+            if ($searchText !== null) {
+              echo 'Search results for "' . $searchText . '"';
+            } else {
+              echo $category ? $category : 'All';
+            }
+          ?></div>
           <div class="text-wrapper-21">
           <div class="text-wrapper-21">
             <div class="toggle-container">
                 <input type="radio" id="vendors" name="toggle" checked>
-                <label for="vendors" class="toggle-label" onclick="toggleSlider(true)">Vendors</label>
+                <label for="vendors" class="toggle-label" onclick="window.location.href='index.php'">Vendors</label>
 
                 <input type="radio" id="products" name="toggle">
-                <label for="products" class="toggle-label" onclick="toggleSlider(false)">Products</label>
+                <label for="products" class="toggle-label" onclick="window.location.href='products.php'">Products</label>
 
                 <div class="toggle-slider"></div>
             </div>
@@ -88,7 +104,7 @@
                 <div class="text-wrapper-23 dairy-button"><a href="dairyProducts.php">Dairy</a></div>
               </div>
               <div class="search-bar">
-                <form id="search-form"  class="search-form" action="search-results.php" method="post">
+                <form id="search-form"  class="search-form" method="post">
                   <input type="text" id="search" class="search" name="search" placeholder="Search for products">
                   <button type="submit" class="search-button"><img src="img/search.svg"></button>
                 </form>
@@ -119,13 +135,11 @@
                 </div>
               </div>
             </div>
-            <div class="rectangle-13"></div>
-            <img class="nav-logo" src="img/urban-food-logo.png" />
+            <div class="rectangle-13">
+              <img class="nav-logo" src="img/urban-food-logo.png" />
+            </div>
           </div>
         </div>
-          <div>
-            <p class="text-wrapper-33">Copyright © 2024 Beliyo Fasion Pvt Ltd. All rights reserved.</p>
-          </div>
         </div>
       </div>
     </div>
@@ -138,10 +152,23 @@
     <?php
       // Oracle Database Connection
       include 'connection.php';
-
+      
       // Prepare the SQL block to call the stored procedure
       $sql = "BEGIN SYSTEM.get_all_sellers(:cursor); END;";
+
+      if ($category !== null) {
+        $sql = "BEGIN SYSTEM.get_sellers_by_products(:category, :cursor); END;";
+      } elseif ($searchText !== null) {
+        $sql = "BEGIN SYSTEM.get_sellers_by_search(:search, :cursor); END;";
+      }
+
       $stid = oci_parse($conn, $sql);
+
+      if ($category !== null) {
+        oci_bind_by_name($stid, ":category", $category);
+      } elseif ($searchText !== null) {
+        oci_bind_by_name($stid, ":search", $searchText);
+      }
 
       $cursor = oci_new_cursor($conn);
       oci_bind_by_name($stid, ":cursor", $cursor, -1, OCI_B_CURSOR);
@@ -164,10 +191,10 @@
                       <div class="frame"><img class="heart" src="img/image.svg" /></div>
                       <div class="frame-2">
                           <div class="frame-3">
-                              <div class="black-sweatshirt">' . htmlspecialchars($row["SELLER_NAME"]) . '</div>
-                              <div class="jhanvi-s-brand">Priya’s&nbsp;&nbsp;Brand</div>
+                              <div class="element-wrapper"><div class="text-wrapper">'. htmlspecialchars($row["SELLER_NAME"]) . '</div></div>
+                              <div class="seller-contact-no"></div>
                           </div>
-                          <div class="element-wrapper"><div class="text-wrapper">'. htmlspecialchars($row["FARM_ADDRESS"]) . '</div></div>
+                          <div class="seller-name-1">' . htmlspecialchars($row["FARM_ADDRESS"]) . '</div>
                       </div>
                   </div>
               </a>

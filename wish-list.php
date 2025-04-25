@@ -211,7 +211,7 @@ $deliveryCharge = 250;
             </div>
             <img class="line-3" src="img/line-6.svg" />
             <img class="line-4" src="img/line-6.svg" />
-            <p class="text-wrapper-36">Copyright © 2024 Beliyo Fasion Pvt Ltd. All rights reserved.</p>
+            <p class="text-wrapper-36"></p>
           </div>
         </div>
       </div>

@@ -223,7 +223,7 @@ $mysqli->close();
             </div>
             <img class="line-13" src="img/line-6.svg" />
             <img class="line-14" src="img/line-6.svg" />
-            <p class="text-wrapper-39">Copyright © 2024 Beliyo Fasion Pvt Ltd. All rights reserved.</p>
+            <p class="text-wrapper-39"></p>
           </div>
         </div>
       </div>

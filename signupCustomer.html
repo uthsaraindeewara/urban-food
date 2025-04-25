@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up </title>
+    <link rel="stylesheet" href="signUpStyle.css">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+</head>
+<body>
+    <header>
+
+    </header>
+    <hr>
+    <div class="main-container">
+        <div class="left-section">
+            <img src="img/pexels-tima-miroshnichenko-7879902.jpg" alt="Sign In Image">
+        </div>
+        <div class="right-section">
+            <div class="container">
+                <h1>Sign In as a Customer</h1>
+                <a href="auth.php">
+                    <button class="google-signin-button">
+                        <img src="img/google-1.svg" alt="Google Logo" />
+                        Continue with Google
+                    </button>
+                </a>
+            </div>
+
+            <div class="line-with-text">or</div>
+            
+            <form action="signupCustomer.php" method="POST" onsubmit="return validateForm()">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required>
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+                <span class="toggle-password" onclick="togglePasswordVisibility()"><u>Hide</u></span>
+
+                <small>Use 8 or more characters with a mix of letters, numbers, and symbols</small><br><br>
+
+                <label for="confirm-password">Re-enter Password</label>
+                <input type="password" id="confirm-password" name="confirm-password" required>
+
+                <div class="checkbox-container">
+                    <input type="checkbox" id="terms" name="terms" required>
+                    <label for="terms">Agree to our <a href="#">Terms of Use</a> and <a href="#">Privacy Policy</a></label>
+                </div>
+
+                <button type="submit" class="signup-button">Sign Up</button>
+            </form>
+        </div>
+    </div>
+    <script src="password.js"></script>
+    <script src="signin.js"></script>
+    <script src="input-validate.js"></script>
+</body>
+</html>

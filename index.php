@@ -121,7 +121,17 @@
                               <div class="avatar"><?php echo $firstLetter; ?></div> <!-- First letter of the user's name -->
                               <span class="username"><?php echo htmlspecialchars($username); ?></span> <!-- User's username -->
                           </div>
-                          <button class="edit-account">Edit Account</button>
+                          <button class="edit-account" onclick="window.location.href='edit-account-main.php';">Edit Account</button>
+                          <form id="deleteForm" action="delete-account.php" method="POST" onsubmit="return confirmDelete();">
+                               <button type="submit">Delete Account</button>
+                          </form>
+
+                          <script>
+                                function confirmDelete() {
+                                      return confirm("Are you sure you want to delete your account? This action cannot be undone.");
+                              }
+                          </script>
+
                           <hr />
                           <a href="logout.php" class="logout">Logout</a> <!-- Link to logout script -->
                       <?php else: ?>

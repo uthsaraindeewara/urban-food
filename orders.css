@@ -1,75 +1,81 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f9f9f9;
-    color: #333;
-  }
-  
-  .orders-container {
-    max-width: 800px;
-    margin: 20px auto;
-    background-color: #ffffff;
-    border: 2px solid #ffd700; 
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  }
-  
-  h1, h2 {
-    text-align: center;
-    color: #228b22; 
-  }
-  
-  .orders-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-  }
-  
-  .orders-table th {
-    background-color: #ffd700; 
-    color: #ffffff;
-    padding: 10px;
-    border: 1px solid #ddd;
-    text-align: left;
-  }
-  
-  .orders-table td {
-    padding: 10px;
-    border: 1px solid #ddd;
-  }
-  
-  .orders-table tr:nth-child(even) {
-    background-color: #f2f2f2;
-  }
-  
-  .btn-remove {
-    background-color: #ff0000f1; 
-    color: #ffffff;
-    padding: 5px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .btn-remove:hover {
-    background-color: #e60000b9; 
-  }
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+  color: #333;
+}
 
-  .btn-link {
-    display: inline-block;
-    padding: 5px 15px;
-    background-color:#1100ffe4;
-    color: white;
-    text-decoration: none;
-    border: none;
-    border-radius: 5px;
-    font-size: 14px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+.orders-container {
+  max-width: 800px;
+  margin: 20px auto;
+  background-color: #ffffff;
+  border: 2px solid #ffd700;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+h1, h2 {
+  text-align: center;
+  color: #228b22;
+}
+
+.orders-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.orders-table th, .orders-table td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+.orders-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+
+
+button {
+  font-size: 14px;
+  padding: 7px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+
+
+.btn-complete:hover {
+  background-color: #1a6f17;
+}
+
+
+.btn-remove {
+  background-color: #ff4d4f; 
+  color: #ffffff;
+}
+
+.btn-remove:hover {
+  background-color: #e60000;
+}
+
+
+.btn-link {
+  background-color: #0056b3; 
+  color: #ffffff;
+  text-decoration: none;
+  padding: 7px 15px;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 .btn-link:hover {
-    background-color: #2a00e6c6;
+  background-color: #003d80; 
 }

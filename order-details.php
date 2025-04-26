@@ -7,7 +7,7 @@ if (!$conn) {
     die("Database connection failed: " . oci_error()['message']);
 }
 
-// Validate order 
+ 
 if (!isset($_GET['order_id'])) {
     die("Invalid request: No order ID provided.");
 }
@@ -43,6 +43,7 @@ oci_execute($resultCursor);
             <th>Unit Price</th>
             <th>Quantity</th>
             <th>Total</th>
+            <th>Status</th> 
           </tr>
         </thead>
         <tbody>
@@ -53,6 +54,7 @@ oci_execute($resultCursor);
             <td>Rs. <?php echo number_format($row['PRICE'], 2); ?></td>
             <td><?php echo htmlspecialchars($row['QUANTITY']); ?></td>
             <td>Rs. <?php echo number_format($row['TOTAL'], 2); ?></td>
+            <td><?php echo htmlspecialchars($row['STATUS']); ?></td> 
           </tr>
           <?php endwhile; ?>
         </tbody>

@@ -7,7 +7,7 @@ if (!isset($_SESSION['user']['userID'])) {
     echo "User session not set.";
     exit();
 }
-// Oracle DB connection
+
 $conn = oci_connect('system', 'oracle_password', '//localhost:1521/XEPDB1');
 if (!$conn) {
     $e = oci_error();
@@ -18,17 +18,15 @@ if (!$conn) {
 $cusID = $_SESSION['user']['userID'];
 $userType = $_SESSION['user']['userType'];
 
-// Prepare PL/SQL call
+// call procedure 
 $sql = "BEGIN 
             edit_account_seller(:user_id, :username, :email, :contact, :farmAddress); 
         END;";
 
 $stmt = oci_parse($conn, $sql);
 
-// Bind input
 oci_bind_by_name($stmt, ":user_id", $cusID);
 
-// Bind output
 oci_bind_by_name($stmt, ":username", $username, 100);
 oci_bind_by_name($stmt, ":email", $email, 100);
 oci_bind_by_name($stmt, ":contact", $contactNo, 20);
@@ -81,21 +79,19 @@ oci_close($conn);
             </div>
             
             
-          
+          <!-- Email -->
             <div class="form-group">
                 <label for="email">Email</label>
                 <input type="email" id="email" name="email" value="<?php echo htmlspecialchars($email); ?>" required>
             </div>
             
 
-            <!-- Save Changes Button -->
             <div class="form-group">
                 <button type="submit">Save Changes</button>
             </div>
         </form>
     </div>
 
-    <script src="edit-account.js"></script>
 
 </body>
 </html>

@@ -1,14 +1,11 @@
 <?php
 session_start();
-
-// Oracle connection
-$conn = oci_connect('system', 'oracle_password', '//localhost:1521/XEPDB1');
+// Database connection
+$conn = oci_connect("system", "sys112233", "//localhost/XEPDB1");
 if (!$conn) {
-    $e = oci_error();
-    die("Connection failed: " . $e['message']);
+    die("Database connection failed: " . oci_error()['message']);
 }
 
-// Get POST data
 $email = trim($_POST['email'] ?? '');
 $newPassword = $_POST['newPassword'] ?? '';
 $confirmPassword = $_POST['confirmPassword'] ?? '';
@@ -29,15 +26,15 @@ if ($newPassword !== $confirmPassword) {
     exit();
 }
 
-// Call stored procedure
+// Call procedure
 $sql = "BEGIN reset_user_password(:email, :newPassword); END;";
 $stmt = oci_parse($conn, $sql);
 
-// Bind parameters
+
 oci_bind_by_name($stmt, ":email", $email);
 oci_bind_by_name($stmt, ":newPassword", $newPassword);
 
-// Execute
+// Execute procedure
 if (oci_execute($stmt)) {
     echo "<script>alert('Password reset successfully.'); window.location.href='login.html';</script>";
 } else {
@@ -49,7 +46,6 @@ if (oci_execute($stmt)) {
     }
 }
 
-// Cleanup
 oci_free_statement($stmt);
 oci_close($conn);
 ?>

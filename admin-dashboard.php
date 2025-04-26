@@ -1,20 +1,29 @@
 <?php
 
+session_start();
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+if (!isset($_SESSION['user']['userID'])) {
+    echo "User session not set.";
+    exit();
+}
+
+$cusID = $_SESSION['user']['userID'];
+
+
 // Database connection
 $conn = oci_connect("system", "sys112233", "//localhost/XEPDB1");
 if (!$conn) {
     die("Database connection failed: " . oci_error()['message']);
 }
 
-if (!$conn) {
-    $e = oci_error();
-    die("Connection failed: " . $e['message']);
-}
 
 if (isset($_GET['delete_id'])) {
     $deleteUserID = $_GET['delete_id'];
-    $stmt = oci_parse($conn, "BEGIN admin_delete_user(:id); END;");
+    $stmt = oci_parse($conn, "BEGIN admin_delete_user(:admin_id, :id); END;");
     oci_bind_by_name($stmt, ':id', $deleteUserID);
+    oci_bind_by_name($stmt, ':admin_id', $cusID);
     if (oci_execute($stmt)) {
         echo "<script>alert('User deleted successfully.'); window.location.href = 'admin-dashboard.php';</script>";
     } else {

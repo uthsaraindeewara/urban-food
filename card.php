@@ -1,25 +1,37 @@
 <?php
 session_start();
+include "connection.php";
 
-$conn = oci_connect("system", "123", "//localhost/XEPDB1");
-if (!$conn) {
-    die("Connection failed: " . oci_error()['message']);
+if (!isset($_POST['orderID'])) {
+    header("Location: checkout-details.php");
+    exit();
 }
 
-$customerID = 1;
+$orderID = (int) $_POST['orderID'];
+
+// Get total amount based on orderID
 $totalAmount = 0;
-$selectedItems = $_SESSION['selected_items'];
+try {
+    $stmt = oci_parse($conn, "BEGIN GetOrderDetails(:orderID, :result); END;");
+    $resultCursor = oci_new_cursor($conn);
+    oci_bind_by_name($stmt, ":orderID", $orderID);
+    oci_bind_by_name($stmt, ":result", $resultCursor, -1, OCI_B_CURSOR);
 
-foreach ($selectedItems as $productID => $qty) {
-    $priceStmt = oci_parse($conn, "BEGIN GetProductPrice(:productID, :price); END;");
-    oci_bind_by_name($priceStmt, ":productID", $productID);
-    oci_bind_by_name($priceStmt, ":price", $price, 20);
-    oci_execute($priceStmt);
+    oci_execute($stmt);
+    oci_execute($resultCursor);
 
-    $totalAmount += $price * $qty;
+    while ($row = oci_fetch_assoc($resultCursor)) {
+        $totalAmount += $row['TOTAL']; // Assuming TOTAL = price * quantity
+    }
+
+    $_SESSION['total_amount'] = $totalAmount;
+    $_SESSION['orderID'] = $orderID;
+
+} catch (Exception $e) {
+    $_SESSION['error'] = "Failed to retrieve order details.";
+    header("Location: checkout-details.php?orderID=$orderID");
+    exit();
 }
-
-$_SESSION['total_amount'] = $totalAmount;
 ?>
 
 
@@ -141,7 +153,7 @@ $_SESSION['total_amount'] = $totalAmount;
 
         <form id="paymentForm">
             <input type="hidden" name="payment_method" value="credit_card">
-            <input type="hidden" name="amount" value="<?= $_SESSION['total_amount'] ?>">
+            <input type="hidden" name="amount" value="<?= $totalAmount ?>">
 
 
             <div class="card-icons">
@@ -181,44 +193,7 @@ $_SESSION['total_amount'] = $totalAmount;
     <script>
         document.getElementById('paymentForm').addEventListener('submit', function (e) {
             e.preventDefault();
-            alert("Payment processing simulated for Rs. 2500.00");
-            // Here, you would integrate payment gateway or redirect
         });
     </script>
 </body>
 </html>
-
-<?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $totalAmount = $_SESSION['total_amount'];
-    $items = $_SESSION['selected_items'];
-
-    // Step 1: Call PL/SQL to create order and get new order ID
-    $orderID = null;
-    $orderProc = oci_parse($conn, "BEGIN CreateOrder(:customerID, :orderID); END;");
-    oci_bind_by_name($orderProc, ":customerID", $customerID);
-    oci_bind_by_name($orderProc, ":orderID", $orderID, 20);
-    oci_execute($orderProc);
-
-    // Step 2: Call PL/SQL to insert order items
-    foreach ($items as $productID => $qty) {
-        $orderItemProc = oci_parse($conn, "BEGIN (:orderID, :productID, :quantity); END;");
-        oci_bind_by_name($orderItemProc, ":orderID", $orderID);
-        oci_bind_by_name($orderItemProc, ":productID", $productID);
-        oci_bind_by_name($orderItemProc, ":quantity", $qty);
-        oci_execute($orderItemProc);
-    }
-
-    // Step 3: Call PL/SQL to insert payment
-    $paymentProc = oci_parse($conn, "BEGIN AddPayment(:orderID, :amount); END;");
-    oci_bind_by_name($paymentProc, ":orderID", $orderID);
-    oci_bind_by_name($paymentProc, ":amount", $totalAmount);
-    oci_execute($paymentProc);
-
-    // Cleanup and redirect
-    unset($_SESSION['selected_items']);
-    unset($_SESSION['total_amount']);
-    header("Location: order.php");
-    exit;
-}
-?>

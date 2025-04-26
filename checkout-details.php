@@ -1,7 +1,57 @@
+<?php
+session_start();
+
+if (!isset($_SESSION['user'])) {
+    header("Location: login.php");
+    exit();
+}
+
+include "connection.php";
+
+$customerID = $_SESSION['user']['userID'];
+
+if (!isset($_GET['orderID'])) {
+    echo "Order ID not provided.";
+    exit();
+}
+
+$orderID = (int) $_GET['orderID'];
+
+$total_discount = 0;
+$net_total = 0;
+$cartItems = [];
+
+if ($conn) {
+    $stmt = oci_parse($conn, "BEGIN GetOrderDetails(:orderID, :result); END;");
+    $resultCursor = oci_new_cursor($conn);
+    oci_bind_by_name($stmt, ":orderID", $orderID);
+    oci_bind_by_name($stmt, ":result", $resultCursor, -1, OCI_B_CURSOR);
+
+    oci_execute($stmt);
+    oci_execute($resultCursor);
+
+    while ($row = oci_fetch_assoc($resultCursor)) {
+        $productName = $row['PRODUCT_NAME'];
+        $price = $row['PRICE'];
+        $quantity = $row['QUANTITY'];
+        $total = $row['TOTAL']; // price * quantity
+
+        $net_total += $total;
+
+        $cartItems[] = [
+            'productName' => $productName,
+            'price' => $price,
+            'quantity' => $quantity,
+            'total' => $total
+        ];
+    }
+}
+?>
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
   <title>Checkout</title>
   <style>
     body {
@@ -23,8 +73,8 @@
       box-shadow: 0 0 15px rgba(0,0,0,0.1);
     }
     h2 {
-      color: #2e7d32; /* Dark green */
-      border-bottom: 2px solid #fbc02d; /* Yellow */
+      color: #2e7d32;
+      border-bottom: 2px solid #fbc02d;
       padding-bottom: 10px;
       text-align: center;
     }
@@ -32,27 +82,27 @@
       font-size: 18px;
       margin-top: 10px;
       padding: 15px;
-      background-color: #e8f5e9; /* Light green */
-      border-left: 4px solid #fbc02d; /* Yellow */
+      background-color: #e8f5e9;
+      border-left: 4px solid #fbc02d;
       text-align: center;
     }
     .summary strong {
-      color: #2e7d32; /* Dark green */
+      color: #2e7d32;
     }
     .payment-method {
       margin-top: 30px;
       padding: 15px;
-      background-color: #e8f5e9; /* Light green */
+      background-color: #e8f5e9;
       border-radius: 5px;
     }
     .payment-method label {
       display: block;
       margin-bottom: 10px;
       font-weight: bold;
-      color: #2e7d32; /* Dark green */
+      color: #2e7d32;
     }
     input[type="radio"] {
-      accent-color: #fbc02d; /* Yellow */
+      accent-color: #fbc02d;
       margin-right: 10px;
     }
     button {
@@ -60,8 +110,8 @@
       padding: 12px 25px;
       font-size: 16px;
       cursor: pointer;
-      background-color: #fbc02d; /* Yellow */
-      color: #2e7d32; /* Dark green */
+      background-color: #fbc02d;
+      color: #2e7d32;
       border: none;
       border-radius: 5px;
       font-weight: bold;
@@ -70,7 +120,7 @@
       width: 100%;
     }
     button:hover {
-      background-color: #f9a825; /* Darker yellow */
+      background-color: #f9a825;
     }
     .form-group {
       margin-bottom: 20px;
@@ -82,74 +132,61 @@
 <div class="checkout-container">
   <h2>Checkout</h2>
 
-  <form method="post" action="process_payment.php">
+  <form id="checkoutForm" method="post">
+    <input type="hidden" name="orderID" value="<?= htmlspecialchars($orderID) ?>">
+    
     <div class="form-group">
-      <?php
-      session_start();
-      $customerID = $_SESSION['user']['cusID'];
-      $mysqli = new mysqli("localhost:3306", "root", "", "storedb");
-      if ($mysqli->connect_error) {
-          die("Connection failed: " . $mysqli->connect_error);
-      }
+      <?php foreach ($cartItems as $item): ?>
+        <p class="summary">
+          <?= htmlspecialchars($item['productName']) ?> (x<?= $item['quantity'] ?>) - 
+          Rs. <?= number_format($item['total'], 2) ?>
+        </p>
+      <?php endforeach; ?>
 
-      $sql = "SELECT product_cart.quantity, product.price, discount.amount AS discount
-              FROM cart
-              INNER JOIN product_cart ON cart.cartID = product_cart.cartID
-              INNER JOIN product ON product_cart.productID = product.ProductID
-              LEFT JOIN discount ON product.productID = discount.productID
-              WHERE cart.cusID = ?";
-      $stmt = $mysqli->prepare($sql);
-      $stmt->bind_param("i", $customerID);
-      $stmt->execute();
-      $result = $stmt->get_result();
-
-      $total_discount = 0;
-      $net_total = 0;
-
-      while ($row = $result->fetch_assoc()) {
-          $discount = $row['discount'] ?? 0;
-          $price_after_discount = $row['price'] - $discount;
-          $total_item = $price_after_discount * $row['quantity'];
-          $total_discount += $discount * $row['quantity'];
-          $net_total += $total_item;
-      }
-
-      $stmt->close();
-      $mysqli->close();
-      ?>
-
-      <!-- Summary only -->
-      <p class="summary">Total Discount: <strong>Rs. <?= number_format($total_discount, 2) ?></strong></p>
       <p class="summary">Net Total: <strong>Rs. <?= number_format($net_total, 2) ?></strong></p>
     </div>
 
-    <!-- Payment Method Selection -->
+    <!-- Payment Method -->
     <div class="payment-method">
-    <div class="payment-title">Payment Method</div>
-    <label>
-      <input type="radio" name="payment_method" value="credit_card" required onclick="goToCardPage()"> Credit Card
-    </label>
-    <label>
-      <input type="radio" name="payment_method" value="paypal" required onclick="goToPayPalPage()"> PayPal
-    </label><br><br>
-  </div>
+      <div class="payment-title">Payment Method</div>
+      <label>
+        <input type="radio" name="payment_method" value="credit_card" required> Credit Card
+      </label>
+      <label>
+        <input type="radio" name="payment_method" value="paypal" required> PayPal
+      </label>
+    </div>
 
-  <!-- Single Pay button here -->
- 
-</form>
-
-<!-- JS Redirect -->
-<script>
-  function goToCardPage() {
-    window.location.href = "card.php";
-  }
-  function goToPayPalPage() {
-    window.location.href = "paypal.php";
-  }
-</script>
-    
+    <button type="submit">Pay Now</button>
   </form>
 </div>
+
+<script>
+document.getElementById('checkoutForm').addEventListener('submit', function(event) {
+  event.preventDefault(); // Prevent default form submission first
+  
+  const paymentMethod = document.querySelector('input[name="payment_method"]:checked');
+  
+  if (!paymentMethod) {
+    alert("Please select a payment method.");
+    return;
+  }
+
+  let actionUrl = '';
+
+  if (paymentMethod.value === 'credit_card') {
+    actionUrl = 'card.php';
+  } else if (paymentMethod.value === 'paypal') {
+    actionUrl = 'paypal.php';
+  }
+
+  // Dynamically set the form action
+  this.action = actionUrl;
+
+  // Now submit the form manually
+  this.submit();
+});
+</script>
 
 </body>
 </html>

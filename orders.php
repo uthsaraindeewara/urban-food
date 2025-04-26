@@ -9,30 +9,40 @@ if (!$conn) {
 
 $customerID = 1; 
 
-// remove order
-if (isset($_POST['removeOrder'])) {
-    $orderID = $_POST['removeOrder'];
-    $removeStmt = oci_parse($conn, "BEGIN RemoveOrder(:orderID); END;");
-    oci_bind_by_name($removeStmt, ":orderID", $orderID);
-    oci_execute($removeStmt);
+ 
+if (isset($_POST['markAsDelivered'])) {
+    $orderID = $_POST['markAsDelivered'];
+
+    $updateOrderStatusStmt = oci_parse($conn, "BEGIN UpdateOrderStatus(:orderID, 'COMPLETED'); END;");
+    oci_bind_by_name($updateOrderStatusStmt, ":orderID", $orderID);
+    oci_execute($updateOrderStatusStmt);
 }
 
-// get ongoing orders
-$ongoingOrdersStmt = oci_parse($conn, "BEGIN GetOrders(:customerID, 'ONGOING', :result); END;");
+//to get ongoin orders
+$ongoingOrdersStmt = oci_parse($conn, "BEGIN GetOngoingOrders(:customerID, :result); END;");
 oci_bind_by_name($ongoingOrdersStmt, ":customerID", $customerID);
 $ongoingCursor = oci_new_cursor($conn);
 oci_bind_by_name($ongoingOrdersStmt, ":result", $ongoingCursor, -1, OCI_B_CURSOR);
 oci_execute($ongoingOrdersStmt);
 oci_execute($ongoingCursor);
 
-// get completed orders
-$completedOrdersStmt = oci_parse($conn, "BEGIN GetOrders(:customerID, 'COMPLETED', :result); END;");
+//to get completed orders
+$completedOrdersStmt = oci_parse($conn, "BEGIN GetCompletedOrders(:customerID, :result); END;");
 oci_bind_by_name($completedOrdersStmt, ":customerID", $customerID);
 $completedCursor = oci_new_cursor($conn);
 oci_bind_by_name($completedOrdersStmt, ":result", $completedCursor, -1, OCI_B_CURSOR);
 oci_execute($completedOrdersStmt);
 oci_execute($completedCursor);
+
+
+if (isset($_POST['removeOrder'])) {
+  $orderID = $_POST['removeOrder'];
+  $removeStmt = oci_parse($conn, "BEGIN RemoveOrder(:orderID); END;");
+  oci_bind_by_name($removeStmt, ":orderID", $orderID);
+  oci_execute($removeStmt);
+}
 ?>
+
 
 <!DOCTYPE html>
 <html>
@@ -45,6 +55,8 @@ oci_execute($completedCursor);
   <body>
     <div class="orders-container">
       <h1>My Orders</h1>
+
+      
       <h2>Ongoing Orders</h2>
       <form method="POST" action="">
         <table class="orders-table">
@@ -53,7 +65,8 @@ oci_execute($completedCursor);
               <th>Order ID</th>
               <th>Ordered Date</th>
               <th>Total Amount</th>
-              <th>Actions</th>
+              <th>Status</th>
+              <th><center>Actions</center></th>
             </tr>
           </thead>
           <tbody>
@@ -61,17 +74,26 @@ oci_execute($completedCursor);
             <tr>
               <td><?php echo htmlspecialchars($row['ORDER_ID']); ?></td>
               <td><?php echo htmlspecialchars($row['ORDER_DATE']); ?></td>
-              <td>Rs. <?php echo number_format($row['AMOUNT'], 2); ?></td>
+              <td>Rs. <?php echo number_format($row['TOTAL_AMOUNT'], 2); ?></td>
+              <td><?php echo htmlspecialchars($row['STATUS']); ?></td>
               <td>
-                <a href="order-details.php?order_id=<?php echo urlencode($row['ORDER_ID']); ?>" class="btn-link">View Details</a>
-                <button type="submit" name="removeOrder" value="<?php echo htmlspecialchars($row['ORDER_ID']); ?>" class="btn-remove">Remove</button>
-              </td>
+                <center>
+              <?php if ($row['STATUS'] == 'SHIPPED'): ?>
+                <button type="submit" name="markAsDelivered" value="<?php echo htmlspecialchars($row['ORDER_ID']); ?>" style="background-color: #228b22; color: white; padding: 7px 15px; border: none; border-radius: 5px; cursor: pointer; font-size: 14px;">
+                Mark as Delivered</button>
+
+             <?php endif; ?>
+             <a href="order-details.php?order_id=<?php echo urlencode($row['ORDER_ID']); ?>" class="btn-link">View Details</a>
+             <button type="submit" name="removeOrder" value="<?php echo htmlspecialchars($row['ORDER_ID']); ?>" class="btn-remove">Remove</button>
+              </center>
+            </td>
             </tr>
             <?php endwhile; ?>
           </tbody>
         </table>
       </form>
 
+      
       <h2>Completed Orders</h2>
       <form method="POST" action="">
         <table class="orders-table">
@@ -80,7 +102,7 @@ oci_execute($completedCursor);
               <th>Order ID</th>
               <th>Ordered Date</th>
               <th>Total Amount</th>
-              <th>Actions</th>
+              <th><center>Actions</center></th>
             </tr>
           </thead>
           <tbody>
@@ -88,10 +110,12 @@ oci_execute($completedCursor);
             <tr>
               <td><?php echo htmlspecialchars($row['ORDER_ID']); ?></td>
               <td><?php echo htmlspecialchars($row['ORDER_DATE']); ?></td>
-              <td>Rs. <?php echo number_format($row['AMOUNT'], 2); ?></td>
+              <td>Rs. <?php echo number_format($row['TOTAL_AMOUNT'], 2); ?></td>
               <td>
-              <a href="order-details.php?order_id=<?php echo urlencode($row['ORDER_ID']); ?>" class="btn-link">View Details</a>
-              <button type="submit" name="removeOrder" value="<?php echo htmlspecialchars($row['ORDER_ID']); ?>" class="btn-remove">Remove</button>
+                <center>
+                <a href="order-details.php?order_id=<?php echo urlencode($row['ORDER_ID']); ?>" class="btn-link">View Details</a>
+                <button type="submit" name="removeOrder" value="<?php echo htmlspecialchars($row['ORDER_ID']); ?>" class="btn-remove">Remove</button>
+            </center>
               </td>
             </tr>
             <?php endwhile; ?>

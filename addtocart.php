@@ -1,37 +1,28 @@
 <?php
 session_start();
 
-// Connect to the database
-$servername = "localhost:3307";
-$username = "root";
-$password = "";
-$dbname = "storedb";
-
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+include "connection.php";
 
 // Get data from POST request
-$productID = isset($_POST['productId']) ? intval($_POST['productId']) : 0;
-$cusID = $_SESSION['user']['cusID'];
-$size = isset($_POST['size']) ? $_POST['size'] : '';
+$productId = isset($_POST['productId']) ? intval($_POST['productId']) : 0;
+// $cusId = $_SESSION['user']['cusID'];
+$cusId = 1;
 $quantity = isset($_POST['quantity']) ? intval($_POST['quantity']) : 1;
 
-// Insert into product_cart
-$stmt = $conn->prepare("INSERT INTO product_cart (productID, cartID, size, quantity)
-                        VALUES (?, (SELECT cartID FROM cart WHERE cusID = ?), ?, ?)");
-$stmt->bind_param("iisi", $productID, $cusID, $size, $quantity);
-$stmt->execute();
+$sql = "BEGIN SYSTEM.add_product_to_cart(:productId, :cusId, :quantity); END;";
 
-if ($stmt->affected_rows > 0) {
-    header("Location: cart.php");
-    exit();
-} else {
-    echo "Failed to add product to cart.";
+$stid = oci_parse($conn, $sql);
+
+oci_bind_by_name($stid, ":productId", $productId);
+oci_bind_by_name($stid, ":cusId", $cusId);
+oci_bind_by_name($stid, ":quantity", $quantity);
+
+// Execute the procedure
+if (!oci_execute($stid)) {
+    $e = oci_error($stid);
+    die("Error executing procedure: " . $e['message']);
 }
 
-$stmt->close();
-$conn->close();
+oci_free_statement($stid);
+oci_close($conn);
 ?>

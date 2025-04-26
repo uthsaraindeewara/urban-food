@@ -18,6 +18,7 @@ if (!$conn) {
 
 
 $username = trim($_POST['username']);
+$name= trim($_POST['name']);    
 $contactNo = trim($_POST['contactNo']);
 $email = trim($_POST['email']);
 $Address = trim($_POST['Address']);
@@ -30,7 +31,7 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
 
 // procedure call
 $sql = "BEGIN 
-            update_account_seller(:user_id, :username, :email, :contact, :farm_address); 
+            update_account_seller(:user_id, :username,:name, :email, :contact, :farm_address); 
         END;";
 
 $stmt = oci_parse($conn, $sql);
@@ -38,6 +39,7 @@ $stmt = oci_parse($conn, $sql);
 // Bind parameters
 oci_bind_by_name($stmt, ":user_id", $cusID);
 oci_bind_by_name($stmt, ":username", $username);
+oci_bind_by_name($stmt, ":name", $name);
 oci_bind_by_name($stmt, ":email", $email);
 oci_bind_by_name($stmt, ":contact", $contactNo);
 oci_bind_by_name($stmt, ":farm_address", $Address);

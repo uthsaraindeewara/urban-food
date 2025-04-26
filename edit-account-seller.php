@@ -20,7 +20,7 @@ $userType = $_SESSION['user']['userType'];
 
 // call procedure 
 $sql = "BEGIN 
-            edit_account_seller(:user_id, :username, :email, :contact, :farmAddress); 
+            edit_account_seller(:user_id, :username, :name, :email, :contact, :farmAddress); 
         END;";
 
 $stmt = oci_parse($conn, $sql);
@@ -28,6 +28,7 @@ $stmt = oci_parse($conn, $sql);
 oci_bind_by_name($stmt, ":user_id", $cusID);
 
 oci_bind_by_name($stmt, ":username", $username, 100);
+oci_bind_by_name($stmt, ":name", $name, 100);
 oci_bind_by_name($stmt, ":email", $email, 100);
 oci_bind_by_name($stmt, ":contact", $contactNo, 20);
 oci_bind_by_name($stmt, ":farmAddress", $farmAddress, 200);
@@ -61,6 +62,12 @@ oci_close($conn);
             <div class="form-group">
                 <label for="username">Username</label>
                 <input type="text" id="username" name="username" value="<?php echo htmlspecialchars($username); ?>" required>
+            </div>
+
+            <!-- Name -->
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" value="<?php echo htmlspecialchars($name ?? ''); ?>" required>
             </div>
 
             <!-- Address -->

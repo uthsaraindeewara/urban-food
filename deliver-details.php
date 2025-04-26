@@ -17,7 +17,7 @@ if (!$conn) {
 
 // Call procedure
 $sql = "BEGIN 
-            edit_account_customer(:user_id, :username,:name, :email, :contact, :shipping, :billing); 
+            edit_delivery_details(:user_id, :name, :email, :contact, :shipping, :billing); 
         END;";
 
 $stmt = oci_parse($conn, $sql);
@@ -25,7 +25,6 @@ $stmt = oci_parse($conn, $sql);
 oci_bind_by_name($stmt, ":user_id", $cusID);
 
 
-oci_bind_by_name($stmt, ":username", $username, 100);
 oci_bind_by_name($stmt, ":name", $name, 100);
 oci_bind_by_name($stmt, ":email", $email, 100);
 oci_bind_by_name($stmt, ":contact", $contactNo, 20);
@@ -54,15 +53,10 @@ oci_close($conn);
 <body>
 
     <div class="container">
-        <h2>Edit Account Details</h2>
+        <h2>Deliver Details</h2>
         <form action="update-account-customer.php" method="POST">
 
-            <!-- Username -->
-            <div class="form-group">
-                <label for="username">Username</label>
-                <input type="text" id="username" name="username" value="<?php echo htmlspecialchars($username ?? ''); ?>" required>
-            </div>
-
+         
             <!-- Name -->
             <div class="form-group">
                 <label for="name">Name</label>

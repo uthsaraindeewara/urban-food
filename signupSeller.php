@@ -4,11 +4,7 @@ error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
 
-// Database connection
-$conn = oci_connect("system", "sys112233", "//localhost/XEPDB1");
-if (!$conn) {
-    die("Database connection failed: " . oci_error()['message']);
-}
+include "connection.php";
 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {

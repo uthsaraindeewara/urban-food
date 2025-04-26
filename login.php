@@ -4,12 +4,7 @@ session_start();
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-// Oracle connection (adjust with your local config)
-$conn = oci_connect('SYSTEM', 'ui123', 'DESKTOP-5EIEBIJ/XE');
-if (!$conn) {
-    $e = oci_error();
-    die("Oracle connection failed: " . $e['message']);
-}
+include "connection.php";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];

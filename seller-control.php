@@ -3,14 +3,16 @@ session_start();
 include 'connection.php';
 
 // Check if user is logged in as seller
-// if (!isset($_SESSION['seller_id'])) {
-//     header("Location: login.php");
-//     exit();
-// }
+if (!isset($_SESSION['user'])) {
+    header("Location: login.php");
+    exit();
+}
 
-// $seller_id = $_SESSION['seller_id'];
-
-$seller_id = 1;
+if ($_SESSION['user']['userType'] === "seller") {
+    $seller_id = $_SESSION['user']['userID'];
+} else {
+    exit();
+}
 
 // Handle form submissions
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {

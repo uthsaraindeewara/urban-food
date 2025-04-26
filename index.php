@@ -13,6 +13,7 @@
 
   $isLoggedIn = isset($_SESSION['user']);
   $username = $isLoggedIn ? $_SESSION['user']['name'] : '';
+  $userType = $isLoggedIn ? $_SESSION['user']['userType'] : '';
   $firstLetter = $isLoggedIn ? strtoupper(substr($username, 0, 1)) : '';
   $category = null;
   $searchText = null;
@@ -98,10 +99,18 @@
           <div class="overlap-15">
             <div class="frame-27">
               <div class="navbar">
-                <div class="text-wrapper-22 shop-button"><a href="index.php">Shop</a></div>
-                <div class="text-wrapper-22 vegetables-button"><a href="vegetablesProducts.php">Vegetables</a></div>
-                <div class="text-wrapper-22 fruits-button"><a href="fruitsProducts.php">Fruits</a></div>
-                <div class="text-wrapper-23 dairy-button"><a href="dairyProducts.php">Dairy</a></div>
+                <?php
+                  if ($isLoggedIn && $userType === "seller") {
+                    echo '<div class="text-wrapper-22 shop-button"><a href="seller-control.php">Seller Control Panel</a></div>';
+                  } else {
+                    echo '
+                      <div class="text-wrapper-22 shop-button"><a href="index.php">Shop</a></div>
+                      <div class="text-wrapper-22 vegetables-button"><a href="vegetablesProducts.php">Vegetables</a></div>
+                      <div class="text-wrapper-22 fruits-button"><a href="fruitsProducts.php">Fruits</a></div>
+                      <div class="text-wrapper-23 dairy-button"><a href="dairyProducts.php">Dairy</a></div>
+                    ';
+                  }
+                ?>
               </div>
               <div class="search-bar">
                 <form id="search-form"  class="search-form" method="post">

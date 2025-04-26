@@ -41,7 +41,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             'userType' => 'seller'
         ];
 
-        header("Location: login.html");
+        header("Location: edit-account-seller.php");
         exit();
     } else {
         echo "<script>alert('Error registering seller. Please try again.');</script>";

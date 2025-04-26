@@ -10,14 +10,12 @@ if (!isset($_SESSION['user']['userID'])) {
 }
 
 $cusID = $_SESSION['user']['userID'];
-// Database connection
-$conn = oci_connect("system", "sys112233", "//localhost/XEPDB1");
-if (!$conn) {
-    die("Database connection failed: " . oci_error()['message']);
-}
+
+include "connection.php";
 
 
 $username = trim($_POST['username']);
+$sellerName = trim($_POST['sellerName']);
 $contactNo = trim($_POST['contactNo']);
 $email = trim($_POST['email']);
 $Address = trim($_POST['Address']);
@@ -28,9 +26,33 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
     exit();
 }
 
+if (isset($_FILES['sellerImage']) && $_FILES['sellerImage']['error'] === UPLOAD_ERR_OK) {
+    $fileTmpPath = $_FILES['sellerImage']['tmp_name'];
+    $fileName = $_FILES['sellerImage']['name'];
+    $fileExtension = strtolower(pathinfo($fileName, PATHINFO_EXTENSION));
+
+    if ($fileExtension !== 'jpg') {
+        echo "<script>alert('Only JPG images are allowed.'); window.history.back();</script>";
+        exit();
+    }
+
+    $destinationDirectory = 'sellerImages/';
+    if (!is_dir($destinationDirectory)) {
+        mkdir($destinationDirectory, 0755, true); // Create folder if it doesn't exist
+    }
+
+    $newFileName = "seller-" . $cusID . ".jpg";
+    $destinationPath = $destinationDirectory . $newFileName;
+
+    if (!move_uploaded_file($fileTmpPath, $destinationPath)) {
+        echo "<script>alert('Failed to upload image.'); window.history.back();</script>";
+        exit();
+    }
+}
+
 // procedure call
 $sql = "BEGIN 
-            update_account_seller(:user_id, :username, :email, :contact, :farm_address); 
+            update_account_seller(:user_id, :username, :email, :seller_name, :contact, :farm_address); 
         END;";
 
 $stmt = oci_parse($conn, $sql);
@@ -39,12 +61,13 @@ $stmt = oci_parse($conn, $sql);
 oci_bind_by_name($stmt, ":user_id", $cusID);
 oci_bind_by_name($stmt, ":username", $username);
 oci_bind_by_name($stmt, ":email", $email);
+oci_bind_by_name($stmt, ":seller_name", $sellerName);
 oci_bind_by_name($stmt, ":contact", $contactNo);
 oci_bind_by_name($stmt, ":farm_address", $Address);
 
-// Execute procedure
 if (!oci_execute($stmt)) {
-    echo "Something went wrong. Please try again later";
+    $e = oci_error($stmt);
+    echo "Database error: " . htmlentities($e['message']);
     exit();
 }
 
@@ -52,6 +75,6 @@ oci_free_statement($stmt);
 oci_close($conn);
 
 
-header("Location: edit-account-seller.php");
+header("Location: index.php");
 exit();
 ?>

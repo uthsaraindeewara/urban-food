@@ -8,6 +8,12 @@
   if (!is_numeric($product_id)) {
       die("Invalid ID: Must be a number.");
   }
+  
+  $userId = null;
+
+  if (!isset($_SESSION['user'])) {
+    $userId = $_SESSION['user']['userID'];
+  }
   ?>
 <head>
     <meta charset="utf-8" />
@@ -153,13 +159,17 @@
                 echo '<span class="star">&#9734;</span>';
               }
             }
-
-            $existingRating = $ratingCollection->findone([
-              'product_id' => (int)$product_id,
-              'user_id' => 1
-            ]);
             
-            $existingRating = $existingRating['value'] ?? 0;
+            $existingRating = 0;
+
+            if ($userId !== null) {
+              $existingRating = $ratingCollection->findone([
+                'product_id' => (int)$product_id,
+                'user_id' => $userId
+              ]);
+
+              $existingRating = $existingRating['value'] ?? 0;
+            }
 
             $starsHtml = '';
 
@@ -182,7 +192,7 @@
                               <form id="ratingForm">
                                 <input type="hidden" name="rating" id="ratingValue" value="' . $existingRating . '">
                                 <input type="hidden" name="productId" value="' . $product_id . '">
-                                <input type="hidden" name="userId" value="' . 1 . '">
+                                <input type="hidden" name="userId" value="' . $userId . '">
                                 <button type="button" onclick="submitRating()">Submit Rating</button>
                               </form>
                             </div>
@@ -264,7 +274,7 @@
                       <form id="reviewForm">
                           <textarea id="reviewText" rows="4" placeholder="Write your review here..." required></textarea>
                           <input type="hidden" name="productId" value="' . $product_id . '">
-                          <input type="hidden" name="cusId" value="' . 1 . '">
+                          <input type="hidden" name="cusId" value="' . $userId . '">
                           <button type="button" onclick="submitReview()">Submit Review</button>
                       </form>
                     </div>

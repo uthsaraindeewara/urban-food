@@ -3,7 +3,12 @@ session_start();
 
 include "connection.php";
 
-$customerID = 1; 
+if (!isset($_SESSION['user'])) {
+    header("Location: login.php");
+    exit();
+}
+
+$customerID = $_SESSION['user']['userID'];
 
 if (isset($_POST['placeOrder'])) {
     $_SESSION['cart'] = $_POST['quantity']; 

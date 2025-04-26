@@ -8,19 +8,14 @@ if (!isset($_SESSION['user']['userID'])) {
     exit();
 }
 
-$conn = oci_connect('system', 'oracle_password', '//localhost:1521/XEPDB1');
-if (!$conn) {
-    $e = oci_error();
-    die("Oracle connection failed: " . $e['message']);
-}
-
+include "connection.php";
 
 $cusID = $_SESSION['user']['userID'];
 $userType = $_SESSION['user']['userType'];
 
 // call procedure 
 $sql = "BEGIN 
-            edit_account_seller(:user_id, :username, :email, :contact, :farmAddress); 
+            edit_account_seller(:user_id, :username, :email, :sellerName, :contact, :farmAddress); 
         END;";
 
 $stmt = oci_parse($conn, $sql);
@@ -29,6 +24,7 @@ oci_bind_by_name($stmt, ":user_id", $cusID);
 
 oci_bind_by_name($stmt, ":username", $username, 100);
 oci_bind_by_name($stmt, ":email", $email, 100);
+oci_bind_by_name($stmt, ":sellerName", $sellerName, 200);
 oci_bind_by_name($stmt, ":contact", $contactNo, 20);
 oci_bind_by_name($stmt, ":farmAddress", $farmAddress, 200);
 
@@ -55,7 +51,7 @@ oci_close($conn);
 
     <div class="container">
         <h2>Edit Account Details</h2>
-        <form action="update-account-seller.php" method="POST">
+        <form action="update-account-seller.php" method="POST" enctype="multipart/form-data">
 
             <!-- Username -->
             <div class="form-group">
@@ -63,14 +59,16 @@ oci_close($conn);
                 <input type="text" id="username" name="username" value="<?php echo htmlspecialchars($username); ?>" required>
             </div>
 
+            <div class="form-group">
+                <label for="sellerName">Seller Name</label>
+                <input type="text" id="sellerName" name="sellerName" value="<?php echo htmlspecialchars($sellerName); ?>" required>
+            </div>
+
             <!-- Address -->
             <div class="form-group">
                 <label for="address">Address</label>
                 <input type="text" id="address" name="Address" value="<?php echo htmlspecialchars($farmAddress); ?>" required>
             </div>
-
-          
-
 
             <!-- Contact Number -->
             <div class="form-group">
@@ -83,6 +81,11 @@ oci_close($conn);
             <div class="form-group">
                 <label for="email">Email</label>
                 <input type="email" id="email" name="email" value="<?php echo htmlspecialchars($email); ?>" required>
+            </div>
+
+            <div class="form-group">
+                <label for="sellerImage">Upload Seller Image</label>
+                <input type="file" id="sellerImage" name="sellerImage" accept=".jpg" >
             </div>
             
 

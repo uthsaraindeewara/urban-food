@@ -10,11 +10,7 @@ if (!isset($_SESSION['user']['userID'])) {
 
 $cusID = $_SESSION['user']['userID'];
 
-// Database connection
-$conn = oci_connect("system", "sys112233", "//localhost/XEPDB1");
-if (!$conn) {
-    die("Database connection failed: " . oci_error()['message']);
-}
+include "connection.php";
 
 
 $username = trim($_POST['username']);
@@ -53,6 +49,6 @@ if (!oci_execute($stmt)) {
 oci_free_statement($stmt);
 oci_close($conn);
 
-header("Location: edit-account-customer.php");
+header("Location: index.php");
 exit();
 ?>

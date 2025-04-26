@@ -1,13 +1,12 @@
 <?php
 session_start();
 
-// Database connection
-$conn = oci_connect("system", "sys112233", "//localhost/XEPDB1");
-if (!$conn) {
-    die("Database connection failed: " . oci_error()['message']);
+if (!isset($_SESSION['user'])) {
+  header("Location: login.php");
+  exit();
 }
 
-$customerID = 1; 
+$customerID = $_SESSION['user']['userID'];
 
 // remove order
 if (isset($_POST['removeOrder'])) {

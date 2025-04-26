@@ -3,11 +3,7 @@ session_start();
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-// Database connection
-$conn = oci_connect("system", "sys112233", "//localhost/XEPDB1");
-if (!$conn) {
-    die("Database connection failed: " . oci_error()['message']);
-}
+include "connection.php";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST['username'];
@@ -37,8 +33,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     oci_bind_by_name($stmt, ":status", $status, 20);
 
     $exec = oci_execute($stmt);
-    echo "Status: $status, UserID: $userID";
 
+    if (!$exec) {
+        $e = oci_error($stmt);
+        echo "Database execution error: " . htmlentities($e['message']);
+        exit();
+    }
 
     if ($exec && $status == 'SUCCESS') {
         $_SESSION['user'] = [

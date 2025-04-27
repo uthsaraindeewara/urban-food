@@ -1,9 +1,7 @@
 <?php
 session_start();
-$conn = oci_connect("system", "sys112233", "//localhost/XEPDB1");
-if (!$conn) {
-    die("Database connection failed: " . oci_error()['message']);
-}
+
+include "connection.php";
 
 if (isset($_POST['updateStatus'])) {
     $orderItemID = $_POST['updateStatus'];

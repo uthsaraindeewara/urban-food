@@ -152,6 +152,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <div class="header">
             <h1>Seller Control Panel</h1>
             <button id="addProductBtn" class="btn btn-primary">Add Product</button>
+            <button id="sellerOrderBtn" class="btn btn-primary">Orders</button>
         </div>
 
         <div class="products-grid" id="productsContainer">
@@ -344,6 +345,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 productCard.querySelector('.product-view-mode').style.display = 'block';
                 productCard.classList.remove('edit-mode');
             });
+        });
+
+        document.getElementById('sellerOrderBtn').addEventListener('click', function() {
+            window.location.href = 'seller_orders.php';
         });
     </script>
 </body>

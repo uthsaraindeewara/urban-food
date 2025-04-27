@@ -8,6 +8,8 @@ if (!isset($_SESSION['user'])) {
 
 $customerID = $_SESSION['user']['userID'];
 
+include "connection.php";
+
  
 if (isset($_POST['markAsDelivered'])) {
     $orderID = $_POST['markAsDelivered'];

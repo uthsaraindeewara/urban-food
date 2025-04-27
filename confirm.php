@@ -146,7 +146,7 @@
         </div>
         
         <div class="btn-container">
-            <a href="order_details.php" class="btn btn-secondary">
+            <a href="orders.php" class="btn btn-secondary">
                 <i class="fas fa-file-alt"></i> View Order
             </a>
             <a href="index.php" class="btn btn-primary">

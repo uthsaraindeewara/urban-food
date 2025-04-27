@@ -193,6 +193,7 @@ try {
     <script>
         document.getElementById('paymentForm').addEventListener('submit', function (e) {
             e.preventDefault();
+            window.location.href = "confirm.php";
         });
     </script>
 </body>

@@ -42,8 +42,17 @@
                 <img class="nav-logo" src="img/urban-food-logo.png" alt="Urban Food Logo">
                 
                 <div class="navbar-links">
-                    <a href="index.php" class="nav-link">Shop</a>
+                    <a href="index.php" class="nav-link">Home</a>
                 </div>
+                <?php
+                    if ($isLoggedIn) {
+                        echo '
+                        <div class="navbar-links">
+                            <a href="orders.php" class="nav-link">Orders</a>
+                        </div>
+                        ';
+                    }
+                ?>
 
                 <div class="search-bar">
                     <form class="search-form" method="get">

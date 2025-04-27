@@ -151,8 +151,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <div class="container">
         <div class="header">
             <h1>Seller Control Panel</h1>
-            <button id="addProductBtn" class="btn btn-primary">Add Product</button>
-            <button id="sellerOrderBtn" class="btn btn-primary">Orders</button>
+            <div>
+                <button id="addProductBtn" class="btn btn-primary">Add Product</button>
+                <button id="sellerOrderBtn" class="btn btn-primary">Orders</button>
+            </div>
         </div>
 
         <div class="products-grid" id="productsContainer">

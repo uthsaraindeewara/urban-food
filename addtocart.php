@@ -30,6 +30,8 @@ if (!oci_execute($stid)) {
 
 echo '<script>alert("product added successfully");</script>';
 
+header('Location: cart.php');
+
 oci_free_statement($stid);
 oci_close($conn);
 ?>

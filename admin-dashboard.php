@@ -12,18 +12,13 @@ if (!isset($_SESSION['user']['userID'])) {
 $cusID = $_SESSION['user']['userID'];
 
 
-// Database connection
-$conn = oci_connect("system", "sys112233", "//localhost/XEPDB1");
-if (!$conn) {
-    die("Database connection failed: " . oci_error()['message']);
-}
+include "connection.php";
 
 
 if (isset($_GET['delete_id'])) {
     $deleteUserID = $_GET['delete_id'];
-    $stmt = oci_parse($conn, "BEGIN admin_delete_user(:admin_id, :id); END;");
+    $stmt = oci_parse($conn, "BEGIN admin_delete_user(:id); END;");
     oci_bind_by_name($stmt, ':id', $deleteUserID);
-    oci_bind_by_name($stmt, ':admin_id', $cusID);
     if (oci_execute($stmt)) {
         echo "<script>alert('User deleted successfully.'); window.location.href = 'admin-dashboard.php';</script>";
     } else {
@@ -42,7 +37,7 @@ if (isset($_POST['search'])) {
 }
 
 // Get customers
-$stmtCustomer = oci_parse($conn, $isSearch ? "BEGIN admin_serach_customer(:term, :cursor); END;" : "BEGIN admin_get_customer(:cursor); END;");
+$stmtCustomer = oci_parse($conn, $isSearch ? "BEGIN admin_search_customer(:term, :cursor); END;" : "BEGIN admin_get_customer(:cursor); END;");
 $cursorCustomer = oci_new_cursor($conn);
 
 if ($isSearch) {
@@ -53,7 +48,7 @@ oci_execute($stmtCustomer);
 oci_execute($cursorCustomer);
 
 // Get sellers
-$stmtSeller = oci_parse($conn, $isSearch ? "BEGIN admin_serach_seller(:term, :cursor); END;" : "BEGIN admin_get_seller(:cursor); END;");
+$stmtSeller = oci_parse($conn, $isSearch ? "BEGIN admin_search_seller(:term, :cursor); END;" : "BEGIN admin_get_seller(:cursor); END;");
 $cursorSeller = oci_new_cursor($conn);
 
 if ($isSearch) {

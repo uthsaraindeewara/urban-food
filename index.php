@@ -106,8 +106,6 @@
                     echo '
                       <div class="text-wrapper-22 shop-button"><a href="index.php">Home</a></div>
                       <div class="text-wrapper-22 vegetables-button"><a href="orders.php">Orders</a></div>
-                      <div class="text-wrapper-22 fruits-button"><a href="fruitsProducts.php">Fruits</a></div>
-                      <div class="text-wrapper-23 dairy-button"><a href="dairyProducts.php">Dairy</a></div>
                     ';
                   }
                 ?>

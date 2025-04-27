@@ -158,6 +158,7 @@ if ($conn) {
     </div>
 
     <button type="submit">Pay Now</button>
+    <button>Delivary Details</button>
   </form>
 </div>
 

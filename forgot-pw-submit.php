@@ -1,10 +1,7 @@
 <?php
 session_start();
-// Database connection
-$conn = oci_connect("system", "sys112233", "//localhost/XEPDB1");
-if (!$conn) {
-    die("Database connection failed: " . oci_error()['message']);
-}
+
+include "connection.php";
 
 $email = trim($_POST['email'] ?? '');
 $newPassword = $_POST['newPassword'] ?? '';

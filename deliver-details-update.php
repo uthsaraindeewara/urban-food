@@ -10,13 +10,7 @@ if (!isset($_SESSION['user']['userID'])) {
 
 $cusID = $_SESSION['user']['userID'];
 
-// Database connection
-$conn = oci_connect("system", "sys112233", "//localhost/XEPDB1");
-if (!$conn) {
-    die("Database connection failed: " . oci_error()['message']);
-}
-
-
+include "connection.php";
 
 $name = trim($_POST['name']);
 $shippingAddress = trim($_POST['shippingAddress']);

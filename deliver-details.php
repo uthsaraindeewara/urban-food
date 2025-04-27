@@ -10,10 +10,7 @@ if (!isset($_SESSION['user']['userID'])) {
 
 $cusID = $_SESSION['user']['userID'];
 
-$conn = oci_connect("system", "sys112233", "//localhost/XEPDB1");
-if (!$conn) {
-    die("Database connection failed: " . oci_error()['message']);
-}
+include "connection.php";
 
 // Call procedure
 $sql = "BEGIN 
@@ -54,7 +51,7 @@ oci_close($conn);
 
     <div class="container">
         <h2>Deliver Details</h2>
-        <form action="update-account-customer.php" method="POST">
+        <form action="deliver-details-update.php" method="POST">
 
          
             <!-- Name -->

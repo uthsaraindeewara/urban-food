@@ -54,7 +54,7 @@ if (isset($_POST['placeOrder'])) {
                 }
             }
 
-            header("Location: checkout-details.php?orderID=" . urlencode($orderID));
+            header("Location: deliver-details.php?orderID=" . urlencode($orderID));
             exit();
         } else {
             echo "<script>alert('Failed to create order. Please try again.'); window.location.href='cart.php';</script>";

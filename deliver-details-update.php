@@ -8,6 +8,12 @@ if (!isset($_SESSION['user']['userID'])) {
     exit();
 }
 
+if (!isset($_POST['orderID'])) {
+    echo "Order ID not provided.";
+    exit();
+}
+
+$orderID = $_POST['orderID'];
 $cusID = $_SESSION['user']['userID'];
 
 include "connection.php";
@@ -32,7 +38,7 @@ $sql = "BEGIN
 $stmt = oci_parse($conn, $sql);
 
 oci_bind_by_name($stmt, ":user_id", $cusID);
-oci-bind_by_name($stmt, ":name", $name);
+oci_bind_by_name($stmt, ":name", $name);
 oci_bind_by_name($stmt, ":email", $email);
 oci_bind_by_name($stmt, ":contact", $contactNo);
 oci_bind_by_name($stmt, ":shipping", $shippingAddress);
@@ -48,6 +54,6 @@ if (!oci_execute($stmt)) {
 oci_free_statement($stmt);
 oci_close($conn);
 
-header("Location: delivery-details.php");
+header("Location: checkout-details.php?orderID=" . urlencode($orderID));
 exit();
 ?>

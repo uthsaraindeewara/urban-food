@@ -165,7 +165,7 @@
             if ($userId !== null) {
               $existingRating = $ratingCollection->findone([
                 'product_id' => (int)$product_id,
-                'user_id' => $userId
+                'user_id' => (int)$userId
               ]);
 
               $existingRating = $existingRating['value'] ?? 0;

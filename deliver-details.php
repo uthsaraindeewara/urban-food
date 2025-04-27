@@ -8,6 +8,12 @@ if (!isset($_SESSION['user']['userID'])) {
     exit();
 }
 
+if (!isset($_GET['orderID'])) {
+    echo "Order ID not provided.";
+    exit();
+}
+
+$orderID = $_GET['orderID'];
 $cusID = $_SESSION['user']['userID'];
 
 include "connection.php";
@@ -20,8 +26,6 @@ $sql = "BEGIN
 $stmt = oci_parse($conn, $sql);
 
 oci_bind_by_name($stmt, ":user_id", $cusID);
-
-
 oci_bind_by_name($stmt, ":name", $name, 100);
 oci_bind_by_name($stmt, ":email", $email, 100);
 oci_bind_by_name($stmt, ":contact", $contactNo, 20);
@@ -38,28 +42,25 @@ oci_free_statement($stmt);
 oci_close($conn);
 ?>
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit Account Details</title>
+    <title>Edit Delivery Details</title>
     <link rel="stylesheet" href="edit-account.css">
 </head>
 <body>
-
     <div class="container">
-        <h2>Deliver Details</h2>
+        <h2>Delivery Details</h2>
         <form action="deliver-details-update.php" method="POST">
-
-         
+            <input type="hidden" name="orderID" value="<?php echo htmlspecialchars($orderID); ?>">
+            
             <!-- Name -->
             <div class="form-group">
                 <label for="name">Name</label>
                 <input type="text" id="name" name="name" value="<?php echo htmlspecialchars($name ?? ''); ?>" required>
             </div>
-
 
             <!-- Address -->
             <div class="form-group">
@@ -72,28 +73,22 @@ oci_close($conn);
                 <input type="text" id="address" name="billingAddress" value="<?php echo htmlspecialchars($billingAddress ?? ''); ?>"required>
             </div>
 
-
             <!-- Contact Number -->
             <div class="form-group">
                 <label for="contactNo">Contact Number</label>
                 <input type="tel" id="contactNo" name="contactNo" value="<?php echo htmlspecialchars($contactNo ?? ''); ?>" required>
             </div>
             
-            
-          <!-- Email -->
+            <!-- Email -->
             <div class="form-group">
                 <label for="email">Email</label>
                 <input type="email" id="email" name="email" value="<?php echo htmlspecialchars($email); ?>" required>
             </div>
-            
 
             <div class="form-group">
                 <button type="submit">Save Changes</button>
             </div>
         </form>
     </div>
-
-    
-
 </body>
 </html>

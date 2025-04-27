@@ -60,6 +60,7 @@ $stmt = oci_parse($conn, $sql);
 // Bind parameters
 oci_bind_by_name($stmt, ":user_id", $cusID);
 oci_bind_by_name($stmt, ":username", $username);
+oci_bind_by_name($stmt, ":name", $name);
 oci_bind_by_name($stmt, ":email", $email);
 oci_bind_by_name($stmt, ":seller_name", $sellerName);
 oci_bind_by_name($stmt, ":contact", $contactNo);

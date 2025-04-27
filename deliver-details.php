@@ -1,33 +1,35 @@
 <?php
-// Start session and connect to database
 session_start();
-
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 
 if (!isset($_SESSION['user']['userID'])) {
     echo "User session not set.";
     exit();
 }
 
-include "connection.php";
-
 $cusID = $_SESSION['user']['userID'];
-$userType = $_SESSION['user']['userType'];
 
-// call procedure 
+$conn = oci_connect("system", "sys112233", "//localhost/XEPDB1");
+if (!$conn) {
+    die("Database connection failed: " . oci_error()['message']);
+}
+
+// Call procedure
 $sql = "BEGIN 
-            edit_account_seller(:user_id, :username, :email, :sellerName, :contact, :farmAddress); 
+            edit_delivery_details(:user_id, :name, :email, :contact, :shipping, :billing); 
         END;";
 
 $stmt = oci_parse($conn, $sql);
 
 oci_bind_by_name($stmt, ":user_id", $cusID);
 
-oci_bind_by_name($stmt, ":username", $username, 100);
+
 oci_bind_by_name($stmt, ":name", $name, 100);
 oci_bind_by_name($stmt, ":email", $email, 100);
-oci_bind_by_name($stmt, ":sellerName", $sellerName, 200);
 oci_bind_by_name($stmt, ":contact", $contactNo, 20);
-oci_bind_by_name($stmt, ":farmAddress", $farmAddress, 200);
+oci_bind_by_name($stmt, ":shipping", $shippingAddress, 200);
+oci_bind_by_name($stmt, ":billing", $billingAddress, 200);
 
 if (!oci_execute($stmt)) {
     $e = oci_error($stmt);
@@ -51,30 +53,33 @@ oci_close($conn);
 <body>
 
     <div class="container">
-        <h2>Edit Account Details</h2>
-        <form action="update-account-seller.php" method="POST" enctype="multipart/form-data">
+        <h2>Deliver Details</h2>
+        <form action="update-account-customer.php" method="POST">
 
-            <!-- Username -->
+         
+            <!-- Name -->
             <div class="form-group">
-                <label for="username">Username</label>
-                <input type="text" id="username" name="username" value="<?php echo htmlspecialchars($username); ?>" required>
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" value="<?php echo htmlspecialchars($name ?? ''); ?>" required>
             </div>
 
-            <div class="form-group">
-                <label for="sellerName">Seller Name</label>
-                <input type="text" id="sellerName" name="sellerName" value="<?php echo htmlspecialchars($sellerName); ?>" required>
-            </div>
 
             <!-- Address -->
             <div class="form-group">
-                <label for="address">Address</label>
-                <input type="text" id="address" name="Address" value="<?php echo htmlspecialchars($farmAddress); ?>" required>
+                <label for="address">Shipping Address</label>
+                <input type="text" id="address" name="shippingAddress" value="<?php echo htmlspecialchars($shippingAddress ?? ''); ?>" required>
             </div>
+
+            <div class="form-group">
+                <label for="address">Billing Address</label>
+                <input type="text" id="address" name="billingAddress" value="<?php echo htmlspecialchars($billingAddress ?? ''); ?>"required>
+            </div>
+
 
             <!-- Contact Number -->
             <div class="form-group">
                 <label for="contactNo">Contact Number</label>
-                <input type="tel" id="contactNo" name="contactNo" value="<?php echo htmlspecialchars($contactNo); ?>" required>
+                <input type="tel" id="contactNo" name="contactNo" value="<?php echo htmlspecialchars($contactNo ?? ''); ?>" required>
             </div>
             
             
@@ -82,11 +87,6 @@ oci_close($conn);
             <div class="form-group">
                 <label for="email">Email</label>
                 <input type="email" id="email" name="email" value="<?php echo htmlspecialchars($email); ?>" required>
-            </div>
-
-            <div class="form-group">
-                <label for="sellerImage">Upload Seller Image</label>
-                <input type="file" id="sellerImage" name="sellerImage" accept=".jpg" >
             </div>
             
 
@@ -96,6 +96,7 @@ oci_close($conn);
         </form>
     </div>
 
+    
 
 </body>
 </html>

@@ -10,10 +10,14 @@ if (!isset($_SESSION['user']['userID'])) {
 
 $cusID = $_SESSION['user']['userID'];
 
-include "connection.php";
+// Database connection
+$conn = oci_connect("system", "sys112233", "//localhost/XEPDB1");
+if (!$conn) {
+    die("Database connection failed: " . oci_error()['message']);
+}
 
 
-$username = trim($_POST['username']);
+
 $name = trim($_POST['name']);
 $shippingAddress = trim($_POST['shippingAddress']);
 $billingAddress = trim($_POST['billingAddress']);
@@ -28,14 +32,13 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
 
 // procedure call
 $sql = "BEGIN 
-            update_account_customer(:user_id, :username,:name, :email, :contact, :shipping, :billing); 
+            update_delivery_details(:user_id,:name, :email, :contact, :shipping, :billing); 
         END;";
 
 $stmt = oci_parse($conn, $sql);
 
 oci_bind_by_name($stmt, ":user_id", $cusID);
-oci_bind_by_name($stmt, ":username", $username);
-oci_bind_by_name($stmt, ":name", $name); 
+oci-bind_by_name($stmt, ":name", $name);
 oci_bind_by_name($stmt, ":email", $email);
 oci_bind_by_name($stmt, ":contact", $contactNo);
 oci_bind_by_name($stmt, ":shipping", $shippingAddress);
@@ -51,6 +54,6 @@ if (!oci_execute($stmt)) {
 oci_free_statement($stmt);
 oci_close($conn);
 
-header("Location: index.php");
+header("Location: delivery-details.php");
 exit();
 ?>

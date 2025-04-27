@@ -169,8 +169,8 @@
                             <input type="radio" name="sort" id="price" value="price" <?= ($_GET['sort'] ?? '') === 'price' ? 'checked' : '' ?>>
                             <label for="price">Price</label>
 
-                            <input type="radio" name="sort" id="ratings" value="ratings" <?= ($_GET['sort'] ?? '') === 'ratings' ? 'checked' : '' ?>>
-                            <label for="ratings">Ratings</label>
+                            <input type="radio" name="sort" id="sales" value="sales" <?= ($_GET['sort'] ?? '') === 'sales' ? 'checked' : '' ?>>
+                            <label for="sales">Sales</label>
                         </div>
 
                         <!-- Sort Direction -->

@@ -8,12 +8,12 @@
   if (!is_numeric($product_id)) {
       die("Invalid ID: Must be a number.");
   }
-  
-  $userId = null;
 
-  if (!isset($_SESSION['user'])) {
-    $userId = $_SESSION['user']['userID'];
-  }
+  // Initialize user variables
+  $isLoggedIn = isset($_SESSION['user']);
+  $userId = $isLoggedIn ? $_SESSION['user']['userID'] : null;
+  $username = $isLoggedIn ? $_SESSION['user']['name'] : '';
+  $firstLetter = $isLoggedIn ? strtoupper(substr($username, 0, 1)) : '';
   ?>
 <head>
     <meta charset="utf-8" />

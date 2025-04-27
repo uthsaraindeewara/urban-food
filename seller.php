@@ -25,14 +25,6 @@
     $sort = $_GET['sort'] ?? 'none';
     $order = $_GET['order'] ?? 'asc';
     $search = $_GET['search'] ?? '';
-    
-    // Database configuration
-    $dbConfig = [
-        'host' => 'localhost:3306',
-        'user' => 'root',
-        'password' => '',
-        'dbname' => 'storedb'
-    ];
     ?>
 
     <div class="products-list-page">

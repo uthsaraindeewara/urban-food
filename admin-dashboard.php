@@ -94,10 +94,10 @@ oci_execute($cursorSeller);
             <tbody>
             <?php while (($row = oci_fetch_array($cursorCustomer, OCI_ASSOC + OCI_RETURN_NULLS)) != false): ?>
     <tr>
-        <td><?php echo htmlspecialchars($row['USERNAME']); ?></td>
-        <td><?php echo htmlspecialchars($row['EMAIL']); ?></td>
-        <td><?php echo htmlspecialchars($row['SHIPPING_ADDRESS']); ?></td>
-        <td><?php echo htmlspecialchars($row['BILLING_ADDRESS']); ?></td>
+        <td><?php echo $row['USERNAME'] ? htmlspecialchars($row['USERNAME']) : ''; ?></td>
+        <td><?php echo $row['EMAIL'] ? htmlspecialchars($row['EMAIL']) : ''; ?></td>
+        <td><?php echo $row['SHIPPING_ADDRESS'] ? htmlspecialchars($row['SHIPPING_ADDRESS']) : ''; ?></td>
+        <td><?php echo $row['BILLING_ADDRESS'] ? htmlspecialchars($row['BILLING_ADDRESS']) : ''; ?></td>
         <td>
             <a href="admin-dashboard.php?delete_id=<?php echo $row['USER_ID']; ?>" onclick="return confirm('Are you sure you want to delete this user?');">Delete</a>
         </td>
